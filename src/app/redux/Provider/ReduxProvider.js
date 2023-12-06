@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, useState } from "react";
 import { store } from "../store/store";
 import { Provider } from "react-redux";
@@ -23,7 +25,7 @@ const ReduxProvider = ({ children }) => {
     }
   }, []);
 
-  return <Provider store={store}>{isOnline ? children : <Offline />}</Provider>;
+  return <Provider store={store}> {isOnline ? children : <Offline />}</Provider>;
 };
 
 export default ReduxProvider;
