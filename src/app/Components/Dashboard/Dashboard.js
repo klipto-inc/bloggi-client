@@ -167,7 +167,7 @@ const Dasboard = () => {
             </div>
           </div>
 
-          <div className="mt-8 text-white flex flex-col gap-5">
+          <div className="flex flex-col gap-5 mt-8 text-white">
             {user ? (
               <h1 className="text-xl font-bold text-gray-300 sm:text-3xl">
                 Welcome Back, {user.fullname.split(" ")[0]}!

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/router"; // Fix: Change "next/navigation" to "next/router"
 import Image from "next/image";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -11,16 +11,6 @@ import parse from "html-react-parser";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import Swal from "sweetalert2";
 import Tooltip from "@mui/material/Tooltip";
-
-import { TbEdit } from "react-icons/tb";
-import {
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
-  Button,
-} from "@material-tailwind/react";
-
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useRef } from "react";
@@ -28,7 +18,9 @@ import io from "socket.io-client";
 import { FaHandsClapping } from "react-icons/fa6";
 import PostChat from "../Components/Modal/PostChat";
 
+// Component definition
 const BlogPost = () => {
+  // State and variable declarations
   const params = useParams();
   const router = useRouter();
   const token = Cookies.get("authtoken");
@@ -49,16 +41,15 @@ const BlogPost = () => {
   const postlike = "w-4 h-4 mr-1 text-blue-500";
   const postunlike = "w-4 h-4 mr-1";
 
+  // Function to toggle blog navigation
   const PostNav = () => {
     setBlogNav(!blognav);
   };
 
+  // Function to post a comment
   const PostComment = async (e) => {
-    // e.preventDefault();
-
     if (user) {
       let userid = String(user._id);
-
       const blogid = params.id;
 
       let commentData = {
@@ -78,6 +69,7 @@ const BlogPost = () => {
     }
   };
 
+  // useEffect for socket events
   useEffect(() => {
     socket.on("allcomment", (data) => {
       setAllComments(data);
@@ -96,6 +88,7 @@ const BlogPost = () => {
     };
   }, [socket]);
 
+  // useEffect to fetch blog data
   useEffect(() => {
     const FetchData = async () => {
       try {
@@ -105,7 +98,6 @@ const BlogPost = () => {
 
         if (response.status === 200) {
           setBlog(response.data.blogdata);
-
           setAllComments(response.data.blogdata.comment);
           setallClap(response.data.blogdata.like);
           console.log(response.data.blogdata.comment);
@@ -118,8 +110,9 @@ const BlogPost = () => {
     };
 
     FetchData();
-  }, []);
+  }, [params.id]);
 
+  // Function to delete a post
   const deletePost = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -129,12 +122,12 @@ const BlogPost = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         console.log("click me to delete", params.id);
         try {
-          const response = axios.delete(
-            `http://localhost:8000/api/v1/blog/delete/${params.id}`,
+          const response = await axios.delete( // Fix: Add "await" before axios.delete
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog/delete/${params.id}`,
             {
               headers: {
                 Authorization: `Bearer ${String(token)}`,
@@ -153,18 +146,21 @@ const BlogPost = () => {
           });
 
           router.push("/");
-        } catch (error) {}
+        } catch (error) {
+          console.log(error);
+        }
       }
     });
   };
 
+  // Function to view user profile
   const viewProfile = (id) => {
     router.push(`/user/${id}`);
   };
 
+  // Function to react to a post
   const PostReaction = (id) => {
     let userid = String(user._id);
-
     const blogid = id;
 
     console.log("like " + blogid, userid);
