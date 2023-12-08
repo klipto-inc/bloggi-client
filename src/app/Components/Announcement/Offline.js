@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import offline from "../../Resources/Images/offline.png";
 import logo from "../../Resources/Images/bloggilogo.png";
@@ -8,7 +10,7 @@ const Offline = () => {
 
   const reFresh = () => {
     if (typeof window !== "undefined") {
-      window.location.reload();
+      window.location.reload(); 
     }
   };
 

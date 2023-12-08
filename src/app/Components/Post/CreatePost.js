@@ -1,11 +1,7 @@
-
+"use client";
 
 const CreatePost = () => {
-  return ( 
-    <>
-    
-    </>
-   );
-}
- 
+  return <></>;
+};
+
 export default CreatePost;

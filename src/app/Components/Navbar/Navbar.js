@@ -62,6 +62,7 @@ const Navbar = () => {
 
       Cookies.remove("authtoken");
       if (typeof window !== "undefined") {
+      
         window.location.reload();
       }
     } catch (error) {}
@@ -100,6 +101,7 @@ const Navbar = () => {
 
           Cookies.remove("authtoken");
           if (typeof window !== "undefined") {
+      
             window.location.reload();
           }
 
