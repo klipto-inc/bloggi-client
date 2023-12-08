@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import userimg from "../../Resources/Images/user.jpg";
+import userimg from "../../../../public/headerbg.png";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";

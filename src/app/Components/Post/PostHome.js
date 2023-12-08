@@ -100,7 +100,7 @@ function PostHome() {
           <div className="grid gap-8 lg:grid-cols-1 w-full md:w-full lg:w-[65%]">
             {!blogs && (
               <article className="flex flex-col items-center w-full gap-4 border border-gray-200 rounded-lg shadow-md h-fit lg:flex-row animate-pulse sm:flex-col">
-                <div className="rounded-lg w-[60%] h-[50%] md:h-full lg:h-[50%] object-cover bg-gray-500"></div>
+                <div className="rounded-lg bg-gray-500 w-[60%] h-[50%] md:h-full lg:h-[50%] object-cover animate-pulse"></div>
 
                 <div className="flex-grow w-full p-6 content">
                   <div className="flex items-center justify-between mb-5 text-gray-300">
