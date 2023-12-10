@@ -202,9 +202,9 @@ const BlogPost = () => {
       ) : (
         <div className="flex flex-col  md:mx-2 my-10 md:flex-col lg:flex-row lg:px-[2%] md:gap-2 lg:gap-10">
           <div className="items-center justify-center w-full md:w-[80%] lg:w-[70%] lg:px-10">
-            <main className="relative flex flex-col gap-4 p-5 shadow-md md:p-5 lg:p-10">
+            <main className="relative flex flex-col gap-4 p-0 shadow-md md:p-5 lg:p-10">
               <div className="flex flex-col w-full gap-4 mx-auto ab md:mb-0">
-                <div className="flex flex-col items-start justify-between md:items-center md:flex-row">
+                <div className="flex flex-col items-start justify-between p-5 md:items-center md:flex-row">
                   <div className="flex py-2 ">
                     <Image
                       src={blog.author.userdp}
@@ -266,7 +266,7 @@ const BlogPost = () => {
                   />
                 </div> */}
 
-                <div className="md:px-4 lg:px-0">
+                <div className="px-5 md:px-4 lg:px-0">
                   <h2 className="text-xl font-semibold leading-tight text-gray-800">
                     {blog.title}
                   </h2>
@@ -282,7 +282,7 @@ const BlogPost = () => {
                   />
                 </div>
 
-                <div className="hidden md:block">
+                <div className="hidden p-5 md:block">
                   <div className="flex flex-row items-center w-full gap-5 ">
                     <div
                       className="flex flex-row items-center w-full gap-5 px-2 py-1 bg-gray-200 rounded-full cursor-pointer"
@@ -406,7 +406,7 @@ const BlogPost = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-row items-center w-full gap-5 md:hidden">
+                <div className="flex flex-row items-center w-full gap-5 px-5 md:hidden">
                   <div
                     className="flex flex-row items-center w-full gap-5 px-2 py-1 bg-gray-200 rounded-full cursor-pointer"
                     onClick={() => {
@@ -535,7 +535,7 @@ const BlogPost = () => {
                 allComments={allComments}
               />
 
-              <div className="flex flex-col mt-4">
+              <div className="flex flex-col px-4 mt-4">
                 <div className="w-full text-lg leading-relaxed text-gray-700 lg:px-0 lg:w-full">
                   {parse(blog.longdescription)}
                 </div>
