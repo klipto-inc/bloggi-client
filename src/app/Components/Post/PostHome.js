@@ -81,8 +81,8 @@ function PostHome() {
     fetchData();
   }, []);
 
-  const postlike = "w-4 h-4 mr-1 text-blue-500";
-  const postunlike = "w-4 h-4 mr-1";
+  const postlike = "w-4 h-4 mr-1 text-blue-500 text-[14px]";
+  const postunlike = "w-4 h-4 mr-1 text-[14px]";
   const checkpost = !user ? postlike : postunlike;
 
   const postReaction = (id) => {
@@ -143,14 +143,14 @@ function PostHome() {
                     <article
                       key={post.id}
                       
-                      className="flex flex-col-reverse items-center w-full gap-4 px-2 mb-5 bg-white rounded-lg shadow-lg h-fit md:flex-row lg:flex-row"
+                      className="flex flex-col-reverse items-center w-full gap-4 mb-5 bg-white rounded-lg shadow-lg h-fit md:flex-row lg:flex-row"
                     >
                       <Link
                         href={`/${post._id}`}
                         className="h-full w-full md:w-[50%] lg:w-[50%] xl:w-[50%]"
                       >
                         <Image
-                          className="rounded-lg h-full md:h-[270px] w-full object-cover"
+                          className="md:rounded-lg h-[45vh] md:h-[270px] w-full object-cover"
                           src={post.blogimage}
                           alt="Blog post"
                           width={440}
@@ -158,23 +158,23 @@ function PostHome() {
                           draggable={false}
                         />
                       </Link>
-                      <div className="content p-2 md:p-6 w-full md:w-[50%] lg:w-[50%] xl:w-[50%]">
+                      <div className="content p-2 px-3 md:p-6 w-full md:w-[50%] lg:w-[50%] xl:w-[50%]">
                         <div className="flex items-center justify-between mb-5 text-gray-500">
                           {/* <span className='bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded'>
                             {post.category}
                           </span> */}
-                          <div className="flex items-center space-x-4">
+                          <div className="flex items-center space-x-2">
                             <Link href={`/user/${post.author._id}`}>
                               <Image
                                 src={post.author.userdp}
                                 alt="Jese Leos avatar"
                                 width={56}
                                 height={56}
-                                className="h-[30px] w-[30px] object-cover bg-gray-50 p-1[]  rounded-full"
+                                className="h-[40px] w-[40px] object-cover bg-gray-50 p-1[]  rounded-full"
                               />
                             </Link>
                             <Link href={`/user/${post.author._id}`}>
-                              <span className="text-sm font-medium">
+                              <span className="text-sm font-medium ">
                                 {post.author.fullname}
                               </span>
                             </Link>
@@ -189,10 +189,10 @@ function PostHome() {
                           </span>
                         </div>
 
-                        <h2 className="my-2 text-base font-medium tracking-tight text-gray-900">
+                        <h2 className="my-2 text-[18px] font-medium tracking-tight text-gray-900">
                           <Link href={`/${post._id}`}>{post.title}</Link>
                         </h2>
-                        <p className="mb-5 text-sm font-light text-gray-500">
+                        <p className="mb-5 text-[16px] font-light text-gray-700 ">
                           <Link href={`/${post._id}`}>
                             {post.shortdescription}
                           </Link>
@@ -207,7 +207,7 @@ function PostHome() {
                               <div className="flex flex-row items-center mr-2 text-xs font-medium text-gray-500">
                                 <Link href={`/${post._id}`}>
                                   <svg
-                                    className="w-4 h-4 mr-1 cursor-pointer"
+                                    className="w-4 h-4 mr-1 cursor-pointer text-[15px]"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -228,7 +228,7 @@ function PostHome() {
                                   </svg>
                                 </Link>
                                 <Link href={`/${post._id}`}>
-                                  <span className="cursor-pointer">
+                                  <span className="cursor-pointer text-[14px]">
                                     {post.view}
                                   </span>
                                 </Link>
@@ -257,7 +257,7 @@ function PostHome() {
                                     ></path>
                                   </svg>
                                 </Link>
-                                <Link href={`/${post._id}`}>
+                                <Link href={`/${post._id}`} className="text-[14px]">
                                   <span className="cursor-pointer">
                                     {post.comment.length}
                                   </span>
@@ -292,7 +292,7 @@ function PostHome() {
                                   }}
                                 />
 
-                                <span>{post.like.length}</span>
+                                <span className="text-[14px]">{post.like.length}</span>
                               </div>
                             </Tooltip>
                           </div>
@@ -323,7 +323,7 @@ function PostHome() {
           </div>
           <div className="hidden lg:w-[35%] h-fit lg:flex flex-col gap-6 items-end justify-center sticky top-20">
             <div className="flex flex-col items-end justify-center w-full gap-4">
-              <p className="font-medium text-black">Suggested Authors...</p>
+              <p className="font-medium text-black text-[15px]">Suggested Authors...</p>
               <div className="flex -space-x-4">
                 <Image
                   alt="Author 1"
