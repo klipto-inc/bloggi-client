@@ -19,46 +19,54 @@ import { FaHandsClapping } from "react-icons/fa6";
 function PostHome() {
   const [blogs, setBlogs] = useState(null);
   const [loads, setLoads] = useState(true);
-  const [allclap, setallClap] = useState(null);
+  const [allClap, setAllClap] = useState(null);
+  const [socketConnected, setSocketConnected] = useState(false);
+
   const dispatch = useDispatch();
-  const [dataFetched, setDataFetched] = useState(false);
-  const token = Cookies.get("authtoken");
-  const fetchRef = useRef(null);
-
-  const socket = io.connect(`${process.env.NEXT_PUBLIC_SERVER_URL}`);
-
   const router = useRouter();
+  const token = Cookies.get("authtoken");
 
   const user = useSelector((state) => state.userauth.user);
-  const isAuthenticated = useSelector(
-    (state) => state.userauth.isAuthenticated
-  );
+  const isAuthenticated = useSelector((state) => state.userauth.isAuthenticated);
   const loading = useSelector((state) => state.userauth.loading);
   const error = useSelector((state) => state.userauth.error);
-  const [blogLoading, setBlogLoading] = useState(false);
+
+  const fetchRef = useRef(null);
 
   useEffect(() => {
-    socket.on("alllike", (data) => {
-      setLike(data);
-      console.log("this is data", allclap);
+    // Create a socket connection
+    const socket = io.connect(`${process.env.NEXT_PUBLIC_SERVER_URL}`);
+
+    // Handle the socket connection events
+    socket.on("connect", () => {
+      setSocketConnected(true);
     });
 
+    socket.on("alllike", (data) => {
+      setAllClap(data);
+      console.log("This is data from alllike event:", allClap);
+    });
+
+    socket.on("error", (error) => {
+      console.error("Socket.IO connection error:", error);
+      // Handle the error (e.g., set an error state, show a message)
+    });
+
+    // Disconnect the socket when the component unmounts
     return () => {
       socket.disconnect();
     };
-  }, [socket]);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog`
-        );
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog`);
+
         if (response.data && response.data.allblog) {
           setBlogs(response.data.allblog);
-          setallClap(response.data.allblog.like)
+          setAllClap(response.data.allblog.like);
           setLoads(false);
-          setDataFetched(true);
           console.log("This is the fetched data:", response.data.allblog);
         } else {
           setLoads(false);
@@ -66,7 +74,7 @@ function PostHome() {
         }
       } catch (error) {
         console.error(error);
-        setLoads(false); // Set loads to false on error to handle the loading state
+        setLoads(false);
       }
     };
 
@@ -75,21 +83,20 @@ function PostHome() {
 
   const postlike = "w-4 h-4 mr-1 text-blue-500";
   const postunlike = "w-4 h-4 mr-1";
-
   const checkpost = !user ? postlike : postunlike;
 
-  const PostReaction = (id) => {
-    let userid = String(user._id);
-
+  const postReaction = (id) => {
+    const userid = String(user._id);
     const blogid = id;
 
-    console.log("like " + blogid, userid);
+    console.log("Like: Blog ID", blogid, "User ID", userid);
 
-    let likeData = {
+    const likeData = {
       blogid,
       userid,
     };
 
+    // Emit the "postreact" event to the server
     socket.emit("postreact", likeData);
   };
 
