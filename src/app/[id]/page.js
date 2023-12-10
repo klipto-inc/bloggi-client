@@ -266,7 +266,7 @@ const BlogPost = () => {
                   />
                 </div> */}
 
-                <div className="px-5 md:px-4 lg:px-0">
+                <div className="px-3 md:px-4 lg:px-0">
                   <h2 className="text-xl font-semibold leading-tight text-gray-800">
                     {blog.title}
                   </h2>
@@ -282,7 +282,7 @@ const BlogPost = () => {
                   />
                 </div>
 
-                <div className="hidden p-5 md:block">
+                <div className="hidden p-2 md:block">
                   <div className="flex flex-row items-center w-full gap-5 ">
                     <div
                       className="flex flex-row items-center w-full gap-5 px-2 py-1 bg-gray-200 rounded-full cursor-pointer"
