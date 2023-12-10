@@ -275,7 +275,7 @@ const BlogPost = () => {
                 <div className="relative flex flex-col w-full h-full show">
                   <Image
                     src={blog.blogimage}
-                    className="object-cover w-full h-full lg:rounded"
+                    className="object-cover w-full h-[45vh] md:h-full lg:rounded"
                     width={1000}
                     height={500}
                     alt="blog"
