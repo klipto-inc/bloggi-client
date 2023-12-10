@@ -2,7 +2,6 @@
 
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import Auth from '../../Components/Auth/ProtectedRoute';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter, useParams } from 'next/navigation';
 import Cookies from 'js-cookie';
@@ -25,11 +24,6 @@ function EditBlog() {
 
   const [state, setState] = useState('idle');
   const [loading, setLoading] = useState(true);
-
-  var currentDate = new Date();
-  var year = currentDate.getFullYear();
-  var month = currentDate.getMonth() + 1; // Note: Month is zero-based, so we add 1
-  var day = currentDate.getDate();
 
 
   const [blogid, setBlogId] = useState(params.id)
