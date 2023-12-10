@@ -106,7 +106,7 @@ function SignIn() {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm pe-12"
+                    className="w-full p-4 text-sm text-black border border-gray-300 rounded-lg shadow-sm pe-12"
                     onChange={(e) => setPassword(e.target.value)}
                     required={true}
                   />
