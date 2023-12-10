@@ -47,7 +47,7 @@ function Recovery() {
       <Navbar />
       <section className="px-4 py-16 mx-auto sm:px-6 md:bg-gray-200">
         <div className="flex flex-col items-center justify-center py-4 mx-auto md:h-fit lg:py-0">
-          <div className="w-full bg-white rounded-lg shadow-lg md:mt-0 sm:max-w-md xl:p-0 dark:border-gray-700">
+          <div className="w-full bg-white rounded-lg md:shadow-lg md:mt-0 sm:max-w-md xl:p-0 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <div className="a flex flex-row items-center gap-4 mb-[30px]">
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
