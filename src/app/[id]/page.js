@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/router"; // Fix: Change "next/navigation" to "next/router"
+import { useParams, useRouter } from "next/navigation"; // Fix: Change "next/navigation" to "next/router"
 import Image from "next/image";
 import Cookies from "js-cookie";
 import axios from "axios";
