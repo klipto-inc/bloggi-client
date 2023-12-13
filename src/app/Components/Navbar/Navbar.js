@@ -116,7 +116,7 @@ const Navbar = () => {
   };
 
   return (
-    <section className="relative sticky top-0 z-30 ">
+    <section className="relative md:z-30 md:top-0 md:sticky ">
       <header className="bg-white shadow-lg">
         <div className="px-4 ">
           <div className="flex items-center justify-between h-16">

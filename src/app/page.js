@@ -9,6 +9,7 @@ import Footer from './Components/Footer/Footer';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgress } from '@mui/material';
+import BottomNav from './Components/BottomNavigation/BottomNav';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -25,11 +26,12 @@ export default function Home() {
   
 
   return (
-    <main className='bg-white'>
+    <main className='h-screen bg-white lg:h-auto'>
       <Navbar />
       <Dashboard />
       <PostHome />
       <Footer />
+      <BottomNav />
     </main>
   );
 }
