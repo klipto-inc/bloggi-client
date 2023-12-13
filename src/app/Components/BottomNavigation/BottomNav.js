@@ -5,7 +5,7 @@ import Link from "next/link";
 import { IoCreateOutline } from "react-icons/io5";
 import { MdOutlineExplore } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
-import {usePathName} from 'nextNavigation'
+import {usePathName} from 'next/navigation'
 
 
 const BottomNav = () => {
@@ -17,13 +17,13 @@ const BottomNav = () => {
         <div id="tabs" className="flex justify-between">
           <Link
             href="/"
-            className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${pathName === "/"? "text-[#FF3131]" : "text-[#000]" }`}
+            className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${pathName === "/"? "text-[#FF3131] border-t-[#FF3131] border-1" : "text-[#000]" }`}
             // activeClassName="dark:text-gray-100 text-[#FF3131]"
             
           >
             
             <MdOutlineExplore className="inline-block w-6 h-6 mb-1" />
-            <span className="block text-xs tab">Feed</span>
+            <span className="block text-xs tab text-black">Feed</span>
           </Link>
           <Link
             href="/category"
