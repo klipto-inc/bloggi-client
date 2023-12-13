@@ -6,7 +6,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="bg-gray-100">
+    <footer className="hidden bg-gray-100 md:block">
       <div className="max-w-5xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div className="flex justify-center text-teal-600">
           <Link
