@@ -14,6 +14,7 @@ import Auth from "../Components/Auth/ProtectedRoute2";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 import ReactiveButton from "reactive-button";
+import BottomNav from "../Components/BottomNavigation/BottomNav";
 
 function SignIn() {
   const [state, setState] = useState("idle");
@@ -61,7 +62,7 @@ function SignIn() {
   };
 
   return (
-    <div>
+    <div className="h-screen bg-white lg:h-auto">
       <Navbar />
       <section className="px-2 py-16 mx-auto md:bg-gray-200 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center py-8 mx-auto lg:px-6 md:h-fit lg:py-0">
@@ -160,6 +161,7 @@ function SignIn() {
         </div>
       </section>
       <Footer />
+      <BottomNav />
     </div>
   );
 }

@@ -17,6 +17,7 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 import io from "socket.io-client";
 import { setUser } from "@/app/redux/slice/userauthSlice";
 import { FaHandsClapping } from "react-icons/fa6";
+import BottomNav from "@/app/Components/BottomNavigation/BottomNav";
 
 const UserProfile = () => {
   const user = useSelector((state) => state.userauth.user);
@@ -98,7 +99,7 @@ const UserProfile = () => {
   };
 
   return (
-    <>
+    <div className="h-screen bg-white lg:h-auto">
       <Navbar />
       <div className="h-auto bg-gray-200">
         <div className="flex items-start pt-[65px] justify-left">
@@ -503,7 +504,8 @@ const UserProfile = () => {
         </div>
       </div>
       <Footer />
-    </>
+       <BottomNav />
+    </div>
   );
 };
 

@@ -11,6 +11,7 @@ import Auth from "../Components/Auth/ProtectedRoute2";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 import ReactiveButton from "reactive-button";
+import BottomNav from "../Components/BottomNavigation/BottomNav";
 
 function Recovery() {
   const [state, setState] = useState("idle");
@@ -43,7 +44,7 @@ function Recovery() {
   };
 
   return (
-    <div>
+    <div className="h-screen bg-white lg:h-auto">
       <Navbar />
       <section className="px-4 py-16 mx-auto sm:px-6 md:bg-gray-200">
         <div className="flex flex-col items-center justify-center py-4 mx-auto md:h-fit lg:py-0">
@@ -113,6 +114,7 @@ function Recovery() {
         </div>
       </section>
       <Footer />
+      <BottomNav />
     </div>
   );
 }

@@ -17,6 +17,7 @@ import { useRef } from "react";
 import io from "socket.io-client";
 import { FaHandsClapping } from "react-icons/fa6";
 import PostChat from "../Components/Modal/PostChat";
+import BottomNav from "../Components/BottomNavigation/BottomNav";
 
 // Component definition
 const BlogPost = () => {
@@ -174,7 +175,7 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative h-screen bg-white lg:h-auto">
       <Navbar />
       {blog === null ? (
         <div className="flex flex-col md:mx-10 my-10 lg:flex-row lg:mx-[12%] gap-10 justify-start items-start">
@@ -651,6 +652,7 @@ const BlogPost = () => {
         </div>
       )}
       <Footer />
+      <BottomNav />
     </div>
   );
 };

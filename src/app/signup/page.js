@@ -10,6 +10,7 @@ import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 import ReactiveButton from "reactive-button";
 import { useSelector, useDispatch } from "react-redux";
+import BottomNav from "../Components/BottomNavigation/BottomNav";
 
 function SignUp() {
   const [state, setState] = useState("idle");
@@ -72,7 +73,7 @@ function SignUp() {
   }
 
   return (
-    <div>
+    <div className="h-screen bg-white lg:h-auto">
       <Navbar />
       <section className="px-2 py-16 mx-auto md:bg-gray-200 sm:px-6">
         <div className="flex flex-col items-center justify-center py-8 mx-auto md:h-fit lg:py-0">
@@ -220,6 +221,7 @@ function SignUp() {
         </div>
       </section>
       <Footer />
+      <BottomNav />
     </div>
   );
 }

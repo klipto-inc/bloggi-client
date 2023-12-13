@@ -12,6 +12,7 @@ import Dashboard from '../../Components/Dashboard/Dashboard';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Image from 'next/image';
+import BottomNav from '@/app/Components/BottomNavigation/BottomNav';
 
 function CreatePost() {
   const params = useParams();
@@ -97,7 +98,7 @@ function CreatePost() {
   };
 
   return (
-    <div>
+    <div className='h-screen bg-white lg:h-auto'>
       <Navbar />
       <div className='px-4 py-16 mx-auto bg-gray-50 sm:px-6'>
         <div className='max-w-lg mx-auto'>
@@ -233,6 +234,7 @@ function CreatePost() {
         </div>
       </div>
       <Footer />
+      <BottomNav />
     </div>
   );
 }
