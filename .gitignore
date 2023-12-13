@@ -26,6 +26,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*
 !.env.example   # Optionally include a template/example .env file
 
