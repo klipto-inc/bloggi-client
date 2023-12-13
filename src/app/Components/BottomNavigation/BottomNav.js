@@ -5,14 +5,14 @@ import Link from "next/link";
 import { IoCreateOutline } from "react-icons/io5";
 import { MdOutlineExplore } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
-import {usePathName} from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 
 const BottomNav = () => {
 
-  const pathName = usePathName()
+  const pathName = usePathname()
   return (
-    <div classNameName="md:hidden">
+    <div classNameName="block md:hidden lg:hidden xl:hidden">
       <section className="fixed inset-x-0 bottom-0 z-50 block text-gray-800 bg-gray-300 border-t-2 shadow-lg dark:bg-dark backdrop-blur-lg bg-opacity-30 dark:bg-opacity-20 dark:text-gray-400 border-royal/20">
         <div id="tabs" className="flex justify-between">
           <Link
