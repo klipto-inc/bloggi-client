@@ -39,9 +39,12 @@ function SignIn() {
           email,
           password,
         },
-        {
-          withCredentials: true,
-        }
+        // {
+        //   withCredentials: true,
+        //   headers: {
+        //     'Content-Type': 'application/json',
+        //   },
+        // }
       );
 
       if (response.status === 200 && authToken) {
