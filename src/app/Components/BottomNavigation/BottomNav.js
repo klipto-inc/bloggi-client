@@ -12,7 +12,7 @@ const BottomNav = () => {
           <Link
             href="/"
             className="justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white"
-            activeClassName="dark:text-gray-100 text-black border-1 border-t-[#FF3131]"
+            activeClassName="dark:text-gray-100 text-[#FF3131]"
           >
             
             <MdOutlineExplore className="inline-block w-6 h-6 mb-1" />
@@ -21,7 +21,7 @@ const BottomNav = () => {
           <Link
             href="/category"
             className="justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white"
-            activeClassName="dark:text-gray-100 text-black border-1 border-t-[#FF3131]"
+            activeClassName="dark:text-gray-100 text-[#FF3131]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const BottomNav = () => {
           <Link
             href="/createpost"
             className="justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white"
-            activeClassName="dark:text-gray-100 text-black"
+            activeClassName="dark:text-gray-100 text-[#FF3131]"
           >
             
             <IoCreateOutline className="inline-block w-6 h-6 mb-1"/>
@@ -51,7 +51,7 @@ const BottomNav = () => {
           <Link
             href="user/profile"
             className="justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white"
-            activeClassName="dark:text-gray-100 text-black border-1 border-t-[#FF3131]"
+            activeClassName="dark:text-gray-100 text-[#FF3131]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ const BottomNav = () => {
           <Link
             href="/settings"
             className="justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white"
-            activeClassName="dark:text-gray-100 text-black border-1 border-t-[#FF3131]"
+            activeClassName="dark:text-gray-100 text-[#FF3131]"
           >
             
             <IoSettingsOutline className="inline-block w-6 h-6 mb-1" />
