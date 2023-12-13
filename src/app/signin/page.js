@@ -48,7 +48,7 @@ function SignIn() {
         }
       );
 
-      if (response.status === 200 && authToken) {
+      if (response.status === 200 ) {
         
         const token = Cookies.get("authtoken"); // Note the lowercase 'authorization'
         if (token) {
