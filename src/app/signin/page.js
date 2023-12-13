@@ -23,7 +23,6 @@ function SignIn() {
   const isAuthenticated = useSelector(
     (state) => state.authslice.isAuthenticated
   );
-  
   const authToken = useSelector((state) => state.authslice.authToken);
 
   const router = useRouter();
@@ -41,14 +40,10 @@ function SignIn() {
         },
         {
           withCredentials: true,
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json',
-          },
         }
       );
 
-      if (response.status === 200 ) {
+      if (response.status === 200 && authToken) {
         
         const token = Cookies.get("authtoken"); // Note the lowercase 'authorization'
         if (token) {
