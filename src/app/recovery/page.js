@@ -44,7 +44,7 @@ function Recovery() {
   };
 
   return (
-    <div className="h-screen bg-white lg:h-auto">
+    <div className="h-screen bg-white md:h-auto">
       <Navbar />
       <section className="px-4 py-16 mx-auto sm:px-6 md:bg-gray-200">
         <div className="flex flex-col items-center justify-center py-4 mx-auto md:h-fit lg:py-0">

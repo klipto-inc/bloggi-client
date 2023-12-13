@@ -175,7 +175,7 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="relative h-screen bg-white lg:h-auto">
+    <div className="relative h-screen bg-white md:h-auto">
       <Navbar />
       {blog === null ? (
         <div className="flex flex-col md:mx-10 my-10 lg:flex-row lg:mx-[12%] gap-10 justify-start items-start">

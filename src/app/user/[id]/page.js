@@ -99,7 +99,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="h-screen bg-white lg:h-auto">
+    <div className="h-screen bg-white md:h-auto">
       <Navbar />
       <div className="h-auto bg-gray-200">
         <div className="flex items-start pt-[65px] justify-left">

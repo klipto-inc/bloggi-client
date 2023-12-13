@@ -132,7 +132,7 @@ function EditBlog() {
   };
 
   return (
-    <div className='h-screen bg-white lg:h-auto'>
+    <div className='h-screen bg-white md:h-auto'>
       <Navbar />
       <div className='px-4 py-16 mx-auto bg-gray-50 sm:px-6'>
         <div className='max-w-lg mx-auto'>

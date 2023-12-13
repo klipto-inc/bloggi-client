@@ -62,7 +62,7 @@ function SignIn() {
   };
 
   return (
-    <div className="h-screen bg-white lg:h-auto">
+    <div className="h-screen bg-white md:h-auto">
       <Navbar />
       <section className="px-2 py-16 mx-auto md:bg-gray-200 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center py-8 mx-auto lg:px-6 md:h-fit lg:py-0">

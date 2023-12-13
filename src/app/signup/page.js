@@ -73,7 +73,7 @@ function SignUp() {
   }
 
   return (
-    <div className="h-screen bg-white lg:h-auto">
+    <div className="h-screen bg-white md:h-auto">
       <Navbar />
       <section className="px-2 py-16 mx-auto md:bg-gray-200 sm:px-6">
         <div className="flex flex-col items-center justify-center py-8 mx-auto md:h-fit lg:py-0">

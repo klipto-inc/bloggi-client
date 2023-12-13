@@ -26,7 +26,7 @@ export default function Home() {
   
 
   return (
-    <main className='h-screen bg-white lg:h-auto'>
+    <main className='h-screen bg-white md:h-auto'>
       <Navbar />
       <Dashboard />
       <PostHome />

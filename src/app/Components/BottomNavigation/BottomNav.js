@@ -2,7 +2,7 @@ import React from "react";
 
 const BottomNav = () => {
   return (
-    <div className="lg:hidden">
+    <div className="md:hidden">
       <section class="block fixed bottom-0 inset-x-0 z-50 shadow-lg text-gray-800 bg-gray-700 dark:bg-dark backdrop-blur-lg bg-opacity-30 dark:bg-opacity-30 dark:text-gray-400 border-t-2 border-royal/20">
         <div id="tabs" class="flex justify-between">
           <a
