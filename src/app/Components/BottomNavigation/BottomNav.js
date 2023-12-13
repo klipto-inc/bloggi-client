@@ -1,18 +1,25 @@
+'use client'
+
 import React from "react";
 import Link from "next/link";
 import { IoCreateOutline } from "react-icons/io5";
 import { MdOutlineExplore } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
+import {usePathName} from 'nextNavigation'
+
 
 const BottomNav = () => {
+
+  const pathName = usePathName()
   return (
     <div classNameName="md:hidden">
       <section className="fixed inset-x-0 bottom-0 z-50 block text-gray-800 bg-gray-300 border-t-2 shadow-lg dark:bg-dark backdrop-blur-lg bg-opacity-30 dark:bg-opacity-20 dark:text-gray-400 border-royal/20">
         <div id="tabs" className="flex justify-between">
           <Link
             href="/"
-            className="justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white"
-            activeClassName="dark:text-gray-100 text-[#FF3131]"
+            className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${pathName === "/"? "text-[#FF3131]" : "text-[#000]" }`}
+            // activeClassName="dark:text-gray-100 text-[#FF3131]"
+            
           >
             
             <MdOutlineExplore className="inline-block w-6 h-6 mb-1" />
