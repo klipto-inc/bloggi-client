@@ -16,7 +16,7 @@ const BottomNav = () => {
           href="/"
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
             pathName === "/"
-              ? "text-[#FF3131] border-t-[#FF3131] border-[2px] bg-white"
+              ? "text-[#FF3131]  bg-white"
               : "text-[#000]"
           }`}
         >
@@ -27,7 +27,7 @@ const BottomNav = () => {
           href="/category"
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
             pathName === "/category"
-              ? "text-[#FF3131] border-t-[#FF3131] border-[2px] bg-white"
+              ? "text-[#FF3131] bg-white"
               : "text-[#000]"
           }`}
         >
@@ -45,24 +45,24 @@ const BottomNav = () => {
               d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
             />
           </svg>
-          <span className="block text-xs tab">Categories</span>
+          <span className="block text-xs tab text-black">Categories</span>
         </Link>
         <Link
           href="/createpost"
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
             pathName === "/createpost"
-              ? "text-[#FF3131] border-t-[#FF3131] border-[2px] bg-white"
+              ? "text-[#FF3131] bg-white"
               : "text-[#000]"
           }`}
         >
           <IoCreateOutline className="inline-block w-6 h-6 mb-1" />
-          <span className="block text-xs tab">Create</span>
+          <span className="block text-xs tab text-black">Create</span>
         </Link>
         <Link
           href="user/profile"
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
             pathName === "/userprofile"
-              ? "text-[#FF3131] border-t-[#FF3131] border-[2px] bg-white"
+              ? "text-[#FF3131] bg-white"
               : "text-[#000]"
           }`}
         >
@@ -80,19 +80,19 @@ const BottomNav = () => {
               d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
             />
           </svg>
-          <span className="block text-xs tab">Profile</span>
+          <span className="block text-xs tab text-black">Profile</span>
         </Link>
         <Link
           href="/settings"
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
             pathName === "/settings"
-              ? "text-[#FF3131] border-t-[#FF3131] border-[2px] bg-white"
+              ? "text-[#FF3131] bg-white"
               : "text-[#000]"
           }`}
         >
           <IoSettingsOutline className="inline-block w-6 h-6 mb-1" />
 
-          <span className="block text-xs tab">Settings</span>
+          <span className="block text-xs tab text-black">Settings</span>
         </Link>
       </div>
     </section>
