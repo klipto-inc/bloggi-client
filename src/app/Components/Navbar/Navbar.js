@@ -48,7 +48,7 @@ const Navbar = () => {
   const DeleteAccount = async () => {
     try {
       const response = await axios.delete(
-        `${process.env.SERVER_URL}/api/v1/auth/account`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/account`,
         {
           headers: {
             Authorization: `Bearer ${String(token)}`,
@@ -81,7 +81,7 @@ const Navbar = () => {
       if (result.isConfirmed) {
         try {
           const response = axios.delete(
-            `${process.env.SERVER_URL}/api/v1/auth/account/signout`,
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/account/signout`,
             {
               headers: {
                 Authorization: `Bearer ${String(token)}`,

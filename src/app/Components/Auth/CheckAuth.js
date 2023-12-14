@@ -14,7 +14,7 @@ const CheckAuth = (id = token) => {
 
   if (token) {
     axios
-      .get(`${process.env.SERVER_URL}/api/v1/auth/account`, {
+      .get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/account`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

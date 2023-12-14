@@ -42,7 +42,7 @@ function SignUp() {
       setState("loading");
 
       const response = await axios.post(
-        `${process.env.SERVER_URL}/api/v1/auth/signup`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/signup`,
         {
           fullname,
           username,

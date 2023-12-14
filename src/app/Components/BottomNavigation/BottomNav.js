@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 const BottomNav = () => {
   const pathName = usePathname();
   return (
-    <section className="fixed inset-x-0 bottom-0 z-50 block text-gray-800 bg-gray-300 border-t-2 shadow-lg dark:bg-dark backdrop-blur-lg bg-opacity-30 dark:bg-opacity-20 dark:text-gray-400 border-royal/20 md:hidden">
+    <section className="fixed inset-x-0 bottom-0 z-50 block text-gray-800 bg-gray-300 border-t-2 shadow-lg dark:bg-dark backdrop-blur-lg bg-opacity-80 dark:bg-opacity-20 dark:text-gray-400 border-royal/20 md:hidden">
       <div id="tabs" className="flex justify-between">
         <Link
           href="/"
@@ -21,7 +21,7 @@ const BottomNav = () => {
           }`}
         >
           <MdOutlineExplore className="inline-block w-6 h-6 mb-1" />
-          <span className="block text-xs tab text-black">Feed</span>
+          <span className="block text-xs text-black tab">Feed</span>
         </Link>
         <Link
           href="/category"
@@ -45,7 +45,7 @@ const BottomNav = () => {
               d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
             />
           </svg>
-          <span className="block text-xs tab text-black">Categories</span>
+          <span className="block text-xs text-black tab">Categories</span>
         </Link>
         <Link
           href="/createpost"
@@ -56,7 +56,7 @@ const BottomNav = () => {
           }`}
         >
           <IoCreateOutline className="inline-block w-6 h-6 mb-1" />
-          <span className="block text-xs tab text-black">Create</span>
+          <span className="block text-xs text-black tab">Create</span>
         </Link>
         <Link
           href="user/profile"
@@ -80,7 +80,7 @@ const BottomNav = () => {
               d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
             />
           </svg>
-          <span className="block text-xs tab text-black">Profile</span>
+          <span className="block text-xs text-black tab">Profile</span>
         </Link>
         <Link
           href="/settings"
@@ -92,7 +92,7 @@ const BottomNav = () => {
         >
           <IoSettingsOutline className="inline-block w-6 h-6 mb-1" />
 
-          <span className="block text-xs tab text-black">Settings</span>
+          <span className="block text-xs text-black tab">Settings</span>
         </Link>
       </div>
     </section>

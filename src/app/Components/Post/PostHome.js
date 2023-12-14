@@ -35,7 +35,7 @@ function PostHome() {
 
   useEffect(() => {
     // Create a socket connection
-    const socket = io.connect(`${process.env.SERVER_URL}`);
+    const socket = io.connect(`${process.env.NEXT_PUBLIC_SERVER_URL}`);
 
     // Handle the socket connection events
     socket.on("connect", () => {
@@ -61,7 +61,7 @@ function PostHome() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://bloggi-server.onrender.com/api/v1/blog`);
+        const response = await axios.get(addd`https://bloggi-server.onrender.com/api/v1/blog`);
 
         if (response.data && response.data.allblog) {
           setBlogs(response.data.allblog);
