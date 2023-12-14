@@ -45,7 +45,7 @@ function EditBlog() {
 
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog/edit/${params.id}`,
+          `${process.env.SERVER_URL}/api/v1/blog/edit/${params.id}`,
           {
             headers: {
               Authorization: `Bearer ${String(token)}`,
@@ -110,7 +110,7 @@ function EditBlog() {
     try {
       setState('loading');
       const response = await axios.patch(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog/update/`,
+        `${process.env.SERVER_URL}/api/v1/blog/update/`,
         formData,
         {
           headers: {

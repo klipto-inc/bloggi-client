@@ -76,7 +76,7 @@ function CreatePost() {
     try {
       setState('loading');
       const response = await axios.patch(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog/update/`,
+        `${process.env.SERVER_URL}/api/v1/blog/update/`,
         formData,
         {
           headers: {

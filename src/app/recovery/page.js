@@ -24,7 +24,7 @@ function Recovery() {
       setState("loading");
   
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/recovery`,
+        `${process.env.SERVER_URL}/api/v1/auth/recovery`,
         {
           email,
         }

@@ -31,7 +31,7 @@ const UserProfile = () => {
   const [follower, setFollower] = useState(null);
   const [following, setFollowing] = useState(null);
 
-  const socket = io.connect(`${process.env.NEXT_PUBLIC_SERVER_URL}`);
+  const socket = io.connect(`${process.env.SERVER_URL}`);
 
   const loading = useSelector((state) => state.userauth.loading);
   const error = useSelector((state) => state.userauth.error);
@@ -62,7 +62,7 @@ const UserProfile = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/user/${params.id}`
+          `${process.env.SERVER_URL}/api/v1/auth/user/${params.id}`
         );
 
         if (response.status === 200) {

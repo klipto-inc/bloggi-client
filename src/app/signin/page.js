@@ -34,7 +34,7 @@ function SignIn() {
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/signin`,
+        `${process.env.SERVER_URL}/api/v1/auth/signin`,
         {
           email,
           password,

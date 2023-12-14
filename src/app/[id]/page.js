@@ -26,7 +26,7 @@ const BlogPost = () => {
   const router = useRouter();
   const token = Cookies.get("authtoken");
 
-  const socket = io.connect(`${process.env.NEXT_PUBLIC_SERVER_URL}`);
+  const socket = io.connect(`${process.env.SERVER_URL}`);
 
   const [blog, setBlog] = useState(null);
   const [usercomment, setUserComment] = useState("");
@@ -94,7 +94,7 @@ const BlogPost = () => {
     const FetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog/${params.id}`
+          `${process.env.SERVER_URL}/api/v1/blog/${params.id}`
         );
 
         if (response.status === 200) {
@@ -128,7 +128,7 @@ const BlogPost = () => {
         console.log("click me to delete", params.id);
         try {
           const response = await axios.delete( // Fix: Add "await" before axios.delete
-            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog/delete/${params.id}`,
+            `${process.env.SERVER_URL}/api/v1/blog/delete/${params.id}`,
             {
               headers: {
                 Authorization: `Bearer ${String(token)}`,

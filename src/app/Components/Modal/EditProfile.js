@@ -50,7 +50,7 @@ const EditProfile = ({ size, handleOpen }) => {
     try {
       setState("loading");
       const response = await axios.patch(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/account`,
+        `${process.env.SERVER_URL}/api/v1/auth/account`,
         formData,
         {
           headers: {
