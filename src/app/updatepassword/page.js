@@ -159,4 +159,4 @@ function UpdatePassword() {
   );
 }
 
-export default Auth(UpdatePassword);
+export default UpdatePassword;

@@ -165,4 +165,4 @@ function SignIn() {
   );
 }
 
-export default Auth(SignIn);
+export default SignIn;
