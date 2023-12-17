@@ -5,14 +5,14 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter, useParams } from 'next/navigation';
 import Cookies from 'js-cookie';
-import Navbar from '../../Components/Navbar/Navbar';
-import Footer from '../../Components/Footer/Footer';
+import Navbar from '../../../Components/Navbar/Navbar';
+import Footer from '../../../Components/Footer/Footer';
 import ReactiveButton from 'reactive-button';
 import Dashboard from '../../Components/Dashboard/Dashboard';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Image from 'next/image';
-import BottomNav from '@/app/Components/BottomNavigation/BottomNav';
+import BottomNav from '../../../Components/BottomNavigation/BottomNav';
 
 function CreatePost() {
   const params = useParams();

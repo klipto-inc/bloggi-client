@@ -12,7 +12,7 @@ import Dashboard from '../../Components/Dashboard/Dashboard';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Image from 'next/image';
-import BottomNav from '@/app/Components/BottomNavigation/BottomNav';
+import BottomNav from '../../../Components/BottomNavigation/BottomNav';
 
 function EditBlog() {
   const params = useParams();
