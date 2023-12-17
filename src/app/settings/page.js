@@ -1,8 +1,8 @@
 'use client';
 
+import BottomNav from "@/Components/BottomNavigation/BottomNav";
+import Navbar from "@/Components/Navbar/Navbar";
 
-import Navbar from '../../Components/Navbar/Navbar';
-import BottomNav from '../../Components/BottomNavigation/BottomNav';
 
 export default function Page() {
  

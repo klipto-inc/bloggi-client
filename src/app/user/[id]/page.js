@@ -1,8 +1,5 @@
 "use client";
 
-import Footer from "@/app/Components/Footer/Footer";
-import Navbar from "@/app/Components/Navbar/Navbar";
-import EditProfile from "@/app/Components/Modal/EditProfile";
 import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "next/navigation";
@@ -17,7 +14,10 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 import io from "socket.io-client";
 import { setUser } from "@/app/redux/slice/userauthSlice";
 import { FaHandsClapping } from "react-icons/fa6";
-import BottomNav from "@/app/Components/BottomNavigation/BottomNav";
+import Navbar from "@/Components/Navbar/Navbar";
+import Footer from "@/Components/Footer/Footer";
+import BottomNav from "@/Components/BottomNavigation/BottomNav";
+import EditProfile from "@/Components/Modal/EditProfile";
 
 const UserProfile = () => {
   const user = useSelector((state) => state.userauth.user);

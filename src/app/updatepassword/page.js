@@ -5,12 +5,11 @@ import { useSearchParams } from 'next/navigation';
 import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
-import Auth from '../../Components/Auth/ProtectedRoute2';
-import Footer from '../../Components/Footer/Footer';
-import Navbar from '../../Components/Navbar/Navbar';
 import ReactiveButton from 'reactive-button';
 import { useRouter } from 'next/navigation';
-import BottomNav from '../../Components/BottomNavigation/BottomNav';
+import Navbar from '@/Components/Navbar/Navbar';
+import Footer from '@/Components/Footer/Footer';
+import BottomNav from '@/Components/BottomNavigation/BottomNav';
 
 function UpdatePassword() {
   const [state, setState] = useState('idle');

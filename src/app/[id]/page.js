@@ -5,8 +5,6 @@ import { useParams, useRouter } from "next/navigation"; // Fix: Change "next/nav
 import Image from "next/image";
 import Cookies from "js-cookie";
 import axios from "axios";
-import Navbar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer";
 import parse from "html-react-parser";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import Swal from "sweetalert2";
@@ -16,8 +14,9 @@ import { useSelector } from "react-redux";
 import { useRef } from "react";
 import io from "socket.io-client";
 import { FaHandsClapping } from "react-icons/fa6";
-import PostChat from "../../Components/Modal/PostChat";
-import BottomNav from "../../Components/BottomNavigation/BottomNav";
+import Navbar from "@/Components/Navbar/Navbar";
+import Footer from "@/Components/Footer/Footer";
+import BottomNav from "@/Components/BottomNavigation/BottomNav";
 
 // Component definition
 const BlogPost = () => {

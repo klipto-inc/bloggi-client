@@ -1,15 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import Dashboard from "./../Components/Dashboard/Dashboard";
-import PostHome from "./../Components/Post/PostHome";
-import Announcement from "./../Components/Announcement/Announcement";
-import Navbar from "./../Components/Navbar/Navbar";
-import Footer from "./../Components/Footer/Footer";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
-import BottomNav from "./../Components/BottomNavigation/BottomNav";
+import Navbar from "@/Components/Navbar/Navbar";
+import Dashboard from "@/Components/Dashboard/Dashboard";
+import PostHome from "@/Components/Post/PostHome";
+import Footer from "@/Components/Footer/Footer";
+import BottomNav from "@/Components/BottomNavigation/BottomNav";
 
 export default function Home() {
   const dispatch = useDispatch();
