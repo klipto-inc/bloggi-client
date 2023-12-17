@@ -17,6 +17,7 @@ import { FaHandsClapping } from "react-icons/fa6";
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import BottomNav from "@/Components/BottomNavigation/BottomNav";
+import PostChat from "@/Components/Modal/PostChat";
 
 // Component definition
 const BlogPost = () => {
