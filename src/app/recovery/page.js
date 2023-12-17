@@ -7,9 +7,9 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useEffect } from "react";
-import Auth from "../Components/Auth/ProtectedRoute2";
-import Footer from "../Components/Footer/Footer";
-import Navbar from "../Components/Navbar/Navbar";
+import Auth from "../../Components/Auth/ProtectedRoute2";
+import Footer from "../../Components/Footer/Footer";
+import Navbar from "../../Components/Navbar/Navbar";
 import ReactiveButton from "reactive-button";
 import BottomNav from "../Components/BottomNavigation/BottomNav";
 

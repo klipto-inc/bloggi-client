@@ -10,11 +10,11 @@ import { useEffect } from "react";
 import Cookies from "js-cookie";
 import toast, { Toaster } from "react-hot-toast";
 import { useSelector, useDispatch } from "react-redux";
-import Auth from "../Components/Auth/ProtectedRoute2";
-import Navbar from "../Components/Navbar/Navbar";
-import Footer from "../Components/Footer/Footer";
+import Auth from "../../Components/Auth/ProtectedRoute2";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 import ReactiveButton from "reactive-button";
-import BottomNav from "../Components/BottomNavigation/BottomNav";
+import BottomNav from "../../Components/BottomNavigation/BottomNav";
 
 function SignIn() {
   const [state, setState] = useState("idle");
