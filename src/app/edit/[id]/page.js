@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useRouter, useParams } from 'next/navigation';
 import Cookies from 'js-cookie';
 import ReactiveButton from 'reactive-button';
-import Dashboard from '../../Components/Dashboard/Dashboard';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Image from 'next/image';
