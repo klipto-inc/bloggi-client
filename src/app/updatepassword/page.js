@@ -42,7 +42,6 @@ function UpdatePassword() {
       setState('success');
       router.push('/signin')
 
-
     } catch (error) {
 
     }

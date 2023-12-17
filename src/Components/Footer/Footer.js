@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
 import Link from "next/link";
-import logo from "../../Resources/Images/bloggilogo.png";
+import logo from "../../app/Resources/Images/bloggilogo.png";
 import Image from "next/image";
 
 function Footer() {
@@ -73,8 +73,6 @@ function Footer() {
               Projects
             </a>
           </li>
-
-          
         </ul>
 
         <ul className="flex justify-center gap-6 mt-12 md:gap-8">

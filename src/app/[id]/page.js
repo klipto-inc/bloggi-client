@@ -5,8 +5,8 @@ import { useParams, useRouter } from "next/navigation"; // Fix: Change "next/nav
 import Image from "next/image";
 import Cookies from "js-cookie";
 import axios from "axios";
-import Navbar from "../Components/Navbar/Navbar";
-import Footer from "../Components/Footer/Footer";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 import parse from "html-react-parser";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import Swal from "sweetalert2";
@@ -16,8 +16,8 @@ import { useSelector } from "react-redux";
 import { useRef } from "react";
 import io from "socket.io-client";
 import { FaHandsClapping } from "react-icons/fa6";
-import PostChat from "../Components/Modal/PostChat";
-import BottomNav from "../Components/BottomNavigation/BottomNav";
+import PostChat from "../../Components/Modal/PostChat";
+import BottomNav from "../../Components/BottomNavigation/BottomNav";
 
 // Component definition
 const BlogPost = () => {
@@ -127,7 +127,8 @@ const BlogPost = () => {
       if (result.isConfirmed) {
         console.log("click me to delete", params.id);
         try {
-          const response = await axios.delete( // Fix: Add "await" before axios.delete
+          const response = await axios.delete(
+            // Fix: Add "await" before axios.delete
             `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog/delete/${params.id}`,
             {
               headers: {
@@ -241,7 +242,6 @@ const BlogPost = () => {
                   </div>
 
                   <div className="inline-flex items-center justify-center">
-                    
                     <span className="text-sm text-gray-800">
                       Post Category:
                     </span>

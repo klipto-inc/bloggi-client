@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Dashboard from './Components/Dashboard/Dashboard';
-import PostHome from './Components/Post/PostHome';
-import Announcement from './Components/Announcement/Announcement';
-import Navbar from './Components/Navbar/Navbar';
-import Footer from './Components/Footer/Footer';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { CircularProgress } from '@mui/material';
-import BottomNav from './Components/BottomNavigation/BottomNav';
+import Image from "next/image";
+import Dashboard from "./../Components/Dashboard/Dashboard";
+import PostHome from "./../Components/Post/PostHome";
+import Announcement from "./../Components/Announcement/Announcement";
+import Navbar from "./../Components/Navbar/Navbar";
+import Footer from "./../Components/Footer/Footer";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { CircularProgress } from "@mui/material";
+import BottomNav from "./../Components/BottomNavigation/BottomNav";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -21,12 +21,11 @@ export default function Home() {
   const error = useSelector((state) => state.userauth.error);
 
   useEffect(() => {
-    dispatch({ type: 'userauth/getUserInformation' });
+    dispatch({ type: "userauth/getUserInformation" });
   }, [dispatch]);
-  
 
   return (
-    <main className='h-screen bg-white md:h-auto'>
+    <main className="h-screen bg-white md:h-auto">
       <Navbar />
       <Dashboard />
       <PostHome />

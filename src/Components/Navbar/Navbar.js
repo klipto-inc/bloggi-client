@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { PiCrownBold } from "react-icons/pi";
-import logo from "../../Resources/Images/bloggilogo.png";
+import logo from "../../app//Resources/Images/bloggilogo.png";
 import Image from "next/image";
 import Swal from "sweetalert2";
 import {

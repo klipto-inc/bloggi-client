@@ -1,8 +1,8 @@
 'use client';
 
 import Image from "next/image";
-import offline from "../../Resources/Images/offline.png";
-import logo from "../../Resources/Images/bloggilogo.png";
+import offline from "../../app/Resources/Images/offline.png";
+import logo from "../../app/Resources/Images/bloggilogo.png";
 import Link from "next/link";
 
 const Offline = () => {

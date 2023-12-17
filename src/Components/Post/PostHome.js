@@ -60,9 +60,9 @@ function PostHome() {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log('response')
       try {
-        const response = await axios.get(addd`https://bloggi-server.onrender.com/api/v1/blog`);
-
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog`);
         if (response.data && response.data.allblog) {
           setBlogs(response.data.allblog);
           setAllClap(response.data.allblog.like);

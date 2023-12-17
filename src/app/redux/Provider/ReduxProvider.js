@@ -4,7 +4,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { store } from "../store/store";
 import { Provider } from "react-redux";
-import Offline from "../../Components/Announcement/Offline";
+import Offline from "../../../Components/Announcement/Offline";
 
 const ReduxProvider = ({ children }) => {
   const [isOnline, setIsOnline] = useState(true);
