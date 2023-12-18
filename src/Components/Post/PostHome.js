@@ -27,7 +27,9 @@ function PostHome() {
   const token = Cookies.get("authtoken");
 
   const user = useSelector((state) => state.userauth.user);
-  const isAuthenticated = useSelector((state) => state.userauth.isAuthenticated);
+  const isAuthenticated = useSelector(
+    (state) => state.userauth.isAuthenticated
+  );
   const loading = useSelector((state) => state.userauth.loading);
   const error = useSelector((state) => state.userauth.error);
 
@@ -59,11 +61,12 @@ function PostHome() {
   }, []);
 
   useEffect(() => {
-    
     const fetchData = async () => {
-      console.log('response')
+      console.log("response");
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog`);
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog`
+        );
         if (response.data && response.data.allblog) {
           setBlogs(response.data.allblog);
           setAllClap(response.data.allblog.like);
@@ -80,7 +83,6 @@ function PostHome() {
     };
 
     fetchData();
-    
   }, []);
 
   const postlike = "w-4 h-4 mr-1 text-blue-500 text-[14px]";
@@ -144,7 +146,6 @@ function PostHome() {
                   <>
                     <article
                       key={post.id}
-                      
                       className="flex flex-col-reverse items-center w-full gap-4 mb-5 bg-white rounded-lg shadow-lg h-fit md:flex-row lg:flex-row"
                     >
                       <Link
@@ -259,7 +260,10 @@ function PostHome() {
                                     ></path>
                                   </svg>
                                 </Link>
-                                <Link href={`/${post._id}`} className="text-[14px]">
+                                <Link
+                                  href={`/${post._id}`}
+                                  className="text-[14px]"
+                                >
                                   <span className="cursor-pointer">
                                     {post.comment.length}
                                   </span>
@@ -280,7 +284,6 @@ function PostHome() {
                                       : postunlike
                                   }
                                   onClick={() => {
-                                    
                                     if (user) {
                                       router.push(`/${post._id}`);
                                     } else {
@@ -294,7 +297,9 @@ function PostHome() {
                                   }}
                                 />
 
-                                <span className="text-[14px]">{post.like.length}</span>
+                                <span className="text-[14px]">
+                                  {post.like.length}
+                                </span>
                               </div>
                             </Tooltip>
                           </div>
@@ -325,7 +330,9 @@ function PostHome() {
           </div>
           <div className="hidden lg:w-[35%] h-fit lg:flex flex-col gap-6 items-end justify-center sticky top-20">
             <div className="flex flex-col items-end justify-center w-full gap-4">
-              <p className="font-medium text-black text-[15px]">Suggested Authors...</p>
+              <p className="font-medium text-black text-[15px]">
+                Suggested Authors...
+              </p>
               <div className="flex -space-x-4">
                 <Image
                   alt="Author 1"
