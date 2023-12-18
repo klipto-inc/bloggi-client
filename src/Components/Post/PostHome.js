@@ -59,6 +59,7 @@ function PostHome() {
   }, []);
 
   useEffect(() => {
+    
     const fetchData = async () => {
       console.log('response')
       try {
@@ -79,6 +80,7 @@ function PostHome() {
     };
 
     fetchData();
+    
   }, []);
 
   const postlike = "w-4 h-4 mr-1 text-blue-500 text-[14px]";
