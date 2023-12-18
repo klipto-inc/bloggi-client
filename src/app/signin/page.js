@@ -18,12 +18,12 @@ import BottomNav from "@/Components/BottomNavigation/BottomNav";
 function SignIn() {
   const [state, setState] = useState("idle");
   const [email, setEmail] = useState();
+
   const [password, setPassword] = useState();
 
   const isAuthenticated = useSelector(
     (state) => state.authslice.isAuthenticated
   );
-  const authToken = useSelector((state) => state.authslice.authToken);
 
   const router = useRouter();
 
@@ -43,9 +43,9 @@ function SignIn() {
         }
       );
 
-      if (response.status === 200 && authToken) {
-        
-        const token = Cookies.get("authtoken"); // Note the lowercase 'authorization'
+      if (response.status === 200) {
+        Cookies.set("authtoken", response.data.authToken); // Note the lowercase 'authorization'
+        const token = Cookies.get("authtoken");
         if (token) {
           setState("success");
           router.push("/");
