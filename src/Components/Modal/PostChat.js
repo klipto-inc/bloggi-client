@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import {
@@ -39,7 +39,7 @@ const PostChat = ({
         handler={handleOpen}
         className="fixed flex flex-col h-full md:h-[85%]"
       >
-        <DialogHeader className="h-[10%]">
+        <DialogHeader className="h-[10vh]">
           <div className="flex flex-row items-center justify-between w-full">
             <p className="text-lg md:text-xl lg:text-xl xl:text-xl">
               Post Comment
@@ -52,7 +52,12 @@ const PostChat = ({
             </Tooltip>
           </div>
         </DialogHeader>
-        <DialogBody className="py-1 rounded-sm shadow-sm h-[80vh] md:h-[60vh] lg:h-[70vh] xl:h-[60vh] overflow-y-scroll">
+        <DialogBody
+          className="py-1 overflow-y-auto rounded-sm shadow-sm"
+          style={{
+            height: "calc(100% - 30%)",
+          }}
+        >
           <div className="flex flex-col gap-4">
             {allComments.map((item) => (
               <article
@@ -126,7 +131,7 @@ const PostChat = ({
             ))}
           </div>
         </DialogBody>
-        <DialogFooter className="flex flex-col items-center justify-center h-[10vh] md:h-auto">
+        <DialogFooter className="flex flex-col items-center justify-center h-[15%] md:h-auto">
           <div className="flex flex-row items-center justify-between w-full gap-4">
             <div className="flex flex-row items-center w-full gap-5">
               <div className="flex flex-row items-center w-full gap-5 px-1 py-1 bg-gray-200 rounded-full cursor-pointer">
@@ -137,16 +142,16 @@ const PostChat = ({
                     height={30}
                     width={30}
                     alt="user"
-                    
                   />
                 </div>
                 <div className="w-[90%]">
                   <textarea
                     id="comment"
                     rows="1"
-                    className="w-full h-5 px-2 text-sm text-gray-900 bg-transparent border-0 resize-none focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400"
+                    cols="15"
+                    className="w-full px-2 text-sm text-gray-900 bg-transparent border-0 resize-none focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400"
                     value={usercomment}
-                    placeholder="Write a comment..."
+                    placeholder="Share your thoughts..."
                     onChange={(e) => setUserComment(e.target.value)}
                     required
                   ></textarea>

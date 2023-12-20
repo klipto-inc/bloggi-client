@@ -124,6 +124,7 @@ function EditBlog() {
       }
 
       setState('success');
+      router.back()
 
     } catch (error) {
       console.log(error);

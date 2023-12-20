@@ -202,9 +202,9 @@ const BlogPost = () => {
           </div>
         </div>
       ) : (
-        <div className="flex flex-col  md:mx-2 my-10 md:flex-col lg:flex-row lg:px-[2%] md:gap-2 lg:gap-10">
-          <div className="items-center justify-center w-full md:w-[80%] lg:w-[70%] lg:px-10">
-            <main className="relative flex flex-col gap-4 p-0 shadow-md md:p-5 lg:p-10">
+        <div className="flex flex-col md:mx-2 md:mb-0 my-10 md:flex-col lg:flex-row lg:px-[2%] md:gap-2 lg:gap-10">
+          <div className="items-center mb-40 justify-center w-full md:w-[80%] lg:w-[70%] lg:px-10">
+            <main className="relative flex flex-col gap-4 p-0 md:shadow-md md:p-5 lg:p-10">
               <div className="flex flex-col w-full gap-4 mx-auto ab md:mb-0">
                 <div className="flex flex-col items-start justify-between p-5 md:items-center md:flex-row">
                   <div className="flex py-2 ">
@@ -276,17 +276,17 @@ const BlogPost = () => {
                 <div className="relative flex flex-col w-full h-full show">
                   <Image
                     src={blog.blogimage}
-                    className="object-cover w-full h-[45vh] md:h-full lg:rounded"
+                    className="object-cover w-full h-[45vh] md:h-[70vh] lg:rounded"
                     width={1000}
                     height={500}
                     alt="blog"
                   />
                 </div>
 
-                <div className="hidden p-2 md:block">
+                <div className="hidden md:block">
                   <div className="flex flex-row items-center w-full gap-5 ">
                     <div
-                      className="flex flex-row items-center w-full gap-5 px-2 py-1 bg-gray-200 rounded-full cursor-pointer"
+                      className="flex flex-row items-center w-full gap-5 py-1 bg-gray-200 rounded-full cursor-pointer"
                       onClick={() => {
                         handleOpen("sm");
                       }}
@@ -407,7 +407,7 @@ const BlogPost = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-row items-center w-full gap-5 px-5 md:hidden">
+                <div className="flex flex-row items-center w-full gap-5 px-2 md:hidden">
                   <div
                     className="flex flex-row items-center w-full gap-5 px-2 py-1 bg-gray-200 rounded-full cursor-pointer"
                     onClick={() => {
@@ -552,7 +552,7 @@ const BlogPost = () => {
                   </div>
 
                   {blognav && (
-                    <div className="absolute right-0 flex flex-col bg-white shadow-lg rounded-base w-fit">
+                    <div className="absolute right-0 flex flex-col pb-40 bg-white md:shadow-lg rounded-base w-fit">
                       {blog.author._id === user._id ? (
                         <>
                           <Link href={`/edit/${blog._id}`}>
