@@ -106,7 +106,7 @@ function PostHome() {
 
   return (
     <div>
-      <section className="bg-white">
+      <section className="bg-white pb-14 md:pb-0">
         <div className="flex flex-row justify-between h-full gap-5 px-0 py-3 mx-auto lg:py-6 lg:px-6">
           <div className="grid gap-8 lg:grid-cols-1 w-full md:w-full lg:w-[65%]">
             {!blogs && (
@@ -146,7 +146,7 @@ function PostHome() {
                   <>
                     <article
                       key={post.id}
-                      className="flex flex-col-reverse items-center w-full gap-4 mb-5 bg-white rounded-lg shadow-lg h-fit md:flex-row lg:flex-row"
+                      className="flex flex-col-reverse items-center w-full gap-4 mb-5 bg-white rounded-lg md:shadow-lg h-fit md:flex-row lg:flex-row"
                     >
                       <Link
                         href={`/${post._id}`}

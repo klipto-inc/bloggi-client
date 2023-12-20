@@ -552,7 +552,7 @@ const BlogPost = () => {
                   </div>
 
                   {blognav && (
-                    <div className="absolute right-0 flex flex-col pb-40 bg-white md:shadow-lg rounded-base w-fit">
+                    <div className="absolute right-0 flex flex-col bg-white md:shadow-lg rounded-base w-fit">
                       {blog.author._id === user._id ? (
                         <>
                           <Link href={`/edit/${blog._id}`}>
