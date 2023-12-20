@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 const BottomNav = () => {
   const pathName = usePathname();
   return (
-    <section className="fixed inset-x-0 bottom-0 z-50 block text-gray-800 bg-gray-300 border-t-2 shadow-lg dark:bg-dark backdrop-blur-lg bg-opacity-80 dark:bg-opacity-20 dark:text-gray-400 border-royal/20 md:hidden">
+    <section className="fixed inset-x-0 bottom-0 z-50 block text-gray-800 bg-gray-300 border-t-2 shadow-lg dark:bg-dark backdrop-blur-lg bg-opacity-80 dark:bg-opacity-80 dark:text-gray-400 border-royal/20 md:hidden">
       <div id="tabs" className="flex justify-between">
         <Link
           href="/"
@@ -48,7 +48,7 @@ const BottomNav = () => {
           <span className="block text-xs text-black tab">Categories</span>
         </Link>
         <Link
-          href="/createpost"
+          href="/create"
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
             pathName === "/createpost"
               ? "text-[#FF3131] bg-white"

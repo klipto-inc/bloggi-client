@@ -216,7 +216,7 @@ const Navbar = () => {
                   <div className="sm:flex sm:gap-4">
                     <Link
                       className="rounded-md bg-[#FF3131] px-5 py-2.5 text-sm font-medium text-white shadow"
-                      href="/upload"
+                      href="/create"
                     >
                       Upload
                     </Link>
