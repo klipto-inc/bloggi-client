@@ -407,7 +407,7 @@ const BlogPost = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-row items-center w-full gap-5 px-2 md:hidden">
+                <div className="flex flex-row items-center w-full gap-5 px-2 pr-3 md:hidden">
                   <div
                     className="flex flex-row items-center w-full gap-5 px-2 py-1 bg-gray-200 rounded-full cursor-pointer"
                     onClick={() => {

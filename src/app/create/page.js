@@ -99,7 +99,7 @@ function CreatePost() {
       <Navbar />
       <div className="px-4 py-16 mx-auto bg-gray-50 sm:px-6">
         <div className="max-w-lg mx-auto">
-          <h1 className="text-3xl font-bold text-center text-black">
+          <h1 className="text-2xl font-semibold text-center text-black">
             Tell your story
           </h1>
           <p className="mt-5 text-sm font-medium text-center text-gray-700">

@@ -136,7 +136,7 @@ function EditBlog() {
       <Navbar />
       <div className='px-4 py-16 mx-auto bg-gray-50 sm:px-6'>
         <div className='max-w-lg mx-auto'>
-          <h1 className='text-2xl font-bold text-center text-black sm:text-3xl'>
+          <h1 className='text-2xl font-semibold text-center text-black sm:text-3xl'>
             Edit your post
           </h1>
 
