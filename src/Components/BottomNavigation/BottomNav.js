@@ -57,7 +57,7 @@ const BottomNav = () => {
           <span className="block text-xs text-black tab">Create</span>
         </Link>
 
-        {user && (
+       
           <Link
             href={!user ? "/signin" : `/user/${user._id}`} 
             
@@ -83,7 +83,7 @@ const BottomNav = () => {
             </svg>
             <span className="block text-xs text-black tab">Profile</span>
           </Link>
-        )}
+        
 
         <Link
           href="/settings"
