@@ -60,7 +60,7 @@ const BottomNav = () => {
         <Link
           href={user ? `/user/${user._id}` : "/signin"}
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
-            pathName === `/user/${user._id}`
+            pathName === `/user/`
               ? "text-[#FF3131] bg-white"
               : "text-[#000]"
           }`}
