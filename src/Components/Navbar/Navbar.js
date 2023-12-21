@@ -62,7 +62,6 @@ const Navbar = () => {
 
       Cookies.remove("authtoken");
       if (typeof window !== "undefined") {
-      
         window.location.reload();
       }
     } catch (error) {}
@@ -101,7 +100,6 @@ const Navbar = () => {
 
           Cookies.remove("authtoken");
           if (typeof window !== "undefined") {
-      
             window.location.reload();
           }
 
@@ -137,7 +135,6 @@ const Navbar = () => {
 
             <div className="hidden md:block">
               <nav aria-label="Global">
-                
                 <ul className="flex items-center gap-6 text-sm">
                   <li>
                     <Link
@@ -189,7 +186,7 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              {!token && !user &&!loading  &&  (
+              {!token && !user && !loading && (
                 <div className="sm:flex sm:gap-4">
                   <Link
                     className="rounded-md bg-[#FF3131] px-5 py-2.5 text-sm font-medium text-white shadow"
@@ -209,7 +206,7 @@ const Navbar = () => {
                 </div>
               )}
 
-              {!token && loading && !user &&  <CircularProgress/>}
+              {!token && loading && !user && <CircularProgress />}
 
               {user && (
                 <div className="flex flex-row items-center gap-5">
@@ -227,18 +224,28 @@ const Navbar = () => {
                   >
                     {user && (
                       <div className="flex flex-row items-center">
-                     
                         <Link href={`/user/${user._id}`}>
                           <Image
                             alt="Man"
                             src={user.userdp}
-                            className="h-[48px] w-[48px] rounded-full object-cover border border-1 border-gray-300 p-1"
+                            className="hidden md:block h-[48px] w-[48px] rounded-full object-cover border border-1 border-gray-300 p-1"
                             height={200}
                             width={200}
                           />
                         </Link>
 
                         <Menu placement="bottom-end">
+                          <MenuHandler>
+                            <Link href={`/user/${user._id}`}>
+                              <Image
+                                alt="Man"
+                                src={user.userdp}
+                                className="block md:hidden h-[48px] w-[48px] rounded-full object-cover border border-1 border-gray-300 p-1"
+                                height={200}
+                                width={200}
+                              />
+                            </Link>
+                          </MenuHandler>
                           <MenuHandler>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +313,6 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      
     </section>
   );
 };
