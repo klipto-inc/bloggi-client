@@ -26,11 +26,11 @@ function CreatePost() {
   const authToken = useSelector((state) => state.authslice.authToken);
 
 
-  const [selectedphoto, setSelectedPhoto] = useState(null);
   const [title, setTitle] = useState(null);
   const [shortdescription, setShortDescription] = useState(null);
   const [longdescription, setLongDescription] = useState(null);
   const [category, setCategory] = useState(null);
+  const [selectedphoto, setSelectedPhoto] = useState(null);
   const [blogimage, setBlogImage] = useState(null);
 
   const handleChange = (html) => {
