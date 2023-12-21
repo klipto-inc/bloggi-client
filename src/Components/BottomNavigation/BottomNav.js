@@ -58,8 +58,31 @@ const BottomNav = () => {
         </Link>
 
         <Link
-        href={user ? "/create" : "/signin"}
-          // href={user ? `/user/${user._id}` : "/signin"}
+          href={user ? "/create" : "/signin"}
+          className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
+            pathName === "/create" ? "text-[#FF3131] bg-white" : "text-[#000]"
+          }`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="inline-block w-6 h-6 mb-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            />
+          </svg>
+          
+          <span className="block text-xs text-black tab">Profile</span>
+        </Link>
+
+        {/* <Link
+          href={user ? `/user/${user._id}` : "/signin"}
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white
           ${
             pathName === `/user/${user._id}`
@@ -83,7 +106,7 @@ const BottomNav = () => {
             />
           </svg>
           <span className="block text-xs text-black tab">Profile</span>
-        </Link>
+        </Link> */}
 
         <Link
           href="/settings"
