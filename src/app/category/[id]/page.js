@@ -25,25 +25,25 @@ const Page = () => {
           `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog`
         );
         if (response.data && response.data.allblog) {
-          response.data.allblog
-            .filter((item) => item.category === id)
-            .map((item) => {
-              setBlogs(item);
-              console.log("This is the fetched data:", );
-              return item; // You can choose to return the item if needed
-            });
-          } else {
-          // Handle the case when data or allblog is not available
+
+          console.log(response.data);
+          setBlogs(response.data.allblog);
+          
+          // const filteredData = response.data.allblog.filter((item) => {
+          //   if (item.category === id) {
+          //   }
+          // });
+          console.log("This is the fetched data:", response.data.allblog);
+        } else {
         }
       } catch (error) {
         console.error(error);
         setLoads(false);
       }
     };
-  
+
     fetchData();
-  }, [id]); // Include id as a dependency if it's used inside the effect
-  
+  }, []);
 
   return (
     <main>
