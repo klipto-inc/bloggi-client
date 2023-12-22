@@ -26,8 +26,10 @@ const Page = () => {
         );
         if (response.data && response.data.allblog) {
 
-          console.log(response.data);
-          setBlogs(response.data.allblog);
+          const filtereddata = response.data.allblog.filter((item) => item.category === id)
+
+          console.log(filtereddata);
+          setBlogs(filtereddata);
           
           // const filteredData = response.data.allblog.filter((item) => {
           //   if (item.category === id) {
