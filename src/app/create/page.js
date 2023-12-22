@@ -68,7 +68,7 @@ function CreatePost() {
         }
       );
 
-      if (response.status === 201) {
+      if (response.status !== 201) {
         setState("error");
         Swal.fire({
           icon: "error",

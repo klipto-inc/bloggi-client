@@ -294,14 +294,7 @@ const Navbar = () => {
                               Sign Out
                             </p>
 
-                            {/* <hr className='border-gray-200' />
-
-                            <Button
-                              className='block px-4 py-2 mx-2 mt-2 text-sm text-gray-600 capitalize transition-colors duration-200 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-100'
-                              onClick={DeleteAccount}
-                            >
-                              Delete Account
-                            </Button> */}
+                            
                           </MenuList>
                         </Menu>
                       </div>

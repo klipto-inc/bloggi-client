@@ -490,7 +490,7 @@ const UserProfile = () => {
                         Click the button below to get started.
                       </p>
 
-                      <Link href="/upload">
+                      <Link href="/create">
                         <Button variant="gradient">Create Post</Button>
                       </Link>
                     </div>
