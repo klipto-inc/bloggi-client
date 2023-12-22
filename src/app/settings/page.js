@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import Image from "next/image";
+import Cookies from "js-cookie";
 import Swal from "sweetalert2";
 import { Button } from "@material-tailwind/react";
 import Footer from "@/Components/Footer/Footer";
@@ -14,6 +15,7 @@ import Footer from "@/Components/Footer/Footer";
 export default function Page() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userauth.user);
+  const token = Cookies.get("authtoken");
 
   useEffect(() => {
     dispatch({ type: "userauth/getUserInformation" });
