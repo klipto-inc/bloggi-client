@@ -21,8 +21,6 @@ export default function Page() {
     dispatch({ type: "userauth/getUserInformation" });
   }, [dispatch]);
 
-  
-
   const DeleteAccount = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -239,25 +237,29 @@ export default function Page() {
               </p>
             </Link>
 
-            <hr className="border-gray-200" />
+            {user && (
+              <div className="">
+                <hr className="border-gray-200" />
 
-            <Button
-            variant="gradient"
-            className="block px-4 py-2 mx-2 mt-2 text-sm text-white normal-case transition-colors duration-200 bg-transparent w-fit"
-              onClick={SignOutAccount}
-            >
-              Logout 
-            </Button>
+                <Button
+                  variant="gradient"
+                  className="block px-4 py-2 mx-2 mt-2 text-sm text-white normal-case transition-colors duration-200 bg-transparent w-fit"
+                  onClick={SignOutAccount}
+                >
+                  Logout
+                </Button>
 
-            <hr className="border-gray-200" />
+                <hr className="border-gray-200" />
 
-            <Button
-            variant="gradient"
-              className="block px-4 py-2 mx-2 mt-2 text-sm text-white normal-case transition-colors duration-200 bg-transparent w-fit"
-              onClick={DeleteAccount}
-            >
-              Delete Account
-            </Button>
+                <Button
+                  variant="gradient"
+                  className="block px-4 py-2 mx-2 mt-2 text-sm text-white normal-case transition-colors duration-200 bg-transparent w-fit"
+                  onClick={DeleteAccount}
+                >
+                  Delete Account
+                </Button>
+              </div>
+            )}
           </div>
         </>
       </div>

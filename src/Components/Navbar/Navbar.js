@@ -234,9 +234,7 @@ const Navbar = () => {
                           />
                         </Link>
 
-                        <Menu placement="bottom-end">
-                          <MenuHandler>
-                            <Link href={`/user/${user._id}`}>
+                        <Link href={`/user/${user._id}`}>
                               <Image
                                 alt="Man"
                                 src={user.userdp}
@@ -245,7 +243,9 @@ const Navbar = () => {
                                 width={200}
                               />
                             </Link>
-                          </MenuHandler>
+
+                        <Menu placement="bottom-end">
+                          
                           <MenuHandler>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
