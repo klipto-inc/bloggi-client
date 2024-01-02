@@ -174,7 +174,7 @@ const Dasboard = () => {
               </h1>
             ) : (
               <h1 className="text-xl font-bold text-gray-300 sm:text-3xl">
-                Earn, doing what you love.
+                Write, Read, and Earn!!
               </h1>
             )}
 

@@ -2,7 +2,7 @@
 
 import Cookies from 'js-cookie';
 import { useSelector, useDispatch } from 'react-redux';
-import { UserSignIn, UserSignOut } from '../../redux/slice/authSlice';
+import { redirect } from "next/navigation";
 
 const token = Cookies.get('token');
 
@@ -21,19 +21,19 @@ const CheckAuth = (id = token) => {
       })
       .then((response) => {
         if (response.status === 200) {
-          // dispatch(UserSignIn());
+
         } else {
-          // dispatch(UserSignOut());
+          redirect("/signin")
         }
       })
       .catch((error) => {
         console.error('Authentication error:', error);
-        router.push('/signin');
+        redirect("/signin");
       });
   } else {
     // No token, user is not authenticated
     // setIsAuthenticated(false);
-    router.push('/signin');
+    redirect("/signin");
   }
 };
 

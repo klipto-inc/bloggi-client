@@ -119,7 +119,7 @@ export default function Page() {
       {user && (
       <div className="h-full md:h-fit md:w-[50%] bg-white lg:shadow-md lg:px-10 lg:ml-10 mb-10 py-5">
         <>
-          <div className="flex flex-col gap-4 pb-4 border-b">
+          <div className="flex flex-col mt-8 gap-4 pb-4 border-b">
             <Link href="/settings" className="flex px-4 py-2 hover:bg-gray-100">
               <div className="text-gray-800">
                 <svg
@@ -217,7 +217,7 @@ export default function Page() {
               href="/settings"
               className="flex px-4 py-2 pb-4 hover:bg-gray-100"
             >
-              <p className="text-lg font-medium leading-none text-gray-800">
+              <p className="text-sm font-medium leading-none text-gray-800">
                 Product updates
               </p>
             </Link>
@@ -225,7 +225,7 @@ export default function Page() {
               href="/settings"
               className="flex px-4 py-2 pb-4 hover:bg-gray-100"
             >
-              <p className="text-lg font-medium leading-none text-gray-800">
+              <p className="text-sm font-medium leading-none text-gray-800">
                 Status updates
               </p>
             </Link>
@@ -233,7 +233,7 @@ export default function Page() {
               href="settings"
               className="flex px-4 py-2 pb-4 hover:bg-gray-100"
             >
-              <p className="text-lg font-medium leading-none text-gray-800">
+              <p className="text-sm font-medium leading-none text-gray-800">
                 Support FAQ
               </p>
             </Link>
@@ -243,7 +243,7 @@ export default function Page() {
 
               <Button
                 variant="gradient"
-                className="block px-4 py-2 mx-2 mt-2 text-lg text-white normal-case transition-colors duration-200 bg-transparent w-fit"
+                className="block px-4 py-2 mx-2 mt-2 text-sm text-white normal-case transition-colors duration-200 bg-transparent w-fit"
                 onClick={SignOutAccount}
               >
                 Logout
@@ -253,7 +253,7 @@ export default function Page() {
 
               <Button
                 variant="gradient"
-                className="block px-4 py-2 mx-2 mt-2 text-lg text-white normal-case transition-colors duration-200 bg-transparent w-fit"
+                className="block px-4 py-2 mx-2 mt-2 text-sm text-white normal-case transition-colors duration-200 bg-transparent w-fit"
                 onClick={DeleteAccount}
               >
                 Delete Account

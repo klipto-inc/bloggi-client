@@ -17,10 +17,12 @@ const userAuthSlice = createSlice({
   
   reducers: {
     setUser: (state, action) => {
+
       state.user = action.payload;
       state.isAuthenticated = true;
       state.loading = false;
       state.error = null;
+
     },
     clearUser: (state) => {
       state.user =  null;
@@ -31,10 +33,12 @@ const userAuthSlice = createSlice({
     setLoading: (state) => {
       state.loading = true;
     },
+
     setError: (state, action) => {
       state.error = action.payload;
       state.loading = false;
     },
+    
   },
 });
 

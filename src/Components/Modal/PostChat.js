@@ -66,7 +66,7 @@ const PostChat = ({
               >
                 <footer className="flex items-center justify-between w-full mb-2 ">
                   <div className="flex flex-row items-center justify-between w-full">
-                    <div className="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base mr-3 text-sm font-semibold text-gray-900 dark:text-white">
                       <Image
                         className="w-6 h-6 mr-2 rounded-full"
                         src={item.userid.userdp}
@@ -124,7 +124,7 @@ const PostChat = ({
                     </ul>
                   </div>
                 </footer>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-lg text-gray-500 dark:text-gray-400">
                   {item.usercomment}
                 </p>
               </article>
@@ -133,8 +133,8 @@ const PostChat = ({
         </DialogBody>
         <DialogFooter className="flex flex-col items-center justify-center h-[15%] md:h-auto">
           <div className="flex flex-row items-center justify-between w-full gap-4">
-            <div className="flex flex-row items-center w-full gap-5">
-              <div className="flex flex-row items-center w-full gap-5 px-1 py-1 bg-gray-200 rounded-full cursor-pointer">
+            <div className="flex flex-row items-start w-full gap-5">
+              <div className="flex-shrink-0">
                 <div className="hidden w-auto p-1 bg-white rounded-full h-fit md:block">
                   <Image
                     src={blog.author.userdp}
@@ -144,11 +144,12 @@ const PostChat = ({
                     alt="user"
                   />
                 </div>
-                <div className="w-[90%]">
+              </div>
+              <div className="w-[90%]">
+                <div className="flex flex-col items-start w-full gap-2 px-2 py-1 bg-gray-200 rounded-md cursor-pointer">
                   <textarea
                     id="comment"
-                    rows="1"
-                    cols="15"
+                    rows="3"
                     className="w-full px-2 text-lg text-gray-900 bg-transparent border-0 resize-none focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400"
                     value={usercomment}
                     placeholder="Share your thoughts..."
@@ -158,6 +159,7 @@ const PostChat = ({
                 </div>
               </div>
             </div>
+
             <Button
               variant="gradient"
               style={{ background: "#FF3131" }}

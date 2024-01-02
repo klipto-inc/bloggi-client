@@ -192,10 +192,10 @@ function PostHome() {
                           </span>
                         </div>
 
-                        <h2 className="my-2 text-[18px] font-medium tracking-tight text-gray-900">
+                        <h2 className="my-2 text-[18px] md:text-[16px] font-medium  md:font-semibold tracking-tight text-gray-900">
                           <Link href={`/${post._id}`}>{post.title}</Link>
                         </h2>
-                        <p className="mb-5 text-[16px] font-light text-gray-700 ">
+                        <p className="mb-5 text-[16px] md:text-[14px] font-light text-gray-700 ">
                           <Link href={`/${post._id}`}>
                             {post.shortdescription}
                           </Link>
