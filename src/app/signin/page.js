@@ -80,7 +80,7 @@ function SignIn() {
                 <div>
                   <label
                     for="email"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    className="block mb-2 text-base font-medium text-gray-900"
                   >
                     Your email
                   </label>
@@ -88,7 +88,7 @@ function SignIn() {
                     type="email"
                     name="email"
                     id="email"
-                    className="w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm pe-12"
+                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
                     placeholder="johndoe@example.com"
                     onChange={(e) => setEmail(e.target.value)}
                     required={true}
@@ -97,7 +97,7 @@ function SignIn() {
                 <div>
                   <label
                     for="password"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    className="block mb-2 text-base font-medium text-gray-900"
                   >
                     Password
                   </label>
@@ -106,7 +106,7 @@ function SignIn() {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="w-full p-4 text-sm text-black border border-gray-300 rounded-lg shadow-sm pe-12"
+                    className="w-full p-4 text-lg text-black border border-gray-300 rounded-lg shadow-sm pe-12"
                     onChange={(e) => setPassword(e.target.value)}
                     required={true}
                   />
@@ -135,7 +135,7 @@ function SignIn() {
                 />
 
                 <div className="flex flex-row items-center justify-between w-full">
-                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                  <p className="text-base font-light text-gray-500 dark:text-gray-400">
                     <Link
                       href="/recovery"
                       className="font-medium underline text-primary-600 dark:text-primary-500"
@@ -143,7 +143,7 @@ function SignIn() {
                       Forgotten password?
                     </Link>
                   </p>
-                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                  <p className="text-base font-light text-gray-500 dark:text-gray-400">
                     New?{" "}
                     <Link
                       href="/signup"

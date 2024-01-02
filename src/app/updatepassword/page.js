@@ -65,7 +65,7 @@ function UpdatePassword() {
                 <div>
                   <label
                     for='password'
-                    className='block mb-2 text-sm font-medium text-gray-900'>
+                    className='block mb-2 text-base font-medium text-gray-900'>
                     New Password
                   </label>
                   <input
@@ -73,7 +73,7 @@ function UpdatePassword() {
                     name='password'
                     id='password'
                     placeholder='••••••••'
-                    className='w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm pe-12'
+                    className='w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12'
                     required={true}
                     onChange={(e) => setPassword(e.target.value)}
                   />
@@ -82,7 +82,7 @@ function UpdatePassword() {
                 <div>
                   <label
                     for='password'
-                    className='block mb-2 text-sm font-medium text-gray-900'>
+                    className='block mb-2 text-base font-medium text-gray-900'>
                     Confirm Password
                   </label>
                   <input
@@ -90,7 +90,7 @@ function UpdatePassword() {
                     name='password'
                     id='password'
                     placeholder='••••••••'
-                    className='w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm pe-12'
+                    className='w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12'
                     required={true}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
@@ -106,10 +106,10 @@ function UpdatePassword() {
                       required={true}
                     />
                   </div>
-                  <div className='ml-3 text-sm'>
+                  <div className='ml-3 text-base'>
                     <label
                       for='terms'
-                      className='text-sm font-light text-gray-500 dark:text-gray-800'>
+                      className='text-base font-light text-gray-500 dark:text-gray-800'>
                       By checking this box, you agree to our {' '}
                       <a
                         className='mr-1 font-medium underline text-primary-600 dark:text-primary-500'

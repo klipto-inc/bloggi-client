@@ -65,7 +65,7 @@ export default function Page() {
             {/* Item 1 */}
             <div className="p-4 bg-white rounded-lg shadow-md">
               <div className="flex-1 md:w-1/2 lg:w-full">
-                <h2 className="text-sm font-semibold tracking-wide text-gray-800 uppercase">
+                <h2 className="text-lg font-semibold tracking-wide text-gray-800 uppercase">
                   Technology
                 </h2>
                 <div className="flex flex-col space-y-2">
@@ -84,7 +84,7 @@ export default function Page() {
             {/* Item 2 */}
             <div className="p-4 bg-white rounded-lg shadow-md">
               <div className="flex-1 md:w-1/2 lg:w-full">
-                <h2 className="text-sm font-semibold tracking-wide text-gray-800 uppercase">
+                <h2 className="text-lg font-semibold tracking-wide text-gray-800 uppercase">
                   Travel
                 </h2>
                 <div className="flex flex-col space-y-2">
@@ -104,7 +104,7 @@ export default function Page() {
             {/* Item 3 */}
             <div className="p-4 bg-white rounded-lg shadow-md">
               <div className="flex-1 md:w-1/2 lg:w-full">
-                <h2 className="text-sm font-semibold tracking-wide text-gray-800 uppercase">
+                <h2 className="text-lg font-semibold tracking-wide text-gray-800 uppercase">
                   Lifestyle
                 </h2>
                 <div className="flex flex-col space-y-2">
@@ -121,7 +121,7 @@ export default function Page() {
             {/* Item 4 (Visible on md and lg screens) */}
             <div className="p-4 bg-white rounded-lg shadow-md md:col-span-2 lg:col-span-1">
               <div className="flex-1 md:w-1/2 lg:w-full">
-                <h2 className="text-sm font-semibold tracking-wide text-gray-800 uppercase">
+                <h2 className="text-lg font-semibold tracking-wide text-gray-800 uppercase">
                   More Categories
                 </h2>
                 <div className="flex flex-col space-y-2">
@@ -142,7 +142,7 @@ export default function Page() {
 
             <div className="p-4 bg-white rounded-lg shadow-md md:col-span-2 lg:col-span-1">
               <div className="flex-1 md:w-1/2 lg:w-full">
-                <h2 className="text-sm font-semibold tracking-wide text-gray-800 uppercase">
+                <h2 className="text-lg font-semibold tracking-wide text-gray-800 uppercase">
                   Others Categories
                 </h2>
                 <div className="flex flex-col space-y-2">

@@ -62,7 +62,7 @@ function Recovery() {
                 <div>
                   <label
                     for="email"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    className="block mb-2 text-base font-medium text-gray-900"
                   >
                     Your email
                   </label>
@@ -70,7 +70,7 @@ function Recovery() {
                     type="email"
                     name="email"
                     id="email"
-                    className="w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm pe-12"
+                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@company.com"
                     required={true}
@@ -98,7 +98,7 @@ function Recovery() {
                     background: "#FF3131",
                   }}
                 />
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                <p className="text-base font-light text-gray-500 dark:text-gray-400">
                   Dont have an account?{" "}
                   <Link
                     href="/signup"

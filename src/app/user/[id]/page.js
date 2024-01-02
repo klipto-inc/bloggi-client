@@ -111,7 +111,7 @@ const UserProfile = () => {
 
               <div className="flex-grow w-full p-6 content">
                 <div className="flex items-center justify-between w-full mb-5 text-gray-300">
-                  <span className="text-sm"></span>
+                  <span className="text-lg"></span>
                 </div>
 
                 <div className="flex items-center w-full my-1 space-x-4">
@@ -131,17 +131,7 @@ const UserProfile = () => {
           ) : (
             <div className="flex flex-col w-screen gap-5 md:px-[50px]">
               <div className="flex flex-col items-center justify-center w-full gap-5 md:justify-start md:flex-row lg:flex-row">
-                {/* <div className="relative object-center h-full bg-transparent w-fit">
-                  <Image
-                    alt="Profile Picture"
-                    src={userdata.userdp}
-                    className="h-[160px] w-[160px] object-cover rounded-full border-4 border-white dark:border-gray-800"
-                    width={500}
-                    height={500}
-                  />
-
-                  <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-white rounded-full border-3"></div>
-                </div> */}
+                
 
                 <div className="relative">
                   <Image
@@ -361,7 +351,7 @@ const UserProfile = () => {
                           </div>
                           <hr className="border-gray-300" />
                           <Link href={`/${post._id}`}>
-                            <p className="flex flex-row flex-wrap w-full px-4 py-2 overflow-hidden text-sm text-justify text-gray-700">
+                            <p className="flex flex-row flex-wrap w-full px-4 py-2 overflow-hidden text-lg text-justify text-gray-700">
                               {post.shortdescription}
                             </p>
                           </Link>
@@ -379,7 +369,7 @@ const UserProfile = () => {
                               <div className="absolute right-0 flex flex-col bg-white shadow-lg rounded-base w-fit">
                                 {post.authorid === user._id ? (
                                   <>
-                                    <p className="flex flex-row items-center gap-2 px-6 py-2 text-sm rounded hover:cursor-pointer hover:bg-gray-100">
+                                    <p className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100">
                                       <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -402,7 +392,7 @@ const UserProfile = () => {
                                 )}
 
                                 <hr />
-                                <p className="flex flex-row items-center gap-2 px-6 py-2 text-sm rounded hover:cursor-pointer hover:bg-gray-100">
+                                <p className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -420,7 +410,7 @@ const UserProfile = () => {
                                   Report
                                 </p>
                                 <hr />
-                                <p className="flex flex-row items-center gap-2 px-6 py-2 text-sm rounded hover:cursor-pointer hover:bg-gray-100">
+                                <p className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -441,7 +431,7 @@ const UserProfile = () => {
 
                                 {post.authorid === user._id ? (
                                   <>
-                                    <p className="flex flex-row items-center gap-2 px-6 py-2 text-sm rounded hover:cursor-pointer hover:bg-gray-100">
+                                    <p className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100">
                                       <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"

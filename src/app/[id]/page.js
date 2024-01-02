@@ -221,7 +221,7 @@ const BlogPost = () => {
                     />
                     <div>
                       <p
-                        className="text-sm font-semibold text-black cursor-pointer"
+                        className="text-lg font-semibold text-black cursor-pointer"
                         onClick={() => {
                           let id = blog.author._id;
                           viewProfile(id);
@@ -242,12 +242,12 @@ const BlogPost = () => {
                   </div>
 
                   <div className="inline-flex items-center justify-center">
-                    <span className="text-sm text-gray-800">
+                    <span className="text-lg text-gray-800">
                       Post Category:
                     </span>
                     <Link
                       href={`/category/${blog.category}`}
-                      className="px-1 my-2 mb-2 text-sm font-bold text-gray-800"
+                      className="px-1 my-2 mb-2 text-lg font-bold text-gray-800"
                     >
                       {blog.category}
                     </Link>
@@ -556,7 +556,7 @@ const BlogPost = () => {
                       {blog.author._id === user._id ? (
                         <>
                           <Link href={`/edit/${blog._id}`}>
-                            <p className="flex flex-row items-center gap-2 px-6 py-2 text-sm rounded hover:cursor-pointer hover:bg-gray-100">
+                            <p className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -580,7 +580,7 @@ const BlogPost = () => {
                       )}
 
                       <hr />
-                      <p className="flex flex-row items-center gap-2 px-6 py-2 text-sm rounded hover:cursor-pointer hover:bg-gray-100">
+                      <p className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -598,7 +598,7 @@ const BlogPost = () => {
                         Report
                       </p>
                       <hr />
-                      <p className="flex flex-row items-center gap-2 px-6 py-2 text-sm rounded hover:cursor-pointer hover:bg-gray-100">
+                      <p className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -620,7 +620,7 @@ const BlogPost = () => {
                       {blog.author._id === user._id ? (
                         <>
                           <p
-                            className="flex flex-row items-center gap-2 px-6 py-2 text-sm rounded hover:cursor-pointer hover:bg-gray-100"
+                            className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100"
                             onClick={deletePost}
                           >
                             <svg

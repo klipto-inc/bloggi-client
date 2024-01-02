@@ -74,8 +74,8 @@ function SignUp() {
   return (
     <div className="h-screen bg-white md:h-auto">
       <Navbar />
-      <section className="px-2 py-16 mx-auto md:bg-gray-200 sm:px-6">
-        <div className="flex flex-col items-center justify-center py-8 mx-auto md:h-fit lg:py-0">
+      <section className="px-2 pt-4 pb-16 md:py-16 mx-auto md:bg-gray-200 sm:px-6">
+        <div className="flex flex-col items-center justify-center pb-8 mx-auto md:h-fit lg:py-0">
           <div className="w-full bg-white rounded-lg md:shadow-lg md:mt-0 sm:max-w-md xl:p-0 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <div className="a flex flex-row items-center gap-4 mb-[30px]">
@@ -91,13 +91,13 @@ function SignUp() {
                 <div>
                   <label
                     for="email"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    className="block mb-2 text-base font-medium text-gray-900"
                   >
                     Full name
                   </label>
                   <input
                     type="text"
-                    className="w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm pe-12"
+                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
                     placeholder="John Doe"
                     value={fullname}
                     onChange={(e) => setFullname(e.target.value)}
@@ -107,13 +107,13 @@ function SignUp() {
                 <div>
                   <label
                     for="email"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    className="block mb-2 text-base font-medium text-gray-900"
                   >
                     Username
                   </label>
                   <input
                     type="text"
-                    className="w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm pe-12"
+                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
                     placeholder="jonnydoexx"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
@@ -123,7 +123,7 @@ function SignUp() {
                 <div>
                   <label
                     for="email"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    className="block mb-2 text-base font-medium text-gray-900"
                   >
                     Your email
                   </label>
@@ -131,7 +131,7 @@ function SignUp() {
                     type="email"
                     name="email"
                     id="email"
-                    className="w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm pe-12"
+                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
                     placeholder="johndoe@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -141,7 +141,7 @@ function SignUp() {
                 <div>
                   <label
                     for="password"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    className="block mb-2 text-base font-medium text-gray-900"
                   >
                     Password
                   </label>
@@ -150,7 +150,7 @@ function SignUp() {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm pe-12"
+                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required={true}
@@ -167,10 +167,10 @@ function SignUp() {
                       required={true}
                     />
                   </div>
-                  <div className="ml-3 text-sm">
+                  <div className="ml-3 text-base">
                     <label
                       for="terms"
-                      className="font-light text-gray-500 dark:text-gray-800"
+                      className="font-light text-gray-500 dark:text-gray-800 text-base"
                     >
                       I accept the{" "}
                       <a
@@ -204,7 +204,7 @@ function SignUp() {
                     background: "#FF3131",
                   }}
                 />
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                <p className="text-base font-light text-gray-500 dark:text-gray-400">
                   Already have an account?{" "}
                   <Link
                     href="/signin"

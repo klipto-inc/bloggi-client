@@ -102,7 +102,7 @@ function CreatePost() {
           <h1 className="text-2xl font-semibold text-center text-black">
             Tell your story
           </h1>
-          <p className="mt-5 text-sm font-medium text-center text-gray-700">
+          <p className="mt-5 text-lg font-medium text-center text-gray-700">
             Capture your thoughts, stories, and ideas in a post
           </p>
           <form
@@ -117,7 +117,7 @@ function CreatePost() {
               <input
                 type="text"
                 value={title}
-                className="w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm"
+                className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm"
                 placeholder="Blog Title"
                 onChange={(e) => setTitle(e.target.value)}
                 required
@@ -131,7 +131,7 @@ function CreatePost() {
               <input
                 type="text"
                 value={shortdescription}
-                className="w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm"
+                className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm"
                 placeholder="Short Description"
                 required
                 min={92}
@@ -142,7 +142,7 @@ function CreatePost() {
               <fieldset className="w-full border border-gray-300 rounded-lg">
                 <select
                   name="blog-category"
-                  className="block w-full px-3 py-4 text-sm text-gray-700 border-gray-300 rounded-md shadow-sm"
+                  className="block w-full px-3 py-4 text-lg text-gray-700 border-gray-300 rounded-md shadow-sm"
                   onChange={(e) => setCategory(e.target.value)}
                   required
                 >
@@ -186,7 +186,7 @@ function CreatePost() {
             <div className="w-full mx-auto">
               <label
                 htmlFor="blogimage"
-                className="block mb-1 text-sm font-medium text-gray-700"
+                className="block mb-1 text-lg font-medium text-gray-700"
               >
                 Upload post image
               </label>
@@ -196,7 +196,7 @@ function CreatePost() {
                 onChange={handleImageChange}
                 type="file"
                 required
-                className="block w-full mt-2 text-sm file:mr-4 file:rounded-md file:border-0 file:bg-black file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+                className="block w-full mt-2 text-lg file:mr-4 file:rounded-md file:border-0 file:bg-black file:py-2 file:px-4 file:text-lg file:font-semibold file:text-white hover:file:bg-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
                 accept="image/*"
               />
               {/* <p className='mt-1 text-xs text-gray-700' id='file_input_help'>
@@ -219,14 +219,14 @@ function CreatePost() {
             <div className="my-10 h-[50vh] pb-16 pt-6">
               <label
                 htmlFor="longDescription"
-                className="block mb-2 text-sm font-medium text-gray-900"
+                className="block mb-2 text-lg font-medium text-gray-900"
               >
                 Post Content
               </label>
               
               <ReactQuill
                 theme="snow"
-                className="w-full h-full text-sm rounded-lg"
+                className="w-full h-full text-lg rounded-lg"
                 value={longdescription}
                 onChange={handleChange}
                 required

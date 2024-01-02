@@ -41,6 +41,7 @@ const EditProfile = ({ size, handleOpen }) => {
   };
 
   const UpdateProfile = async () => {
+    
     const formData = new FormData();
     formData.append("fullname", fullname);
     formData.append("username", username);
@@ -131,9 +132,9 @@ const EditProfile = ({ size, handleOpen }) => {
 
             <div className="flex flex-col w-full gap-2 mt-5">
               <div>
-                <label className="text-sm text-black font-base">Fullname</label>
+                <label className="text-base text-black font-base">Fullname</label>
                 <input
-                  className="w-full px-3 py-3 border rounded-lg border-slate-200 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
+                  className="w-full px-3 text-lg py-3 border rounded-lg border-slate-200 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
                   type="text"
                   value={fullname}
                   onChange={(e) => setFullname(e.target.value)}
@@ -141,9 +142,9 @@ const EditProfile = ({ size, handleOpen }) => {
               </div>
 
               <div>
-                <label className="text-sm text-black font-base">Username</label>
+                <label className="text-base text-black font-base">Username</label>
                 <input
-                  className="w-full px-3 py-3 border rounded-lg border-slate-200 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
+                  className="w-full px-3 py-3 text-lg border rounded-lg border-slate-200 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
@@ -151,9 +152,9 @@ const EditProfile = ({ size, handleOpen }) => {
               </div>
 
               <div>
-                <label className="text-sm text-black font-base">Bio</label>
+                <label className="text-base text-black font-base">Bio</label>
                 <textarea
-                  className="w-full px-3 py-3 border rounded-lg border-slate-200 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
+                  className="w-full px-3 text-lg py-3 border rounded-lg border-slate-200 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
                   value={userbio}
                   name="bio"
                   onChange={(e) => setUserBio(e.target.value)}

@@ -116,6 +116,7 @@ export default function Page() {
   return (
     <main className="h-screen bg-white md:h-auto">
       <Navbar />
+      {user && (
       <div className="h-full md:h-fit md:w-[50%] bg-white lg:shadow-md lg:px-10 lg:ml-10 mb-10 py-5">
         <>
           <div className="flex flex-col gap-4 pb-4 border-b">
@@ -134,7 +135,7 @@ export default function Page() {
                 </svg>
               </div>
               <div className="pl-3">
-                <p className="text-sm font-medium leading-none text-gray-800">
+                <p className="text-lg font-medium leading-none text-gray-800">
                   Add members
                 </p>
                 <p className="text-xs text-gray-500">
@@ -158,7 +159,7 @@ export default function Page() {
                 </svg>
               </div>
               <div className="pl-3">
-                <p className="text-sm font-medium leading-none text-gray-800">
+                <p className="text-lg font-medium leading-none text-gray-800">
                   Account settings
                 </p>
                 <p className="text-xs text-gray-500">
@@ -181,7 +182,7 @@ export default function Page() {
                 </svg>
               </div>
               <div className="pl-3">
-                <p className="text-sm font-medium leading-none text-gray-800">
+                <p className="text-lg font-medium leading-none text-gray-800">
                   Personal settings
                 </p>
                 <p className="text-xs text-gray-500">
@@ -204,7 +205,7 @@ export default function Page() {
                 </svg>
               </div>
               <div className="pl-3">
-                <p className="text-sm font-medium leading-none text-gray-800">
+                <p className="text-lg font-medium leading-none text-gray-800">
                   Apps &amp; integrations
                 </p>
                 <p className="text-xs text-gray-500">Google, slack, mail</p>
@@ -216,7 +217,7 @@ export default function Page() {
               href="/settings"
               className="flex px-4 py-2 pb-4 hover:bg-gray-100"
             >
-              <p className="text-sm font-medium leading-none text-gray-800">
+              <p className="text-lg font-medium leading-none text-gray-800">
                 Product updates
               </p>
             </Link>
@@ -224,7 +225,7 @@ export default function Page() {
               href="/settings"
               className="flex px-4 py-2 pb-4 hover:bg-gray-100"
             >
-              <p className="text-sm font-medium leading-none text-gray-800">
+              <p className="text-lg font-medium leading-none text-gray-800">
                 Status updates
               </p>
             </Link>
@@ -232,38 +233,38 @@ export default function Page() {
               href="settings"
               className="flex px-4 py-2 pb-4 hover:bg-gray-100"
             >
-              <p className="text-sm font-medium leading-none text-gray-800">
+              <p className="text-lg font-medium leading-none text-gray-800">
                 Support FAQ
               </p>
             </Link>
 
-            {user && (
-              <div className="">
-                <hr className="border-gray-200" />
+            <div className="">
+              <hr className="border-gray-200" />
 
-                <Button
-                  variant="gradient"
-                  className="block px-4 py-2 mx-2 mt-2 text-sm text-white normal-case transition-colors duration-200 bg-transparent w-fit"
-                  onClick={SignOutAccount}
-                >
-                  Logout
-                </Button>
+              <Button
+                variant="gradient"
+                className="block px-4 py-2 mx-2 mt-2 text-lg text-white normal-case transition-colors duration-200 bg-transparent w-fit"
+                onClick={SignOutAccount}
+              >
+                Logout
+              </Button>
 
-                <hr className="border-gray-200" />
+              <hr className="border-gray-200" />
 
-                <Button
-                  variant="gradient"
-                  className="block px-4 py-2 mx-2 mt-2 text-sm text-white normal-case transition-colors duration-200 bg-transparent w-fit"
-                  onClick={DeleteAccount}
-                >
-                  Delete Account
-                </Button>
-              </div>
-            )}
+              <Button
+                variant="gradient"
+                className="block px-4 py-2 mx-2 mt-2 text-lg text-white normal-case transition-colors duration-200 bg-transparent w-fit"
+                onClick={DeleteAccount}
+              >
+                Delete Account
+              </Button>
+            </div>
           </div>
         </>
       </div>
+       )}
       <div className="hidden md:block">
+       
         <Footer />
       </div>
       <BottomNav />

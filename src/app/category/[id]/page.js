@@ -161,7 +161,7 @@ const Page = () => {
                           </div>
                           <hr className="border-gray-300" />
                           <Link href={`/${post._id}`}>
-                            <p className="flex flex-row flex-wrap w-full px-4 py-2 overflow-hidden text-sm text-justify text-gray-700">
+                            <p className="flex flex-row flex-wrap w-full px-4 py-2 overflow-hidden text-lg text-justify text-gray-700">
                               {post.shortdescription}
                             </p>
                           </Link>

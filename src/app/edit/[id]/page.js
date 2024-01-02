@@ -140,7 +140,7 @@ function EditBlog() {
             Edit your post
           </h1>
 
-          <p className='mt-5 text-sm font-medium text-center text-gray-700'>
+          <p className='mt-5 text-lg font-medium text-center text-gray-700'>
             Tweak, your blog, your audience are waiting...
           </p>
 
@@ -158,7 +158,7 @@ function EditBlog() {
                   <input
                     type='text'
                     value={title}
-                    className='w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm'
+                    className='w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm'
                     placeholder='Blog Title'
                     onChange={(e) => setTitle(e.target.value)}
                     min={74}
@@ -171,7 +171,7 @@ function EditBlog() {
                   <input
                     type='text'
                     value={shortdescription}
-                    className='w-full p-4 text-sm border border-gray-300 rounded-lg shadow-sm'
+                    className='w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm'
                     min={92}
                     placeholder='Short Description'
                     onChange={(e) => setShortDescription(e.target.value)}
@@ -182,7 +182,7 @@ function EditBlog() {
                     <select
                       name='blog-category'
                       value={category}
-                      className='block w-full px-3 py-4 text-sm text-gray-700 border-gray-300 rounded-md shadow-sm'
+                      className='block w-full px-3 py-4 text-lg text-gray-700 border-gray-300 rounded-md shadow-sm'
                       onChange={(e) => setCategory(e.target.value)}
                     >
                       <option value='uncategorized'>Uncategorized</option>
@@ -218,8 +218,8 @@ function EditBlog() {
                 </div>
 
                 <div className="w-full mx-auto">
-                  <label for="example1" className="block mb-1 text-sm font-medium text-gray-700">Update post image</label>
-                  <input id="example1" name="blogimage" onChange={handleImageChange} type="file" className="block w-full mt-2 text-sm file:mr-4 file:rounded-md file:border-0 file:bg-black file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept='image/*' />
+                  <label for="example1" className="block mb-1 text-lg font-medium text-gray-700">Update post image</label>
+                  <input id="example1" name="blogimage" onChange={handleImageChange} type="file" className="block w-full mt-2 text-lg file:mr-4 file:rounded-md file:border-0 file:bg-black file:py-2 file:px-4 file:text-lg file:font-semibold file:text-white hover:file:bg-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-60" accept='image/*' />
                 </div>
 
 
@@ -231,12 +231,12 @@ function EditBlog() {
 
 
                 <div className='my-10 h-[50vh] pb-16 pt-6'>
-                  <label htmlFor='longDescription' className='block mb-2 text-sm font-medium text-gray-900'>
+                  <label htmlFor='longDescription' className='block mb-2 text-lg font-medium text-gray-900'>
                     Post Content
                   </label>
                   <ReactQuill
                     theme="snow"
-                    className='w-full h-full text-sm rounded-lg'
+                    className='w-full h-full text-lg rounded-lg'
                     value={longdescription}
                     onChange={handleChange}
                   />

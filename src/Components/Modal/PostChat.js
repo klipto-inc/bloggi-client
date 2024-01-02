@@ -76,7 +76,7 @@ const PostChat = ({
                       />
                       {item.userid.fullname}
                     </div>
-                    <p className="mr-5 text-sm text-gray-600 dark:text-gray-400">
+                    <p className="mr-5 text-base text-gray-600 dark:text-gray-400">
                       {item.createdAt.substring(0, 10)}
                     </p>
                   </div>
@@ -149,7 +149,7 @@ const PostChat = ({
                     id="comment"
                     rows="1"
                     cols="15"
-                    className="w-full px-2 text-sm text-gray-900 bg-transparent border-0 resize-none focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400"
+                    className="w-full px-2 text-lg text-gray-900 bg-transparent border-0 resize-none focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400"
                     value={usercomment}
                     placeholder="Share your thoughts..."
                     onChange={(e) => setUserComment(e.target.value)}
