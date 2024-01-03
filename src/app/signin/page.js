@@ -31,51 +31,52 @@ function Page() {
 
   const router = useRouter();
 
-const UserLogin = async (e) => {
-  e.preventDefault();
-  setState("loading");
+ const UserLogin = async (e) => {
+   e.preventDefault();
+   setState("loading");
 
-  try {
-    // Make the login request
-    const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/signin`,
-      {
-        email,
-        password,
-      },
-      {
-        withCredentials: true,
-      }
-    );
+   console.log("data", email, password);
 
-    if (response.status === 200) {
-      // Login successful
-      console.log("Login successful", response.data.authToken);
-      Cookies.set("authtoken", response.data.authToken);
+   try {
+     const response = await axios.post(
+       `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/signin`,
+       {
+         email,
+         password,
+       },
+       {
+         withCredentials: true,
+       }
+     );
 
-      // Check if the token is set
-      const token = Cookies.get("authtoken");
-      if (token) {
-        setSuccess(response.data.message);
-        setState("success");
-        router.push("/");
-      } else {
-        // Token not set
-        setError("Failed to set auth token");
-        setState("error");
-      }
-    } else {
-      // Non-200 status, handle accordingly
-      setError(response.data.error || "Unexpected error occurred");
-      setState("error");
-    }
-  } catch (error) {
-    // Handle any errors during the login request
-    console.error("Login failed:", error);
-    setError(error.response.data.error);
-    setState("error");
-  }
-};
+     if (response.status === 200) {
+       // Login successful
+       console.log("Login successful", response.data.authToken);
+       Cookies.set("authtoken", response.data.authToken);
+
+       // Check if the token is set
+       const token = Cookies.get("authtoken");
+       if (token) {
+         setSuccess(response.data.message);
+         setState("success");
+         router.push("/");
+       } else {
+         // Token not set
+         setError("Failed to set auth token");
+         setState("error");
+       }
+     } else {
+       // Non-200 status, handle accordingly
+       setError(response.data.error || "Unexpected error occurred");
+       setState("error");
+     }
+   } catch (error) {
+     // Handle any errors during the login request
+     console.error("Login failed:", error);
+     setError(error.response.data.error);
+     setState("error");
+   }
+ };
 
 
   return (
