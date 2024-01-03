@@ -47,8 +47,9 @@ const UserProfile = () => {
   useEffect(() => {
     socket.on("profileconnect", ({ userData, profileData }) => {
       setUserData(profileData);
-      dispatch();
-      console.log("new data: ", data);
+      // Dispatch action here if needed
+      // dispatch({ type: "SOME_ACTION_TYPE", payload: { userData, profileData } });
+      console.log("new data: ", { userData, profileData });
     });
 
     return () => {
@@ -56,9 +57,8 @@ const UserProfile = () => {
     };
   }, [socket]);
 
+  // dispatch({ type: "userauth/getUserInformation" });
   useEffect(() => {
-    dispatch({ type: "userauth/getUserInformation" });
-
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -67,19 +67,24 @@ const UserProfile = () => {
 
         if (response.status === 200) {
           const userdetails = response.data.olduser;
-
           const postdata = response.data.userblog;
 
           setUserData(userdetails);
           setUserPost(postdata);
 
           console.log("this is", postdata);
+
+          // Dispatch action here if needed
+          // dispatch({ type: "SOME_ACTION_TYPE", payload: { userdetails, postdata } });
         }
-      } catch (error) {}
+      } catch (error) {
+        // Handle the error appropriately
+      }
     };
 
     fetchData();
-  }, []);
+  }, [params.id]);
+
 
   const PostNav = () => {
     setBlogNav(!blognav);
