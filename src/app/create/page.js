@@ -13,6 +13,7 @@ import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import dynamic from "next/dynamic";
 import CheckAuthIn from "@/Components/Auth/CheckAuthIn";
+import Swal from "sweetalert2";
 
 function Page() {
   const router = useRouter();
@@ -82,7 +83,7 @@ function Page() {
         });
 
         // Wait for the navigation to complete before logging
-        await router.push(`/${response.data.blogData._id}`);
+        router.push(`/${response.data.blogData._id}`);
         console.log(response.data); // Corrected from `console.log(post.data);`
       } else {
         setState("error");
