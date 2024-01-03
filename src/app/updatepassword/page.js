@@ -1,31 +1,31 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
-import React from 'react';
-import { useState } from 'react';
-import axios from 'axios';
-import ReactiveButton from 'reactive-button';
-import { useRouter } from 'next/navigation';
-import Navbar from '@/Components/Navbar/Navbar';
-import Footer from '@/Components/Footer/Footer';
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+import React from "react";
+import { useState } from "react";
+import axios from "axios";
+import ReactiveButton from "reactive-button";
+import { useRouter } from "next/navigation";
+import Navbar from "@/Components/Navbar/Navbar";
+import Footer from "@/Components/Footer/Footer";
 import CheckAuth2 from "@/Components/Auth/CheckAuth2";
-import BottomNav from '@/Components/BottomNavigation/BottomNav';
+import BottomNav from "@/Components/BottomNavigation/BottomNav";
 
 function UpdatePassword() {
-  const [state, setState] = useState('idle');
+  const [state, setState] = useState("idle");
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
   const router = useRouter();
 
   const urlParams = useSearchParams();
-  const reset = urlParams.get('reset');
+  const reset = urlParams.get("reset");
 
   const PasswordUpdate = async (e) => {
     e.preventDefault();
 
     try {
-      setState('loading');
+      setState("loading");
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/account/updatepassword`,
         {
@@ -33,48 +33,47 @@ function UpdatePassword() {
           password,
           confirmPassword,
         }
-      )
+      );
 
-      if (response.status !== 200) {
-        setState('error');
+      if (response.status === 200) {
+        setState("success");
+        router.push('/signin')
+      } else {
+        setState("error");
       }
-
-      setState('success');
-      router.push('/signin')
-
-    } catch (error) {
-
-    }
+    } catch (error) {}
   };
 
   return (
-    <div className='h-screen bg-white md:h-auto'>
+    <div className="h-screen bg-white md:h-auto">
       <Navbar />
-      <section className='px-2 py-16 md:bg-gray-200'>
-        <div className='flex flex-col items-center justify-center py-8 mx-auto md:h-fit lg:py-0'>
-          <div className='w-full bg-white rounded-lg md:shadow-lg md:mt-0 sm:max-w-md xl:p-0 dark:border-gray-700'>
-            <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
-              <div className='a flex flex-row items-center gap-4 mb-[30px]'>
-                <h1 className='text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black'>
+      <section className="px-2 py-16 md:bg-gray-200">
+        <div className="flex flex-col items-center justify-center py-8 mx-auto md:h-fit lg:py-0">
+          <div className="w-full bg-white rounded-lg md:shadow-lg md:mt-0 sm:max-w-md xl:p-0 dark:border-gray-700">
+            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <div className="a flex flex-row items-center gap-4 mb-[30px]">
+                <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
                   Update Password
                 </h1>
               </div>
               <form
-                className='space-y-4 md:space-y-6'
-                action='#'
-                onSubmit={PasswordUpdate}>
+                className="space-y-4 md:space-y-6"
+                action="#"
+                onSubmit={PasswordUpdate}
+              >
                 <div>
                   <label
-                    for='password'
-                    className='block mb-2 text-base font-medium text-gray-900'>
+                    for="password"
+                    className="block mb-2 text-base font-medium text-gray-900"
+                  >
                     New Password
                   </label>
                   <input
-                    type='password'
-                    name='password'
-                    id='password'
-                    placeholder='••••••••'
-                    className='w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12'
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="••••••••"
+                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
                     required={true}
                     onChange={(e) => setPassword(e.target.value)}
                   />
@@ -82,51 +81,54 @@ function UpdatePassword() {
 
                 <div>
                   <label
-                    for='password'
-                    className='block mb-2 text-base font-medium text-gray-900'>
+                    for="password"
+                    className="block mb-2 text-base font-medium text-gray-900"
+                  >
                     Confirm Password
                   </label>
                   <input
-                    type='password'
-                    name='password'
-                    id='password'
-                    placeholder='••••••••'
-                    className='w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12'
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="••••••••"
+                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
                     required={true}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                 </div>
 
-                <div className='flex items-start'>
-                  <div className='flex items-center h-5'>
+                <div className="flex items-start">
+                  <div className="flex items-center h-5">
                     <input
-                      id='terms'
-                      aria-describedby='terms'
-                      type='checkbox'
-                      className='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800'
+                      id="terms"
+                      aria-describedby="terms"
+                      type="checkbox"
+                      className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
                       required={true}
                     />
                   </div>
-                  <div className='ml-3 text-base'>
+                  <div className="ml-3 text-base">
                     <label
-                      for='terms'
-                      className='text-base font-light text-gray-500 dark:text-gray-800'>
-                      By checking this box, you agree to our {' '}
+                      for="terms"
+                      className="text-base font-light text-gray-500 dark:text-gray-800"
+                    >
+                      By checking this box, you agree to our{" "}
                       <a
-                        className='mr-1 font-medium underline text-primary-600 dark:text-primary-500'
-                        href='#'>
+                        className="mr-1 font-medium underline text-primary-600 dark:text-primary-500"
+                        href="#"
+                      >
                         Terms
                       </a>
                       and
                       <a
-                        className='ml-1 font-medium underline text-primary-600 dark:text-primary-500'
-                        href='#'>
+                        className="ml-1 font-medium underline text-primary-600 dark:text-primary-500"
+                        href="#"
+                      >
                         Privacy policy
                       </a>
                     </label>
                   </div>
                 </div>
-
 
                 <ReactiveButton
                   buttonState={state}
@@ -135,18 +137,18 @@ function UpdatePassword() {
                   successText="Updated successfully"
                   errorText="Unable to update"
                   color="red"
-                  width='100%'
+                  width="100%"
                   size="medium"
-                  type='submit'
+                  type="submit"
                   style={{
-                    display: 'block',
-                    borderRadius: '0.5rem',
-                    backgroundColor: '#FF3131',
-                    padding: '0.75rem 1.25rem',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                    color: 'white',
-                    background: '#FF3131',
+                    display: "block",
+                    borderRadius: "0.5rem",
+                    backgroundColor: "#FF3131",
+                    padding: "0.75rem 1.25rem",
+                    fontSize: "0.875rem",
+                    fontWeight: "500",
+                    color: "white",
+                    background: "#FF3131",
                   }}
                 />
               </form>
@@ -160,4 +162,6 @@ function UpdatePassword() {
   );
 }
 
-export default CheckAuth2(UpdatePassword);
+const newAuthcheck = CheckAuth2(UpdatePassword);
+
+export default newAuthcheck;

@@ -12,12 +12,10 @@ const CheckAuth = (Component) => {
     const user = useSelector((state) => state.userauth.user);
     const Params = useSearchParams();
     const reset = Params.get("reset");
-    const token = Cookies.get("authtoken");
-
-    if (reset !== "true") {
+    
+    if (!reset || reset === "true") {
       redirect("/signin");
     } else {
-
     }
 
     return <Component {...params} />;

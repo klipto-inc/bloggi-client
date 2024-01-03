@@ -56,17 +56,22 @@ function SignUp() {
         }
       );
 
-      if (response.status !== 201) {
-        console.log("opps something went wrong, try again");
+      if (response.status === 201) {
+        // Account creation successful
+        setState("success");
+        router.push("/signin");
+      } else {
+        // Non-201 status, handle accordingly
+        console.error("Oops, something went wrong. Please try again.");
         setState("error");
       }
-
-      setState("success");
-      router.push("/signin");
     } catch (error) {
+      // Handle any errors during the account creation request
+      console.error("Account creation failed:", error);
       setState("error");
     }
   };
+
 
   if (user) {
     router.push("/");

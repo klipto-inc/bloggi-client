@@ -20,6 +20,8 @@ import CheckAuth from "@/Components/Auth/CheckAuth";
 function Page() {
   const [state, setState] = useState("idle");
   const [email, setEmail] = useState();
+  const [error, setError] = useState();
+  const [success, setSuccess] = useState();
 
   const [password, setPassword] = useState();
 
@@ -29,38 +31,52 @@ function Page() {
 
   const router = useRouter();
 
-  const Userlogin = async (e) => {
-    e.preventDefault();
-    setState("loading");
+const UserLogin = async (e) => {
+  e.preventDefault();
+  setState("loading");
 
-    try {
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/signin`,
-        {
-          email,
-          password,
-        },
-        {
-          withCredentials: true,
-        }
-      );
+  try {
+    // Make the login request
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/signin`,
+      {
+        email,
+        password,
+      },
+      {
+        withCredentials: true,
+      }
+    );
 
-      if (response.status === 200) {
-        Cookies.set("authtoken", response.data.authToken); // Note the lowercase 'authorization'
-        const token = Cookies.get("authtoken");
-        if (token) {
-          setState("success");
-          router.push("/");
-        } else {
-          setState("error");
-        }
+    if (response.status === 200) {
+      // Login successful
+      console.log("Login successful", response.data.authToken);
+      Cookies.set("authtoken", response.data.authToken);
+
+      // Check if the token is set
+      const token = Cookies.get("authtoken");
+      if (token) {
+        setSuccess(response.data.message);
+        setState("success");
+        router.push("/");
       } else {
+        // Token not set
+        setError("Failed to set auth token");
         setState("error");
       }
-    } catch (error) {
+    } else {
+      // Non-200 status, handle accordingly
+      setError(response.data.error || "Unexpected error occurred");
       setState("error");
     }
-  };
+  } catch (error) {
+    // Handle any errors during the login request
+    console.error("Login failed:", error);
+    setError(error.response.data.error);
+    setState("error");
+  }
+};
+
 
   return (
     <div className="h-screen bg-white md:h-auto">
@@ -77,7 +93,7 @@ function Page() {
               <form
                 className="space-y-4 md:space-y-6"
                 action="#"
-                onSubmit={Userlogin}
+                onSubmit={UserLogin}
               >
                 <div>
                   <label
@@ -118,8 +134,8 @@ function Page() {
                   buttonState={state}
                   idleText="Log in"
                   loadingText="Loading"
-                  successText="Log in Successfull"
-                  errorText="Unable to Log in"
+                  successText={success}
+                  errorText={error}
                   color="red"
                   width="100%"
                   size="medium"
