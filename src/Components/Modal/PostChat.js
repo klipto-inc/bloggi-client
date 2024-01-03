@@ -66,7 +66,7 @@ const PostChat = ({
               >
                 <footer className="flex items-center justify-between w-full mb-2 ">
                   <div className="flex flex-row items-center justify-between w-full">
-                    <div className="inline-flex items-center text-base mr-3 text-sm font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center mr-3 text-sm text-base font-semibold text-gray-900 dark:text-white">
                       <Image
                         className="w-6 h-6 mr-2 rounded-full"
                         src={item.userid.userdp}
@@ -124,7 +124,7 @@ const PostChat = ({
                     </ul>
                   </div>
                 </footer>
-                <p className="text-lg text-gray-500 dark:text-gray-400">
+                <p className="text-lg text-gray-900 dark:text-gray-400">
                   {item.usercomment}
                 </p>
               </article>
