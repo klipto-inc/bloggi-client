@@ -14,6 +14,7 @@ import ReactiveButton from "reactive-button";
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import BottomNav from "@/Components/BottomNavigation/BottomNav";
+import CheckAuth from "@/Components/Auth/CheckAuth";
 
 function SignIn() {
   const [state, setState] = useState("idle");
@@ -165,4 +166,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default CheckAuth(SignIn);

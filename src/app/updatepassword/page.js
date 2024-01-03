@@ -9,6 +9,7 @@ import ReactiveButton from 'reactive-button';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/Components/Navbar/Navbar';
 import Footer from '@/Components/Footer/Footer';
+import CheckAuth2 from "@/Components/Auth/CheckAuth2";
 import BottomNav from '@/Components/BottomNavigation/BottomNav';
 
 function UpdatePassword() {
@@ -159,4 +160,4 @@ function UpdatePassword() {
   );
 }
 
-export default UpdatePassword;
+export default CheckAuth2(UpdatePassword);

@@ -11,6 +11,7 @@ import ReactiveButton from "reactive-button";
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import BottomNav from "@/Components/BottomNavigation/BottomNav";
+import CheckAuth from "@/Components/Auth/CheckAuth";
 
 function Recovery() {
   const [state, setState] = useState("idle");
@@ -18,17 +19,17 @@ function Recovery() {
 
   const PasswordRecovery = async (e) => {
     e.preventDefault();
-  
+
     try {
       setState("loading");
-  
+
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/recovery`,
         {
           email,
         }
       );
-  
+
       if (response.status === 200) {
         // If the request is successful, set the state to "success"
         setState("success");
@@ -49,7 +50,7 @@ function Recovery() {
         <div className="flex flex-col items-center justify-center py-4 mx-auto md:h-fit lg:py-0">
           <div className="w-full bg-white rounded-lg md:shadow-lg md:mt-0 sm:max-w-md xl:p-0 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <div className="a flex flex-row items-center gap-4 mb-[30px]">
+              <div className="flex flex-row items-center gap-4 mb-4">
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
                   Password Recovery
                 </h1>
@@ -61,7 +62,7 @@ function Recovery() {
               >
                 <div>
                   <label
-                    for="email"
+                    htmlFor="email"
                     className="block mb-2 text-base font-medium text-gray-900"
                   >
                     Your email
@@ -70,10 +71,10 @@ function Recovery() {
                     type="email"
                     name="email"
                     id="email"
-                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
+                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm"
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@company.com"
-                    required={true}
+                    required
                   />
                 </div>
 
@@ -95,7 +96,6 @@ function Recovery() {
                     fontSize: "0.875rem",
                     fontWeight: "500",
                     color: "white",
-                    background: "#FF3131",
                   }}
                 />
                 <p className="text-base font-light text-gray-500 dark:text-gray-400">
@@ -118,4 +118,4 @@ function Recovery() {
   );
 }
 
-export default Recovery;
+export default CheckAuth(Recovery);

@@ -12,7 +12,7 @@ import BottomNav from "@/Components/BottomNavigation/BottomNav";
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import dynamic from "next/dynamic";
-import CheckAuth from "@/Components/Auth/CheckAuth"; 
+import CheckAuthIn from "@/Components/Auth/CheckAuthIn"; 
 
 function CreatePost() {
   const router = useRouter();
@@ -263,4 +263,4 @@ function CreatePost() {
   );
 }
 
-export default CheckAuth(CreatePost);
+export default CheckAuthIn(CreatePost);

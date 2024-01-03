@@ -6,19 +6,18 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-const CheckAuth = (Component) => {
+const CheckAuthIn = (Component) => {
   return function NotAuth(params) {
    
 
     const user = useSelector((state) => state.userauth.user);
 
     if (!user) {
-      redirect("/");
+      redirect("/signin");
     }
-
 
     return <Component {...params} />;
   };
 };
 
-export default CheckAuth;
+export default CheckAuthIn;

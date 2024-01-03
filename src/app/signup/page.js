@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import BottomNav from "@/Components/BottomNavigation/BottomNav";
+import CheckAuth from "@/Components/Auth/CheckAuth";
 
 function SignUp() {
   const [state, setState] = useState("idle");
@@ -74,7 +75,7 @@ function SignUp() {
   return (
     <div className="h-screen bg-white md:h-auto">
       <Navbar />
-      <section className="px-2 pt-4 pb-16 md:py-16 mx-auto md:bg-gray-200 sm:px-6">
+      <section className="px-2 pt-4 pb-16 mx-auto md:py-16 md:bg-gray-200 sm:px-6">
         <div className="flex flex-col items-center justify-center pb-8 mx-auto md:h-fit lg:py-0">
           <div className="w-full bg-white rounded-lg md:shadow-lg md:mt-0 sm:max-w-md xl:p-0 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -170,7 +171,7 @@ function SignUp() {
                   <div className="ml-3 text-base">
                     <label
                       for="terms"
-                      className="font-light text-gray-500 dark:text-gray-800 text-base"
+                      className="text-base font-light text-gray-500 dark:text-gray-800"
                     >
                       I accept the{" "}
                       <a
@@ -225,4 +226,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default CheckAuth(SignUp);

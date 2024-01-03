@@ -11,8 +11,9 @@ import Cookies from "js-cookie";
 import Swal from "sweetalert2";
 import { Button } from "@material-tailwind/react";
 import Footer from "@/Components/Footer/Footer";
+import CheckAuthIn from "@/Components/Auth/CheckAuthIn";
 
-export default function Page() {
+function Settings () {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userauth.user);
   const token = Cookies.get("authtoken");
@@ -119,7 +120,7 @@ export default function Page() {
       {user && (
       <div className="h-full md:h-fit md:w-[50%] bg-white lg:shadow-md lg:px-10 lg:ml-10 mb-10 py-5">
         <>
-          <div className="flex flex-col mt-8 gap-4 pb-4 border-b">
+          <div className="flex flex-col gap-4 pb-4 mt-8 border-b">
             <Link href="/settings" className="flex px-4 py-2 hover:bg-gray-100">
               <div className="text-gray-800">
                 <svg
@@ -271,3 +272,5 @@ export default function Page() {
     </main>
   );
 }
+
+export default CheckAuthIn(Settings);
