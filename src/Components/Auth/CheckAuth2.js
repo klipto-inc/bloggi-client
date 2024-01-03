@@ -14,7 +14,7 @@ const CheckAuth = (Component) => {
     const reset = Params.get("reset");
     const token = Cookies.get("authtoken");
 
-    if (!token && reset !== "true") {
+    if (reset !== "true") {
       redirect("/signin");
     } else {
 
