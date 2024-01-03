@@ -6,24 +6,20 @@ import { useParams } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { AiOutlineUserAdd } from "react-icons/ai";
-import { FaCamera } from "react-icons/fa";
 import { Button } from "@material-tailwind/react";
 import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 import Link from "next/link";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import io from "socket.io-client";
-import { setUser } from "@/app/redux/slice/userauthSlice";
 import { FaHandsClapping } from "react-icons/fa6";
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import BottomNav from "@/Components/BottomNavigation/BottomNav";
 import EditProfile from "@/Components/Modal/EditProfile";
+import Swal from "sweetalert2";
 
 const UserProfile = () => {
   const user = useSelector((state) => state.userauth.user);
-  const isAuthenticated = useSelector(
-    (state) => state.userauth.isAuthenticated
-  );
 
   const [blognav, setBlogNav] = useState(false);
   const [userdata, setUserData] = useState(null);
@@ -71,8 +67,6 @@ const UserProfile = () => {
 
           setUserData(userdetails);
           setUserPost(postdata);
-
-          console.log("this is", postdata);
 
           // Dispatch action here if needed
           // dispatch({ type: "SOME_ACTION_TYPE", payload: { userdetails, postdata } });
