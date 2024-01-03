@@ -60,6 +60,7 @@ function Page() {
 
     try {
       setState("loading");
+
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog/create`,
         formData,
@@ -71,8 +72,28 @@ function Page() {
         }
       );
 
-      if (response.status !== 201) {
+      if (response.status === 201) {
+        setState("success");
+
+        Swal.fire({
+          title: "Your post is Live",
+          text: "We are incredibly proud of you for sharing your post. Your voice matters!",
+          icon: "success",
+        });
+
+        // Wait for the navigation to complete before logging
+        await router.push(`/${response.data.blogData._id}`);
+        console.log(response.data); // Corrected from `console.log(post.data);`
+      } else {
         setState("error");
+
+        // More detailed error handling based on response status
+        if (response.status === 401) {
+          // Handle unauthorized access
+        } else {
+          // Handle other errors
+        }
+
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -80,22 +101,12 @@ function Page() {
           footer: '<a href="#">Why do I have this issue?</a>',
         });
       }
-
-      setState("success");
-
-      Swal.fire({
-        title: "Your post is Live",
-        text: "We are incredibly proud of you for sharing your post. Your voice matters!",
-        icon: "success",
-      });
-
-      router.push(`/${response.data.blogData._id}`);
-
-      console.log(post.data);
     } catch (error) {
-      console.log(error);
+      console.error("Error submitting the form:", error);
+      setState("error");
     }
   };
+
 
   return (
     <div className="h-screen bg-white md:h-auto">
