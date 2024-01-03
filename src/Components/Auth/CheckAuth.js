@@ -14,7 +14,7 @@ const CheckAuth = (Component) => {
 
     const token = Cookies.get("authtoken")
 
-    if (!token) {
+    if (token) {
       redirect("/");
     }
 

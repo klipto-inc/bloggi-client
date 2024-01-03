@@ -12,12 +12,15 @@ import BottomNav from "@/Components/BottomNavigation/BottomNav";
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import dynamic from "next/dynamic";
-import CheckAuthIn from "@/Components/Auth/CheckAuthIn"; 
+import CheckAuthIn from "@/Components/Auth/CheckAuthIn";
 
-function CreatePost() {
+function Page() {
   const router = useRouter();
   const token = Cookies.get("authtoken");
-  const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }),[]);
+  const ReactQuill = useMemo(
+    () => dynamic(() => import("react-quill"), { ssr: false }),
+    []
+  );
 
   const isAuthenticated = useSelector(
     (state) => state.authslice.isAuthenticated
@@ -25,7 +28,6 @@ function CreatePost() {
 
   const [state, setState] = useState("idle");
   const authToken = useSelector((state) => state.authslice.authToken);
-
 
   const [title, setTitle] = useState(null);
   const [shortdescription, setShortDescription] = useState(null);
@@ -182,7 +184,6 @@ function CreatePost() {
                 </select>
               </fieldset>
             </div>
-           
 
             <div className="w-full mx-auto">
               <label
@@ -224,7 +225,7 @@ function CreatePost() {
               >
                 Post Content
               </label>
-              
+
               <ReactQuill
                 theme="snow"
                 className="w-full h-full text-lg rounded-lg"
@@ -263,4 +264,6 @@ function CreatePost() {
   );
 }
 
-export default CheckAuthIn(CreatePost);
+const CheckAuthInCreate = CheckAuthIn(Page);
+
+export default CheckAuthInCreate;

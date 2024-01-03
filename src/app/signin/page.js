@@ -16,7 +16,8 @@ import Footer from "@/Components/Footer/Footer";
 import BottomNav from "@/Components/BottomNavigation/BottomNav";
 import CheckAuth from "@/Components/Auth/CheckAuth";
 
-function SignIn() {
+
+function Page() {
   const [state, setState] = useState("idle");
   const [email, setEmail] = useState();
 
@@ -166,4 +167,6 @@ function SignIn() {
   );
 }
 
-export default CheckAuth(SignIn);
+const CheckAuthSignin = CheckAuth(Page);
+
+export default CheckAuthSignin;
