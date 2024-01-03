@@ -102,10 +102,10 @@ function Page() {
       <Navbar />
       <div className="px-4 py-16 mx-auto bg-gray-50 sm:px-6">
         <div className="max-w-lg mx-auto">
-          <h1 className="text-2xl font-semibold text-center text-black">
+          <h1 className="text-xl font-semibold text-center text-black">
             Tell your story
           </h1>
-          <p className="mt-5 text-lg font-medium text-center text-gray-700">
+          <p className="mt-5 text-sm font-medium text-center text-gray-700">
             Capture your thoughts, stories, and ideas in a post
           </p>
           <form
@@ -145,7 +145,7 @@ function Page() {
               <fieldset className="w-full border border-gray-300 rounded-lg">
                 <select
                   name="blog-category"
-                  className="block w-full px-3 py-4 text-lg text-gray-700 border-gray-300 rounded-md shadow-sm"
+                  className="block w-full px-3 py-4 text-base text-gray-700 border-gray-300 rounded-md shadow-sm"
                   onChange={(e) => setCategory(e.target.value)}
                   required
                 >
@@ -188,7 +188,7 @@ function Page() {
             <div className="w-full mx-auto">
               <label
                 htmlFor="blogimage"
-                className="block mb-1 text-lg font-medium text-gray-700"
+                className="block mb-1 text-base font-medium text-gray-700"
               >
                 Upload post image
               </label>
@@ -198,7 +198,7 @@ function Page() {
                 onChange={handleImageChange}
                 type="file"
                 required
-                className="block w-full mt-2 text-lg file:mr-4 file:rounded-md file:border-0 file:bg-black file:py-2 file:px-4 file:text-lg file:font-semibold file:text-white hover:file:bg-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+                className="block w-full mt-2 text-base file:mr-4 file:rounded-md file:border-0 file:bg-black file:py-2 file:px-4 file:text-lg file:font-semibold file:text-white hover:file:bg-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
                 accept="image/*"
               />
               {/* <p className='mt-1 text-xs text-gray-700' id='file_input_help'>
@@ -228,8 +228,9 @@ function Page() {
 
               <ReactQuill
                 theme="snow"
-                className="w-full h-full text-lg rounded-lg"
+                className="w-full h-full rounded-lg text-"
                 value={longdescription}
+                style={{ fontSize: "15px" }}
                 onChange={handleChange}
                 required
               />
