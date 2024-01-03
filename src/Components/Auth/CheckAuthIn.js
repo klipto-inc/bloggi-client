@@ -8,11 +8,10 @@ import { useSelector } from "react-redux";
 
 const CheckAuthIn = (Component) => {
   return function NotAuth(params) {
-   
-
     const user = useSelector((state) => state.userauth.user);
+    const token = Cookies.get("authtoken");
 
-    if (!user) {
+    if (!token) {
       redirect("/signin");
     }
 

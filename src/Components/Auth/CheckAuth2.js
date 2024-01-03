@@ -9,19 +9,16 @@ import { useSearchParams } from "next/navigation";
 
 const CheckAuth = (Component) => {
   return function NotAuth(params) {
-   
-
     const user = useSelector((state) => state.userauth.user);
     const Params = useSearchParams();
     const reset = Params.get("reset");
+    const token = Cookies.get("authtoken");
 
-    if (!user && reset !== "true") {
-     
-    }
-    else {
-       redirect("/");
-    }
+    if (!token && reset !== "true") {
+      redirect("/signin");
+    } else {
 
+    }
 
     return <Component {...params} />;
   };

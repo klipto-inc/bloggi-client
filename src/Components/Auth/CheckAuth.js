@@ -12,7 +12,9 @@ const CheckAuth = (Component) => {
 
     const user = useSelector((state) => state.userauth.user);
 
-    if (!user) {
+    const token = Cookies.get("authtoken")
+
+    if (!token) {
       redirect("/");
     }
 
