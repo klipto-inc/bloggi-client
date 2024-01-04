@@ -46,18 +46,6 @@ const UserProfile = () => {
   const handleOpen = (value) => setSize(value);
 
   useEffect(() => {
-    socket.on("profileconnect", ({ userData, profileData }) => {
-      setUserData(profileData);
-      dispatch();
-      console.log("new data: ", data);
-    });
-
-    return () => {
-      socket.disconnect();
-    };
-  }, [socket]);
-
-  useEffect(() => {
     dispatch({ type: "userauth/getUserInformation" });
 
     const fetchData = async () => {
@@ -81,6 +69,20 @@ const UserProfile = () => {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    socket.on("profileconnect", ({ userData, profileData }) => {
+      setUserData(profileData);
+      dispatch();
+      console.log("new data: ", data);
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, [socket]);
+
+  
 
   const PostNav = () => {
     setBlogNav(!blognav);
@@ -147,7 +149,7 @@ const UserProfile = () => {
                 <div className="relative">
                   <Image
                     className="h-[160px] w-[160px] object-cover rounded-full border-4 border-white"
-                    src={userdata?.userdp}
+                    src={userdata.userdp}
                     width={500}
                     height={500}
                     alt=""
@@ -158,9 +160,9 @@ const UserProfile = () => {
                 <div className="flex flex-col items-center justify-center col-span-4 gap-4 md:justify-start lg:ml-10 md:items-start w-[70%]">
                   <div className="flex flex-col items-center gap-5 text-gray-800 md:flex-row md:items-end">
                     <div className="flex flex-col items-center gap-2 a md:items-start">
-                      <div className="font-medium">@{userdata?.username}</div>
+                      <div className="font-medium">@{userdata.username}</div>
 
-                      <div className="text-2xl">{userdata?.fullname}</div>
+                      <div className="text-2xl">{userdata.fullname}</div>
                     </div>
 
                     {user && (
@@ -171,10 +173,10 @@ const UserProfile = () => {
                               className="px-6 py-2 text-gray-100 bg-[#FF3131] flex w-fit items-center justify-center rounded"
                               onClick={userConnect}
                             >
-                              {/* {userdata.followers.includes(String(user._id))
+                              {userdata.followers.includes(String(user._id))
                                 ? "Following"
                                 : "Follow"}
-                              <AiOutlineUserAdd className="ml-2 bx bx-user-plus" /> */}
+                              <AiOutlineUserAdd className="ml-2 bx bx-user-plus" />
                             </button>
                           </div>
                         ) : (
@@ -218,7 +220,7 @@ const UserProfile = () => {
                     <div className="flex flex-row gap-2">
                       <span className="font-semibold">
                         {" "}
-                        {userdata?.mypost.length}{" "}
+                        {userdata.mypost.length}{" "}
                       </span>{" "}
                       Posts
                     </div>
@@ -226,7 +228,7 @@ const UserProfile = () => {
                     <div className="flex flex-row gap-2">
                       <span className="font-semibold">
                         {" "}
-                        {userdata?.followers.length}{" "}
+                        {userdata.followers.length}{" "}
                       </span>{" "}
                       Followers
                     </div>
@@ -234,7 +236,7 @@ const UserProfile = () => {
                     <div className="flex flex-row gap-2">
                       <span className="font-semibold">
                         {" "}
-                        {userdata?.following.length}{" "}
+                        {userdata.following.length}{" "}
                       </span>{" "}
                       Following
                     </div>
@@ -242,7 +244,7 @@ const UserProfile = () => {
 
                   <div className="flex flex-col items-center justify-center text-gray-800 md:justify-start w-full md:items-start md:w-[95%] lg:w-[80%]">
                     <p className="flex flex-wrap w-full text-center md:text-start">
-                      {userdata?.userbio}
+                      {userdata.userbio}
                     </p>
                   </div>
                 </div>
@@ -256,7 +258,7 @@ const UserProfile = () => {
         <div>
           <section className="lg:px-10">
             <div className="container px-2 py-10 pt-2 mx-auto md:px-2">
-              {userpost? (
+              {userpost === null ? (
                 <div className="grid grid-cols-1 gap-8 mt-8 animate-pulse xl:mt-12 xl:gap-8 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-3">
                   <div className="w-full ">
                     <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
@@ -282,7 +284,7 @@ const UserProfile = () => {
               ) : (
                 <div>
                   <div className="grid grid-cols-1 gap-4 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-3 lg:grid-cols-3">
-                    {userpost && userpost.map((post) => (
+                    {userpost.map((post) => (
                       <div
                         className="relative flex w-full py-6 transition-all duration-150 md:w-full lg:w-full"
                         key={post.id}
