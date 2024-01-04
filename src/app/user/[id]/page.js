@@ -218,7 +218,7 @@ const UserProfile = () => {
                     <div className="flex flex-row gap-2">
                       <span className="font-semibold">
                         {" "}
-                        {userdata.mypost.length}{" "}
+                        {userdata?.mypost.length}{" "}
                       </span>{" "}
                       Posts
                     </div>
@@ -234,7 +234,7 @@ const UserProfile = () => {
                     <div className="flex flex-row gap-2">
                       <span className="font-semibold">
                         {" "}
-                        {userdata.following.length}{" "}
+                        {userdata?.following.length}{" "}
                       </span>{" "}
                       Following
                     </div>
@@ -242,7 +242,7 @@ const UserProfile = () => {
 
                   <div className="flex flex-col items-center justify-center text-gray-800 md:justify-start w-full md:items-start md:w-[95%] lg:w-[80%]">
                     <p className="flex flex-wrap w-full text-center md:text-start">
-                      {userdata.userbio}
+                      {userdata?.userbio}
                     </p>
                   </div>
                 </div>
