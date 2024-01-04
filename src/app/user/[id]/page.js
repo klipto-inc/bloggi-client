@@ -158,9 +158,9 @@ const UserProfile = () => {
                 <div className="flex flex-col items-center justify-center col-span-4 gap-4 md:justify-start lg:ml-10 md:items-start w-[70%]">
                   <div className="flex flex-col items-center gap-5 text-gray-800 md:flex-row md:items-end">
                     <div className="flex flex-col items-center gap-2 a md:items-start">
-                      <div className="font-medium">@{userdata.username}</div>
+                      <div className="font-medium">@{userdata?.username}</div>
 
-                      <div className="text-2xl">{userdata.fullname}</div>
+                      <div className="text-2xl">{userdata?.fullname}</div>
                     </div>
 
                     {user && (
