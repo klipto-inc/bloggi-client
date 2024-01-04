@@ -282,7 +282,7 @@ const UserProfile = () => {
               ) : (
                 <div>
                   <div className="grid grid-cols-1 gap-4 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-3 lg:grid-cols-3">
-                    {userpost.map((post) => (
+                    {userpost && userpost.map((post) => (
                       <div
                         className="relative flex w-full py-6 transition-all duration-150 md:w-full lg:w-full"
                         key={post.id}
