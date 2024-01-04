@@ -147,7 +147,7 @@ const UserProfile = () => {
                 <div className="relative">
                   <Image
                     className="h-[160px] w-[160px] object-cover rounded-full border-4 border-white"
-                    src={userdata.userdp}
+                    src={userdata?.userdp}
                     width={500}
                     height={500}
                     alt=""
