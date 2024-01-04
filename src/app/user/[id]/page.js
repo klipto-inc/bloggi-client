@@ -256,7 +256,7 @@ const UserProfile = () => {
         <div>
           <section className="lg:px-10">
             <div className="container px-2 py-10 pt-2 mx-auto md:px-2">
-              {userpost === null ? (
+              {userpost? (
                 <div className="grid grid-cols-1 gap-8 mt-8 animate-pulse xl:mt-12 xl:gap-8 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-3">
                   <div className="w-full ">
                     <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
