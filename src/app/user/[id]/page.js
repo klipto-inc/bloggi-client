@@ -1,8 +1,6 @@
 "use client";
 
-import Footer from "@/app/Components/Footer/Footer";
-import Navbar from "@/app/Components/Navbar/Navbar";
-import EditProfile from "@/app/Components/Modal/EditProfile";
+
 import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "next/navigation";
@@ -18,6 +16,9 @@ import io from "socket.io-client";
 import { setUser } from "@/app/redux/slice/userauthSlice";
 import { FaHandsClapping } from "react-icons/fa6";
 import BottomNav from "@/Components/BottomNavigation/BottomNav";
+import Footer from "@/Components/Footer/Footer";
+import EditProfile from "@/Components/Modal/EditProfile";
+import Navbar from "@/Components/Navbar/Navbar";
 
 const UserProfile = () => {
   const user = useSelector((state) => state.userauth.user);
@@ -170,10 +171,10 @@ const UserProfile = () => {
                               className="px-6 py-2 text-gray-100 bg-[#FF3131] flex w-fit items-center justify-center rounded"
                               onClick={userConnect}
                             >
-                              {userdata.followers.includes(String(user._id))
+                              {/* {userdata.followers.includes(String(user._id))
                                 ? "Following"
                                 : "Follow"}
-                              <AiOutlineUserAdd className="ml-2 bx bx-user-plus" />
+                              <AiOutlineUserAdd className="ml-2 bx bx-user-plus" /> */}
                             </button>
                           </div>
                         ) : (
