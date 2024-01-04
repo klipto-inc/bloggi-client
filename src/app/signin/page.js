@@ -52,7 +52,8 @@ function Page() {
      if (response.status === 200) {
        // Login successful
        console.log("Login successful", response.data.authToken);
-       Cookies.set("authtoken", response.data.authToken);
+       const MaxAge = 30 * 24 * 60 * 60;
+       Cookies.set("authtoken", response.data.authToken, {expires: MaxAge});
 
        // Check if the token is set
        const token = Cookies.get("authtoken");
