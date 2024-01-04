@@ -226,7 +226,7 @@ const UserProfile = () => {
                     <div className="flex flex-row gap-2">
                       <span className="font-semibold">
                         {" "}
-                        {userdata.followers.length}{" "}
+                        {userdata?.followers.length}{" "}
                       </span>{" "}
                       Followers
                     </div>
