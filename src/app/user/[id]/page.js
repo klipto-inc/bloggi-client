@@ -99,7 +99,7 @@ const UserProfile = () => {
       <Navbar />
       <div className="h-auto bg-gray-200">
         <div className="flex items-start pt-[65px] justify-left">
-          {userdata === null ? (
+          {!userdata ? (
             <div className=" w-full lg:w-[70%] flex flex-col gap-5 items-center justify-start px-20 md:flex-col lg:flex-row">
               <div className="object-center">
                 <div className="w-40 h-40 bg-gray-300 rounded-full animate-pulse"></div>
@@ -247,10 +247,10 @@ const UserProfile = () => {
           )}
         </div>
 
-        {/* <div>
+        <div>
           <section className="lg:px-10">
             <div className="container px-2 py-10 pt-2 mx-auto md:px-2">
-              {userpost === null ? (
+              {!userpost ? (
                 <div className="grid grid-cols-1 gap-8 mt-8 animate-pulse xl:mt-12 xl:gap-8 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-3">
                   <div className="w-full ">
                     <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
@@ -496,7 +496,7 @@ const UserProfile = () => {
               )}
             </div>
           </section>
-        </div> */}
+        </div>
       </div>
       <Footer />
       <BottomNav />
