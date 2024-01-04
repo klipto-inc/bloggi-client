@@ -40,6 +40,31 @@ const UserProfile = () => {
 
   const handleOpen = (value) => setSize(value);
 
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/user/${params.id}`
+          );
+
+          if (response.status === 200) {
+            const userdetails = response.data.olduser;
+            const postdata = response.data.userblog;
+
+            setUserData(userdetails);
+            setUserPost(postdata);
+
+            // Dispatch action here if needed
+            // dispatch({ type: "SOME_ACTION_TYPE", payload: { userdetails, postdata } });
+          }
+        } catch (error) {
+          // Handle the error appropriately
+        }
+      };
+
+      fetchData();
+    }, [params.id]);
+
   useEffect(() => {
     socket.on("profileconnect", ({ userData, profileData }) => {
       setUserData(profileData);
@@ -52,30 +77,7 @@ const UserProfile = () => {
   }, [socket]);
 
   // dispatch({ type: "userauth/getUserInformation" });
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/user/${params.id}`
-        );
 
-        if (response.status === 200) {
-          const userdetails = response.data.olduser;
-          const postdata = response.data.userblog;
-
-          setUserData(userdetails);
-          setUserPost(postdata);
-
-          // Dispatch action here if needed
-          // dispatch({ type: "SOME_ACTION_TYPE", payload: { userdetails, postdata } });
-        }
-      } catch (error) {
-        // Handle the error appropriately
-      }
-    };
-
-    fetchData();
-  }, [params.id]);
 
   const PostNav = () => {
     setBlogNav(!blognav);
