@@ -99,7 +99,7 @@ const UserProfile = () => {
       <Navbar />
       <div className="h-auto bg-gray-200">
         <div className="flex items-start pt-[65px] justify-left">
-          {userdata && userdata === null ? (
+          {userdata === null ? (
             <div className=" w-full lg:w-[70%] flex flex-col gap-5 items-center justify-start px-20 md:flex-col lg:flex-row">
               <div className="object-center">
                 <div className="w-40 h-40 bg-gray-300 rounded-full animate-pulse"></div>
