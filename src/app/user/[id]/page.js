@@ -100,7 +100,7 @@ const UserProfile = () => {
     <div className="h-screen bg-white md:h-auto">
       <Navbar />
       <div className="h-auto bg-gray-200">
-        <div className="flex items-start pt-[65px] justify-left">
+        {/* <div className="flex items-start pt-[65px] justify-left">
           {userdata && userdata === null ? (
             <div className=" w-full lg:w-[70%] flex flex-col gap-5 items-center justify-start px-20 md:flex-col lg:flex-row">
               <div className="object-center">
@@ -238,7 +238,7 @@ const UserProfile = () => {
               <hr className="border-gray-300" />
             </div>
           )}
-        </div>
+        </div> */}
 
         <div>
           <section className="lg:px-10">
