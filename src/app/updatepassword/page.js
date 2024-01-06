@@ -103,7 +103,7 @@ const Page = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="flex items-center justify-center py-10 bg-white md:w-1/2 h-full">
+          <div className="flex items-center justify-center py-10 bg-white md:w-1/2 h-[100svh]">
             <form
               className="bg-white px-4 w-full md:px-10 md:w-full lg:px-0 lg:w-[55%]"
               onSubmit={PasswordUpdate}
