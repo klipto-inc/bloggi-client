@@ -120,7 +120,7 @@ const Page = () => {
     <div>
       {randomImageUrl && (
         <div
-          className="h-screen md:flex backdrop-blur-md bg-black"
+          className="h-[100svh] md:flex backdrop-blur-md bg-black overflow-y-hidden"
           style={{
             backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(${randomImageUrl})`,
             backgroundSize: "cover",
