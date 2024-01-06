@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { IoEyeOffOutline } from "react-icons/io5";
 import { IoEyeOutline } from "react-icons/io5";
 import { TbLock } from "react-icons/tb";
-import logo from "../../app/Resources/Images/bloggi-light.png";
+import logo from "../../app/Resources/Images/Bloggilight.png";
 import logo2 from "../../app/Resources/Images/bloggilogo.png";
 import ReactiveButton from "reactive-button";
 import axios from "axios";

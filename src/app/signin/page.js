@@ -10,7 +10,7 @@ import { TbLock } from "react-icons/tb";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import ReactiveButton from "reactive-button";
-import logo from "../../app/Resources/Images/bloggi-light.png";
+import logo from "../../app/Resources/Images/Bloggilight.png";
 import logo2 from "../../app/Resources/Images/bloggilogo.png";
 import Cookies from "js-cookie";
 import CheckAuth from "@/Components/Auth/CheckAuth";
