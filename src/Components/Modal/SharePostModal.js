@@ -1,17 +1,21 @@
 'use client'
 
 import React, { useRef, useState } from "react";
+import { useEffect } from "react";
 
 const SharePostModal = ({ closeModal, linkToShare }) => {
 
   const linkInputRef = useRef(linkToShare);
   const [copystate, setCopyState] = useState("copy");
 
+  useEffect(() => {
+    linkInputRef.current = linkToShare;
+  }, [linkToShare]);
+
   const copyLinkToClipboard = () => {
-    const linkToCopy = linkInputRef.current.value;
+    const linkToCopy = linkInputRef.current;
 
     navigator.clipboard.writeText(linkToCopy).then(() => {
-      // You can add a notification or any other logic when link is copied.
       console.log("Link copied to clipboard:", linkToCopy);
       setCopyState("copied");
       setTimeout(() => {
@@ -19,6 +23,7 @@ const SharePostModal = ({ closeModal, linkToShare }) => {
       }, 2000);
     });
   };
+
 
   const shareOnFacebook = () => {
     const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
