@@ -677,10 +677,14 @@ const BlogPost = () => {
               <meta property="og:title" content={blog.title} />
               <meta property="og:description" content={blog.shortdescription} />
               <meta property="og:image" content={blog.blogimage} />
+              <meta property="og:image:width" content="1200" />
+              <meta property="og:image:height" content="630" />
               <meta
                 property="og:url"
                 content={`${process.env.NEXT_PUBLIC_CLIENT_URL}/${params.id}`}
               />
+              <meta property="og:type" content="article" />
+              <meta property="og:site_name" content="Bloggi - Africas #1 creative platform" />
               {/* Add more Open Graph tags as needed */}
             </Head>
           </div>
