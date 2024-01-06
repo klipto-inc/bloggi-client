@@ -128,12 +128,11 @@ const Page = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="flex items-center justify-center py-10 bg-white md:w-1/2 h-[100svh]">
+          <div className="flex items-center justify-center py-10 bg-white md:w-1/2 h-[100svh] overflow-y-hidden">
             <form
               className="bg-white px-4 w-full md:px-10 md:w-full lg:px-0 lg:w-[55%]"
               onSubmit={UserLogin}
             >
-
               <div className="w-full items-center block flex justify-center mb-8 md:gap-12 md:hidden">
                 <Link
                   className="flex flex-row items-center justify-center gap-2 text-teal-600"

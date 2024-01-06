@@ -92,7 +92,7 @@ const Page = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="relative items-center justify-around hidden w-1/2 overflow-hidden md:flex">
+          <div className="relative items-center justify-around hidden w-1/2 overflow-hidden md:flex ">
             <div className="w-[70%]">
               <div className=" md:flex md:items-center md:gap-12">
                 <Link
@@ -119,7 +119,7 @@ const Page = () => {
             <div className="absolute border-4 border-t-8 rounded-full -top-40 -right-0 w-80 h-80 border-opacity-50" />
             <div className="absolute border-4 border-t-8 rounded-full -top-20 -right-20 w-80 h-80 border-opacity-50" />
           </div>
-          <div className="flex items-center justify-center py-10 bg-white md:w-1/2 h-[100svh]">
+          <div className="flex items-center justify-center py-10 bg-white md:w-1/2 h-[100svh] overflow-y-hidden">
             <form
               className="bg-white px-4 w-full md:px-10 md:w-full lg:px-0 lg:w-[55%]"
               onSubmit={PasswordRecovery}
