@@ -12,6 +12,8 @@ import ReactiveButton from "reactive-button";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
+import { LiaTimesSolid } from "react-icons/lia";
+import { GrStatusGood } from "react-icons/gr";
 
 const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -25,6 +27,8 @@ const Page = () => {
   const dispatch = useDispatch();
   const [error, setError] = useState();
   const [success, setSuccess] = useState();
+  const [usernameStatus, setUsernameStatus] = useState(null);
+  const [usernameStatusmsg, setUsernameStatusmsg] = useState(null);
 
   const router = useRouter();
 
@@ -94,6 +98,57 @@ const Page = () => {
     "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F11.svg?alt=media&token=d67f43c8-518b-4584-8c4b-7c2256fb1908",
     "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F12.svg?alt=media&token=282defe9-f7dd-4011-b3ae-f2ddd3aae267",
   ];
+
+  const handleUsername = async (e) => {
+    try {
+      const newUsername = e.target.value;
+      setUsername(newUsername);
+      setUsernameStatus("loading");
+
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/checkusername`,
+        {
+          username: newUsername,
+        }
+      );
+
+      handleUsernameResponse(response.data.message);
+    } catch (error) {
+      // Handle any errors during the username check
+      handleUsernameResponse(null);
+    }
+  };
+
+const handleUsernameResponse = (message) => {
+  // Reset username status
+  setUsernameStatus(null);
+
+  switch (message) {
+    case "available":
+      setUsernameStatus("available");
+      setUsernameStatusmsg("available");
+      setTimeout(() => {
+        setUsernameStatusmsg(null);
+      }, 1000);
+      break;
+    case "taken":
+      setUsernameStatus("taken");
+      setUsernameStatusmsg("taken");
+      setTimeout(() => {
+        setUsernameStatusmsg(null);
+      }, 1000);
+      break;
+    case "":
+      setUsernameStatus(null);
+      setUsernameStatusmsg(null);
+      break;
+    default:
+      // Non-201 status or unexpected response, handle accordingly
+      setUsernameStatus(null);
+      break;
+  }
+};
+
 
   // Function to set a random image URL
   const setRandomImage = () => {
@@ -196,6 +251,19 @@ const Page = () => {
                   required={true}
                 />
               </div>
+              <div className="flex flex-row items-end justify-end p-0 m-0">
+                <span
+                  className={`text-sm ${
+                    usernameStatusmsg === "available"
+                      ? "text-green-600"
+                      : usernameStatusmsg === "taken"
+                      ? "text-red-600"
+                      : ""
+                  }`}
+                >
+                  {usernameStatusmsg}
+                </span>
+              </div>
               <div className="flex items-center px-3 py-2 mb-4 border-2 rounded-2xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -212,15 +280,26 @@ const Page = () => {
                   />
                 </svg>
                 <input
-                  className="pl-2 border-none outline-none"
+                  className="pl-2 border-none outline-none w-full"
                   type="text"
                   name=""
                   id=""
                   placeholder="Username"
                   value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  onChange={(e) => {
+                    handleUsername(e);
+                  }}
                   required={true}
                 />
+
+                <div className="flex flex-row items-end justify-end p-0 m-0">
+                  {usernameStatus === "available" && (
+                    <GrStatusGood className="text-green-400" />
+                  )}
+                  {usernameStatus === "taken" && (
+                    <LiaTimesSolid className="text-red-600" />
+                  )}
+                </div>
               </div>
               <div className="flex items-center px-3 py-2 mb-4 border-2 rounded-2xl">
                 <svg
