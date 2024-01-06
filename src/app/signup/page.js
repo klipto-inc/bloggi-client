@@ -372,7 +372,7 @@ const handleUsernameResponse = (message) => {
                   idleText="Create an account"
                   errorText={error}
                   successText={success}
-                  loadingText="Please wait..."
+                  loadingText="Loading..."
                   color="red"
                   width="100%"
                   size="medium"

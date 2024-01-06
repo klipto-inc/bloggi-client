@@ -18,6 +18,7 @@ import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import BottomNav from "@/Components/BottomNavigation/BottomNav";
 import PostChat from "@/Components/Modal/PostChat";
+import ShareModal from "@/Components/Modal/ShareModal";
 
 // Component definition
 const BlogPost = () => {
@@ -33,6 +34,7 @@ const BlogPost = () => {
   const [allComments, setAllComments] = useState(null);
   const [allclap, setallClap] = useState(null);
   const [blognav, setBlogNav] = useState(false);
+  const [shareModal, setShareModal] = useState(false);
 
   const user = useSelector((state) => state.userauth.user);
 
@@ -45,6 +47,20 @@ const BlogPost = () => {
   // Function to toggle blog navigation
   const PostNav = () => {
     setBlogNav(!blognav);
+  };
+
+
+
+  const openModal = () => {
+  setBlogNav(false);
+    setShareModal(true);
+    document.body.style.overflow = "hidden"; // Hide the scrollbar
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setShareModal(false);
+    document.body.style.overflow = "auto"; // Show the scrollbar
   };
 
   // Function to post a comment
@@ -553,7 +569,7 @@ const BlogPost = () => {
 
                   {blognav && (
                     <div className="absolute right-0 flex flex-col bg-white md:shadow-lg rounded-base w-fit">
-                      {blog.author._id === user._id ? (
+                      {user && blog.author._id === user._id ? (
                         <>
                           <Link href={`/edit/${blog._id}`}>
                             <p className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100">
@@ -598,7 +614,10 @@ const BlogPost = () => {
                         Report
                       </p>
                       <hr />
-                      <p className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100">
+                      <p
+                        className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100"
+                        onClick={openModal}
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -617,7 +636,7 @@ const BlogPost = () => {
                       </p>
                       <hr />
 
-                      {blog.author._id === user._id ? (
+                      {user && blog.author._id === user._id ? (
                         <>
                           <p
                             className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100"
@@ -653,6 +672,7 @@ const BlogPost = () => {
       )}
       <Footer />
       <BottomNav />
+      {shareModal && <ShareModal closeModal={closeModal} />}
     </div>
   );
 };

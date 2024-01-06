@@ -244,7 +244,7 @@ const Page = () => {
                   idleText="UpdatePassword"
                   errorText={error}
                   successText={success}
-                  loadingText="Please wait..."
+                  loadingText="Loading..."
                   color="red"
                   width="100%"
                   size="medium"

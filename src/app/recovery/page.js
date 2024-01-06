@@ -181,7 +181,7 @@ const Page = () => {
                   idleText="Continue"
                   errorText={error}
                   successText={success}
-                  loadingText="Please wait..."
+                  loadingText="Loading..."
                   color="red"
                   width="100%"
                   size="medium"

@@ -1,9 +1,8 @@
 "use client";
 
-
 import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { AiOutlineUserAdd } from "react-icons/ai";
@@ -31,6 +30,8 @@ const UserProfile = () => {
   const [userpost, setUserPost] = useState(null);
   const [follower, setFollower] = useState(null);
   const [following, setFollowing] = useState(null);
+
+  const router = useRouter();
 
   const socket = io.connect(`${process.env.NEXT_PUBLIC_SERVER_URL}`);
 
@@ -82,8 +83,6 @@ const UserProfile = () => {
     };
   }, [socket]);
 
-  
-
   const PostNav = () => {
     setBlogNav(!blognav);
   };
@@ -100,6 +99,10 @@ const UserProfile = () => {
 
     socket.emit("userconnect", connectData);
   };
+
+  const handleOfflineItemClick = () => {
+    router.push("/signin");
+  }
 
   return (
     <>
@@ -216,6 +219,16 @@ const UserProfile = () => {
                         )}
                       </div>
                     )}
+
+                    {!user && (
+                      <button
+                        className="px-6 py-2 text-gray-100 bg-[#FF3131] flex w-fit items-center justify-center rounded"
+                        onClick={() => handleOfflineItemClick()}
+                      >
+                        Follow
+                        <AiOutlineUserAdd className="ml-2 bx bx-user-plus" />
+                      </button>
+                    )}
                   </div>
 
                   <div className="flex flex-row items-center gap-10 text-gray-800">
@@ -259,7 +272,7 @@ const UserProfile = () => {
 
         <div>
           <section className="lg:px-10">
-            <div className="container px-2 py-10 pt-2 mx-auto md:px-2">
+            <div className="container py-10 pt-2 mx-auto md:px-2">
               {userpost === null ? (
                 <div className="grid grid-cols-1 gap-8 mt-8 animate-pulse xl:mt-12 xl:gap-8 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-3">
                   <div className="w-full ">
@@ -285,19 +298,19 @@ const UserProfile = () => {
                 </div>
               ) : (
                 <div>
-                  <div className="grid grid-cols-1 gap-4 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-3 lg:grid-cols-3">
+                  <div className="grid  grid-cols-1 gap-4 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-3 lg:grid-cols-3">
                     {userpost.map((post) => (
                       <div
                         className="relative flex w-full py-6 transition-all duration-150 md:w-full lg:w-full"
                         key={post.id}
                       >
-                        <div className="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
+                        <div className="flex flex-col w-full bg-blue-500 items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
                           <Link href={`/${post._id}`}>
                             <div className="md:flex-shrink-0 ">
                               <Image
                                 src={post.blogimage}
                                 alt="Blog Cover"
-                                className="object-cover w-full rounded-lg rounded-b-none md:h-56"
+                                className="object-cover w-full rounded-lg rounded-b-none h-[450px] md:h-[320px]"
                                 width={200}
                                 height={200}
                               />

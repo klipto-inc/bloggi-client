@@ -226,7 +226,7 @@ const Page = () => {
                   buttonState={state}
                   errorText={error}
                   successText={success}
-                  loadingText="Please wait..."
+                  loadingText="Loading..."
                   idleText="Log in"
                   color="red"
                   width="100%"
