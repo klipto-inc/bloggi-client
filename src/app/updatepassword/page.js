@@ -1,21 +1,27 @@
 "use client";
 
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
-import React from "react";
-import { useState } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { IoEyeOffOutline } from "react-icons/io5";
+import { IoEyeOutline } from "react-icons/io5";
+import { TbLock } from "react-icons/tb";
 import axios from "axios";
+import logo from "../../app/Resources/Images/bloggi-light.png";
+import logo2 from "../../app/Resources/Images/bloggilogo.png";
 import ReactiveButton from "reactive-button";
-import { useRouter } from "next/navigation";
-import Navbar from "@/Components/Navbar/Navbar";
-import Footer from "@/Components/Footer/Footer";
+import { useRouter, useSearchParams } from "next/navigation";
 import CheckAuth2 from "@/Components/Auth/CheckAuth2";
-import BottomNav from "@/Components/BottomNavigation/BottomNav";
 
-function UpdatePassword() {
+const Page = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [randomImageUrl, setRandomImageUrl] = useState("");
   const [state, setState] = useState("idle");
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
+  const [error, setError] = useState();
+  const [success, setSuccess] = useState();
+
   const router = useRouter();
 
   const urlParams = useSearchParams();
@@ -36,113 +42,216 @@ function UpdatePassword() {
       );
 
       if (response.status === 200) {
+        setSuccess(response.data.message);
         setState("success");
-        router.push('/signin')
+        router.push("/signin");
       } else {
         setState("error");
       }
-    } catch (error) {}
+    } catch (error) {
+      setError(error.response.data.error);
+      setState("error");
+    }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const imageUrl = [
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F14.svg?alt=media&token=3daabae4-53ff-48b3-87f0-7b559ed1f16b",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F15.svg?alt=media&token=95a635a5-e4cf-4667-af9d-4d19bdcba38b",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F17.svg?alt=media&token=390894f8-c0dd-4491-b4c4-59bb6e527dc1",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F2.svg?alt=media&token=094a6390-0c7a-40f0-8aa1-626f0770d4f5",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F5.svg?alt=media&token=8cf79a11-52cc-491a-ad04-12c9ff0a4a0e",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F8.svg?alt=media&token=98bdb5d8-4323-4ade-b6c3-f0e8b7f855ed",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F9.svg?alt=media&token=53d210d3-cb70-4429-8fdc-ca1f81725196",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F1.svg?alt=media&token=554ea4cd-dfe3-4cd0-a2f9-70391cda8f08",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F10.svg?alt=media&token=63074575-f16a-4b2f-88da-74551bb62586",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F12.svg?alt=media&token=282defe9-f7dd-4011-b3ae-f2ddd3aae267",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F13.svg?alt=media&token=05724b79-226e-42c8-8fe2-2fe7bb95478e",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F14.svg?alt=media&token=3daabae4-53ff-48b3-87f0-7b559ed1f16b",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F15.svg?alt=media&token=95a635a5-e4cf-4667-af9d-4d19bdcba38b",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F17.svg?alt=media&token=390894f8-c0dd-4491-b4c4-59bb6e527dc1",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F2.svg?alt=media&token=094a6390-0c7a-40f0-8aa1-626f0770d4f5",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F8.svg?alt=media&token=98bdb5d8-4323-4ade-b6c3-f0e8b7f855ed",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F9.svg?alt=media&token=53d210d3-cb70-4429-8fdc-ca1f81725196",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F11.svg?alt=media&token=d67f43c8-518b-4584-8c4b-7c2256fb1908",
+    "https://firebasestorage.googleapis.com/v0/b/bloggi-51747.appspot.com/o/BloggiAuthBg%2F12.svg?alt=media&token=282defe9-f7dd-4011-b3ae-f2ddd3aae267",
+  ];
+
+  // Function to set a random image URL
+  const setRandomImage = () => {
+    const randomIndex = Math.floor(Math.random() * imageUrl.length);
+    setRandomImageUrl(imageUrl[randomIndex]);
+  };
+
+  // Set a random image URL on initial render
+  useEffect(() => {
+    setRandomImage();
+  }, []);
+
   return (
-    <div className="h-screen bg-white md:h-auto">
-      <Navbar />
-      <section className="px-2 py-16 md:bg-gray-200">
-        <div className="flex flex-col items-center justify-center py-8 mx-auto md:h-fit lg:py-0">
-          <div className="w-full bg-white rounded-lg md:shadow-lg md:mt-0 sm:max-w-md xl:p-0 dark:border-gray-700">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <div className="a flex flex-row items-center gap-4 mb-[30px]">
-                <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
-                  Update Password
-                </h1>
+    <div>
+      {randomImageUrl && (
+        <div
+          className="h-screen md:flex backdrop-blur-md bg-black"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(${randomImageUrl})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat", // Fix: Use backgroundRepeat instead of background
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="flex items-center justify-center py-10 bg-white md:w-1/2 h-full">
+            <form
+              className="bg-white px-4 w-full md:px-10 md:w-full lg:px-0 lg:w-[55%]"
+              onSubmit={PasswordUpdate}
+            >
+              <div className="w-full items-center block flex justify-center mb-8 md:gap-12 md:hidden">
+                <Link
+                  className="flex flex-row items-center justify-center gap-2 text-teal-600"
+                  href="/"
+                >
+                  <Image
+                    className="h-[55px] w-auto object-cover "
+                    src={logo2}
+                    height={200}
+                    width={200}
+                    alt=""
+                  />
+                </Link>
               </div>
-              <form
-                className="space-y-4 md:space-y-6"
-                action="#"
-                onSubmit={PasswordUpdate}
-              >
-                <div>
-                  <label
-                    for="password"
-                    className="block mb-2 text-base font-medium text-gray-900"
-                  >
-                    New Password
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="••••••••"
-                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
-                    required={true}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
 
-                <div>
-                  <label
-                    for="password"
-                    className="block mb-2 text-base font-medium text-gray-900"
-                  >
-                    Confirm Password
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="••••••••"
-                    className="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm pe-12"
-                    required={true}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                  />
-                </div>
+              <div className="header flex flex-col items-center justify-center md:justify-start md:items-start">
+                <h1 className="mb-1 text-2xl font-bold text-gray-800">
+                  Great Job!👏
+                </h1>
+                <p className="text-sm font-normal text-gray-600 mb-7">
+                  You are one step ahead to having your account back.
+                </p>
+              </div>
 
-                <div className="flex items-start">
-                  <div className="flex items-center h-5">
+              <div className="flex flex-col gap-5">
+                <div className="flex items-center px-3 py-2 border-2 rounded-2xl">
+                  <TbLock className="text-[22px] text-gray-400" />
+                  {showPassword ? (
                     <input
-                      id="terms"
-                      aria-describedby="terms"
-                      type="checkbox"
-                      className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                      className="pl-2 border-none outline-none w-full"
+                      type="text"
+                      name=""
+                      id=""
+                      placeholder="New Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       required={true}
                     />
-                  </div>
-                  <div className="ml-3 text-base">
-                    <label
-                      for="terms"
-                      className="text-base font-light text-gray-500 dark:text-gray-800"
-                    >
-                      By checking this box, you agree to our{" "}
-                      <a
-                        className="mr-1 font-medium underline text-primary-600 dark:text-primary-500"
-                        href="#"
-                      >
-                        Terms
-                      </a>
-                      and
-                      <a
-                        className="ml-1 font-medium underline text-primary-600 dark:text-primary-500"
-                        href="#"
-                      >
-                        Privacy policy
-                      </a>
-                    </label>
-                  </div>
+                  ) : (
+                    <input
+                      className="pl-2 border-none outline-none w-full"
+                      type="password"
+                      name=""
+                      id=""
+                      placeholder="New Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required={true}
+                    />
+                  )}
+
+                  {showPassword ? (
+                    <IoEyeOutline
+                      className="w-5 h-5 text-gray-400 cursor-pointer"
+                      onClick={togglePasswordVisibility}
+                    />
+                  ) : (
+                    <IoEyeOffOutline
+                      className="w-5 h-5 text-gray-400 cursor-pointer"
+                      onClick={togglePasswordVisibility}
+                    />
+                  )}
                 </div>
 
+                <div className="flex items-center px-3 py-2 border-2 rounded-2xl ">
+                  <TbLock className="text-[22px] text-gray-400" />
+                  {showPassword ? (
+                    <input
+                      className="pl-2 border-none outline-none w-full"
+                      type="text"
+                      name=""
+                      id=""
+                      placeholder="Confirm Password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      required={true}
+                    />
+                  ) : (
+                    <input
+                      className="pl-2 border-none outline-none w-full"
+                      type="password"
+                      name=""
+                      id=""
+                      placeholder="Confirm Password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      required={true}
+                    />
+                  )}
+
+                  {showPassword ? (
+                    <IoEyeOutline
+                      className="w-5 h-5 text-gray-400 cursor-pointer"
+                      onClick={togglePasswordVisibility}
+                    />
+                  ) : (
+                    <IoEyeOffOutline
+                      className="w-5 h-5 text-gray-400 cursor-pointer"
+                      onClick={togglePasswordVisibility}
+                    />
+                  )}
+                </div>
+              </div>
+
+              <div className="flex items-start w-full my-6 ml-2">
+                <div className="flex items-center h-5">
+                  <input
+                    id="terms"
+                    aria-describedby="terms"
+                    type="checkbox"
+                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                    required={true}
+                  />
+                </div>
+                <div className="ml-3 text-sm w-full">
+                  <label
+                    for="terms"
+                    className="text-sm font-light text-gray-500 flex flex-row"
+                  >
+                    By checking this box, you agree to our{" "}
+                    <a
+                      className="font-normal text-sm underline text-primary-600 dark:text-primary-500 ml-1"
+                      href="#"
+                    >
+                      Terms
+                    </a>{" "}
+                  </label>
+                </div>
+              </div>
+
+              <div className="my-6">
                 <ReactiveButton
                   buttonState={state}
-                  idleText="Update Password"
-                  loadingText="Loading"
-                  successText="Updated successfully"
-                  errorText="Unable to update"
+                  idleText="UpdatePassword"
+                  errorText={error}
+                  successText={success}
+                  loadingText="Please wait..."
                   color="red"
                   width="100%"
                   size="medium"
                   type="submit"
                   style={{
                     display: "block",
-                    borderRadius: "0.5rem",
+                    borderRadius: "14px",
                     backgroundColor: "#FF3131",
                     padding: "0.75rem 1.25rem",
                     fontSize: "0.875rem",
@@ -151,17 +260,42 @@ function UpdatePassword() {
                     background: "#FF3131",
                   }}
                 />
-              </form>
+              </div>
+            </form>
+          </div>
+          <div className="relative items-center justify-around hidden w-1/2 overflow-hidden md:flex">
+            <div className="w-[70%]">
+              <div className=" md:flex md:items-center md:gap-12">
+                <Link
+                  className="flex flex-row items-center gap-2 text-teal-600"
+                  href="/"
+                >
+                  <Image
+                    className="h-[55px] w-auto object-cover "
+                    src={logo}
+                    height={200}
+                    width={200}
+                    alt=""
+                  />
+                </Link>
+              </div>
+              <p className="mt-1 text-white text-sm">
+                Africa{`'`}s #1 Blogging platform for Creators. Join our
+                community and unleash your creativity! share your experiences,
+                and explore a world of limitless possibilities.
+              </p>
             </div>
+            <div className="absolute border-4 border-t-8 rounded-full -bottom-32 -left-40 w-80 h-80 border-opacity-90" />
+            <div className="absolute border-4 border-t-8 rounded-full -bottom-40 -left-20 w-80 h-80 border-opacity-50" />
+            <div className="absolute border-4 border-t-8 rounded-full -top-40 -right-0 w-80 h-80 border-opacity-50" />
+            <div className="absolute border-4 border-t-8 rounded-full -top-20 -right-20 w-80 h-80 border-opacity-50" />
           </div>
         </div>
-      </section>
-      <Footer />
-      <BottomNav />
+      )}
     </div>
   );
-}
+};
 
-const newAuthcheck = CheckAuth2(UpdatePassword);
+const newAuthcheck = CheckAuth2(Page);
 
 export default newAuthcheck;
