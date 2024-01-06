@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 
 const SharePostModal = ({ closeModal, linkToShare }) => {
 
-  const linkInputRef = useRef(null)
+  const linkInputRef = useRef(linkToShare);
   const [copystate, setCopyState] = useState("copy");
 
   const copyLinkToClipboard = () => {
@@ -13,8 +13,9 @@ const SharePostModal = ({ closeModal, linkToShare }) => {
     navigator.clipboard.writeText(linkToCopy).then(() => {
       // You can add a notification or any other logic when link is copied.
       console.log("Link copied to clipboard:", linkToCopy);
+      setCopyState("copied");
       setTimeout(() => {
-        setCopyState("copied");
+        setCopyState("copy");
       }, 2000);
     });
   };
@@ -57,14 +58,14 @@ const SharePostModal = ({ closeModal, linkToShare }) => {
   return (
     <div className="fixed top-0 left-0 z-50 h-full w-full bg-gray-800 bg-opacity-[80%] flex items-center justify-center overflow-auto">
       {/*MODAL ITEM*/}
-      <div className="bg-gray-100 w-full mx-4 p-4 rounded-xl md:w-1/2 lg:w-1/3">
+      <div className="w-full p-4 mx-4 bg-gray-100 rounded-xl md:w-1/2 lg:w-1/3">
         {/*MODAL HEADER*/}
-        <div className="flex justify-between items center border-b border-gray-200 py-3">
+        <div className="flex justify-between py-3 border-b border-gray-200 items center">
           <div className="flex items-center justify-center">
             <p className="text-xl font-bold text-gray-800">Share Modal</p>
           </div>
           <div
-            className="bg-gray-300 hover:bg-gray-500 cursor-pointer hover:text-gray-300 font-sans text-gray-500 w-8 h-8 flex items-center justify-center rounded-full"
+            className="flex items-center justify-center w-8 h-8 font-sans text-gray-500 bg-gray-300 rounded-full cursor-pointer hover:bg-gray-500 hover:text-gray-300"
             onClick={closeModal}
           >
             x
@@ -144,7 +145,7 @@ const SharePostModal = ({ closeModal, linkToShare }) => {
           <p className="text-sm">Or copy link</p>
           {/*BOX LINK*/}
           <div
-            className="border-2 border-gray-200 flex justify-between items-center mt-4 py-2"
+            className="flex items-center justify-between py-2 mt-4 border-2 border-gray-200"
             onClick={copyLinkToClipboard}
           >
             <svg
@@ -152,13 +153,13 @@ const SharePostModal = ({ closeModal, linkToShare }) => {
               width={24}
               height={24}
               viewBox="0 0 24 24"
-              className="fill-gray-500 ml-2"
+              className="ml-2 fill-gray-500"
             >
               <path d="M8.465 11.293c1.133-1.133 3.109-1.133 4.242 0l.707.707 1.414-1.414-.707-.707c-.943-.944-2.199-1.465-3.535-1.465s-2.592.521-3.535 1.465L4.929 12a5.008 5.008 0 0 0 0 7.071 4.983 4.983 0 0 0 3.535 1.462A4.982 4.982 0 0 0 12 19.071l.707-.707-1.414-1.414-.707.707a3.007 3.007 0 0 1-4.243 0 3.005 3.005 0 0 1 0-4.243l2.122-2.121z" />
               <path d="m12 4.929-.707.707 1.414 1.414.707-.707a3.007 3.007 0 0 1 4.243 0 3.005 3.005 0 0 1 0 4.243l-2.122 2.121c-1.133 1.133-3.109 1.133-4.242 0L10.586 12l-1.414 1.414.707.707c.943.944 2.199 1.465 3.535 1.465s2.592-.521 3.535-1.465L19.071 12a5.008 5.008 0 0 0 0-7.071 5.006 5.006 0 0 0-7.071 0z" />
             </svg>
             <input
-              className="w-full outline-none bg-transparent"
+              className="w-full bg-transparent outline-none"
               type={linkToShare}
               placeholder="link"
               defaultValue={linkToShare}
