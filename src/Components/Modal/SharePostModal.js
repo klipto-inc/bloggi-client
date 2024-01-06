@@ -1,6 +1,59 @@
-import React from "react";
+'use client'
 
-const ShareModal = ({ closeModal }) => {
+import React, { useRef, useState } from "react";
+
+const SharePostModal = ({ closeModal, linkToShare }) => {
+
+  const linkInputRef = useRef(null)
+  const [copystate, setCopyState] = useState("copy");
+
+  const copyLinkToClipboard = () => {
+    const linkToCopy = linkInputRef.current.value;
+
+    navigator.clipboard.writeText(linkToCopy).then(() => {
+      // You can add a notification or any other logic when link is copied.
+      console.log("Link copied to clipboard:", linkToCopy);
+      setTimeout(() => {
+        setCopyState("copied");
+      }, 2000);
+    });
+  };
+
+  const shareOnFacebook = () => {
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+      linkToShare
+    )}`;
+    window.open(facebookShareUrl, "_blank");
+  };
+
+  const shareOnTwitter = () => {
+    const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+      linkToShare
+    )}`;
+    window.open(twitterShareUrl, "_blank");
+  };
+
+  const shareOnInstagram = () => {
+    const instagramShareUrl = `https://www.instagram.com/share?url=${encodeURIComponent(
+      linkToShare
+    )}`;
+    window.open(instagramShareUrl, "_blank");
+  };
+
+  const shareOnWhatsApp = () => {
+    const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
+      linkToShare
+    )}`;
+    window.open(whatsappShareUrl, "_blank");
+  };
+
+  const shareOnTelegram = () => {
+    const telegramShareUrl = `https://t.me/share/url?url=${encodeURIComponent(
+      linkToShare
+    )}`;
+    window.open(telegramShareUrl, "_blank");
+  };
+
   return (
     <div className="fixed top-0 left-0 z-50 h-full w-full bg-gray-800 bg-opacity-[80%] flex items-center justify-center overflow-auto">
       {/*MODAL ITEM*/}
@@ -28,6 +81,7 @@ const ShareModal = ({ closeModal }) => {
                 width={24}
                 height={24}
                 viewBox="0 0 24 24"
+                onClick={shareOnFacebook}
               >
                 <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z" />
               </svg>
@@ -39,6 +93,7 @@ const ShareModal = ({ closeModal }) => {
                 width={24}
                 height={24}
                 viewBox="0 0 24 24"
+                onClick={shareOnTwitter}
               >
                 <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z" />
               </svg>
@@ -50,6 +105,7 @@ const ShareModal = ({ closeModal }) => {
                 width={24}
                 height={24}
                 viewBox="0 0 24 24"
+                onClick={shareOnInstagram}
               >
                 <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z" />
                 <circle cx="16.806" cy="7.207" r="1.078" />
@@ -63,6 +119,7 @@ const ShareModal = ({ closeModal }) => {
                 width={24}
                 height={24}
                 viewBox="0 0 24 24"
+                onClick={shareOnWhatsApp}
               >
                 <path
                   fillRule="evenodd"
@@ -78,6 +135,7 @@ const ShareModal = ({ closeModal }) => {
                 width={24}
                 height={24}
                 viewBox="0 0 24 24"
+                onClick={shareOnTelegram}
               >
                 <path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z" />
               </svg>
@@ -85,7 +143,10 @@ const ShareModal = ({ closeModal }) => {
           </div>
           <p className="text-sm">Or copy link</p>
           {/*BOX LINK*/}
-          <div className="border-2 border-gray-200 flex justify-between items-center mt-4 py-2">
+          <div
+            className="border-2 border-gray-200 flex justify-between items-center mt-4 py-2"
+            onClick={copyLinkToClipboard}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width={24}
@@ -98,12 +159,15 @@ const ShareModal = ({ closeModal }) => {
             </svg>
             <input
               className="w-full outline-none bg-transparent"
-              type="text"
+              type={linkToShare}
               placeholder="link"
-              defaultValue="https://boxicons.com/?query=link"
+              defaultValue={linkToShare}
             />
-            <button className="bg-indigo-500 text-white rounded text-sm py-2 px-5 mr-2 hover:bg-indigo-600">
-              Copy
+            <button
+              className="bg-[#FF3131] text-white rounded text-sm py-2 px-5 mr-2"
+              onClick={copyLinkToClipboard}
+            >
+              {copystate}
             </button>
           </div>
         </div>
@@ -112,4 +176,4 @@ const ShareModal = ({ closeModal }) => {
   );
 };
 
-export default ShareModal;
+export default SharePostModal;

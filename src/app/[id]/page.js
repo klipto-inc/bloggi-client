@@ -18,7 +18,8 @@ import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import BottomNav from "@/Components/BottomNavigation/BottomNav";
 import PostChat from "@/Components/Modal/PostChat";
-import ShareModal from "@/Components/Modal/ShareModal";
+import ShareModal from "@/Components/Modal/SharePostModal";
+import Head from "next/head";
 
 // Component definition
 const BlogPost = () => {
@@ -35,6 +36,7 @@ const BlogPost = () => {
   const [allclap, setallClap] = useState(null);
   const [blognav, setBlogNav] = useState(false);
   const [shareModal, setShareModal] = useState(false);
+  const [linkToShare, setLinkToShare] = useState(false);
 
   const user = useSelector((state) => state.userauth.user);
 
@@ -50,9 +52,10 @@ const BlogPost = () => {
   };
 
 
-
-  const openModal = () => {
-  setBlogNav(false);
+  const openModal = (id) => {
+    console.log("this is ", id);
+    setLinkToShare(`${process.env.NEXT_PUBLIC_CLIENT_URL}/${id}`);
+    setBlogNav(false);
     setShareModal(true);
     document.body.style.overflow = "hidden"; // Hide the scrollbar
   };
@@ -616,7 +619,10 @@ const BlogPost = () => {
                       <hr />
                       <p
                         className="flex flex-row items-center gap-2 px-6 py-2 text-lg rounded hover:cursor-pointer hover:bg-gray-100"
-                        onClick={openModal}
+                        onClick={() => {
+                          let id = blog._id;
+                          openModal(id);
+                        }}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -667,12 +673,24 @@ const BlogPost = () => {
                 </div>
               </div>
             </main>
+            <Head>
+              <meta property="og:title" content={blog.title} />
+              <meta property="og:description" content={blog.shortdescription} />
+              <meta property="og:image" content={blog.blogimage} />
+              <meta
+                property="og:url"
+                content={`${process.env.NEXT_PUBLIC_CLIENT_URL}/${params.id}`}
+              />
+              {/* Add more Open Graph tags as needed */}
+            </Head>
           </div>
         </div>
       )}
       <Footer />
       <BottomNav />
-      {shareModal && <ShareModal closeModal={closeModal} />}
+      {shareModal && (
+        <ShareModal closeModal={closeModal} linkToShare={linkToShare} />
+      )}
     </div>
   );
 };
