@@ -6,10 +6,10 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 const page = () => {
   return (
     <div>
-      <div className="section1 my-10 px-2 md:px-5 lg:px-14  flex flex-col gap-5">
+      <div className="flex flex-col gap-5 px-2 my-10 bg-gray-200 section1 md:px-5 lg:px-14">
         <div className="flex flex-col">
           <div className="p-4 bg-white border border-white shadow rounded-2xl">
-            <div className="flex flex-col items-center gap-6 justify-center md:flex-row md:items-start md:justify-start">
+            <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:items-start md:justify-start">
               <div className="w-auto">
                 <div className="relative w-32 h-32 mb-3 sm:mb-0">
                   <img
@@ -32,11 +32,11 @@ const page = () => {
                   </a>
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center md:flex md:items-start md:justify-start w-auto">
+              <div className="flex flex-col items-center justify-center w-auto md:flex md:items-start md:justify-start">
                 <div className="flex items-center justify-between sm:mt-2">
                   <div className="flex items-center">
                     <div className="flex flex-col items-center md:items-start">
-                      <div className="flex items-center gap-1 w-full text-lg font-bold leading-none text-gray-900">
+                      <div className="flex items-center w-full gap-1 text-lg font-bold leading-none text-gray-900">
                         Temple Ajuzie
                         <RiVerifiedBadgeFill className="text-blue-400" />
                       </div>
@@ -52,12 +52,12 @@ const page = () => {
                 <div className="flex-auto my-1 text-gray-700 items-center text-center md:text-start md:items-start w-[90%] md:lg:w-[80%] lg:w-[60%]">
                   <span className="mr-3 font-semibold ">Bio</span>
                   <span className="mr-3 border-r border-gray-600 max-h-0 " />
-                  <span className="text-sm text-gray-900 items-center md:items-start">
+                  <span className="items-center text-sm text-gray-900 md:items-start">
                     I build scalable modern application using Noded JS | Express
                     JS | Mongo DB | Next JS.
                   </span>
                 </div>
-                <div className="flex flex-col justify-center md:flex-row md:justify-start gap-4 md:gap-10 pt-2 text-sm text-gray-900">
+                <div className="flex flex-col justify-center gap-4 pt-2 text-sm text-gray-900 md:flex-row md:justify-start md:gap-10">
                   <div className="flex flex-row items-center gap-4">
                     <div className="flex flex-row items-center cursor-pointer">
                       <svg
@@ -83,9 +83,9 @@ const page = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-row gap-2 items-center">
+                  <div className="flex flex-row items-center gap-2">
                     <div className="inline-flex items-center flex-1 cursor-pointer">
-                      <div className="p-2 rounded-full bg-gray-200 mr-2">
+                      <div className="p-2 mr-2 bg-gray-200 rounded-full">
                         <IoMdShareAlt className="w-5 h-5 " />
                       </div>
                       <p className="">Share</p>
