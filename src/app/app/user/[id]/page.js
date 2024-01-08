@@ -6,7 +6,7 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 const page = () => {
   return (
     <div>
-      <div className="flex flex-col gap-5 px-2 py-10 bg-gray-200 md:bg-white section1 md:px-5 lg:px-14">
+      <div className="flex flex-col gap-5 px-2 py-2 bg-gray-200 md:bg-white section1 md:px-5 lg:px-14">
         <div className="flex flex-col">
           <div className="px-4 py-8 bg-white border shadow pyborder-white md:p-4 rounded-2xl">
             <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:items-start md:justify-start">
