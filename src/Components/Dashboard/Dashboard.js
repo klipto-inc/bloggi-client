@@ -14,7 +14,7 @@ const Dasboard = () => {
 
   return (
     <div>
-      <header className="h-[50vh] relative overflow-hidden">
+      <header className="relative overflow-hidden h-fit">
         <div className="absolute w-full h-[45vh]">
           <div className="absolute bg-black opacity-[70%] w-full h-[45vh]"></div>
           <Image
