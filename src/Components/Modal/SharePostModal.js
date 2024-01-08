@@ -61,7 +61,13 @@ const SharePostModal = ({ closeModal, linkToShare }) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 z-50 h-full w-full bg-gray-800 bg-opacity-[80%] flex items-center justify-center overflow-auto">
+    <div
+      className="fixed top-0 left-0 z-20 flex items-center justify-center w-screen h-screen bg-slate-300/20 backdrop-blur-sm"
+      aria-labelledby="header-2a content-2a"
+      aria-modal="true"
+      tabindex="-1"
+      role="dialog"
+    >
       {/*MODAL ITEM*/}
       <div className="w-full p-4 mx-4 bg-gray-100 rounded-xl md:w-1/2 lg:w-1/3">
         {/*MODAL HEADER*/}
