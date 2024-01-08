@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../app/Resources/Images/bloggilight.png";
+import logo from "../../app/Resources/Images/Bloggilight.png";
 import { BiCategory } from "react-icons/bi";
 import { FaPodcast } from "react-icons/fa6";
 import { AiOutlineRead } from "react-icons/ai";
