@@ -6,7 +6,7 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 const page = () => {
   return (
     <div>
-      <div className="flex flex-col gap-5 px-2 my-10 bg-gray-200 section1 md:px-5 lg:px-14">
+      <div className="flex flex-col gap-5 px-2 py-10 bg-gray-200 md:bg-white section1 md:px-5 lg:px-14">
         <div className="flex flex-col">
           <div className="p-4 bg-white border border-white shadow rounded-2xl">
             <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:items-start md:justify-start">
@@ -15,21 +15,9 @@ const page = () => {
                   <img
                     src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
                     alt="aji"
-                    className="object-cover w-32 h-32 rounded-full"
+                    className="object-cover w-32 h-32 border-4 border-white rounded-full"
                   />
-                  <a
-                    href="#"
-                    className="absolute p-1 -ml-3 text-xs font-medium tracking-wider text-white transition duration-300 ease-in bg-green-400 rounded-full right-1 bottom-2 hover:bg-green-500"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="w-4 h-4"
-                    >
-                      <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
-                    </svg>
-                  </a>
+                  <span className="absolute w-4 h-4 bg-green-400 border-2 border-white rounded-full bottom-2 right-4 dark:border-gray-800"></span>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center w-auto md:flex md:items-start md:justify-start">

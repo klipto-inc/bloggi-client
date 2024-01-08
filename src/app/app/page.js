@@ -9,7 +9,7 @@ import PostHome2 from "@/Components/Post/PostHome2";
 
 const page = () => {
   return (
-    <div className="bg-gray-200 md:bg-transparent">
+    <div className="bg-gray-200 md:bg-white md:bg-transparent">
       <Dashboard />
 
       <div className="grid justify-between grid-cols-4 gap-5 px-0 py-4 mx-0 mt-4 lg:gap-5 md:grid-cols-6 lg:grid-cols-12 md:px-5">
