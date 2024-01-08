@@ -59,7 +59,7 @@ function Dashboard3() {
 
   return (
     <>
-      <div className="flex flex-row items-center w-[100%] gap-4 py-5 px-2 md:p-5 lg:p-5 md:px-0 lg:px-0 bg-white mb-3">
+      <div className="flex flex-row items-center w-[100%] gap-4 py-5 md:p-5 lg:p-5 md:px-0 lg:px-0 bg-white mb-3">
         <ScrollCarousel
           autoplay
           autoplaySpeed={1}
