@@ -14,8 +14,8 @@ const Dasboard = () => {
 
   return (
     <div>
-      <header className="h-[50vh] overflow-hidden">
-        <div className="absolute">
+      <header className="h-[50vh] relative overflow-hidden">
+        <div className="absolute w-full h-[45vh]">
           <div className="absolute bg-black opacity-[70%] w-full h-[45vh]"></div>
           <Image
             src="/headerbg.png"
@@ -27,7 +27,7 @@ const Dasboard = () => {
         </div>
         <div className="relative z-10 px-4 py-8 mx-auto text-white sm:px-6">
           <div className="flex items-center sm:justify-between sm:gap-4">
-            <div className="relative hidden sm:block">
+            {/* <div className="relative hidden sm:block">
               <label className="sr-only" for="search">
                 {" "}
                 Search{" "}
@@ -60,7 +60,7 @@ const Dasboard = () => {
                   />
                 </svg>
               </button>
-            </div>
+            </div> */}
 
             <div className="flex items-center justify-between flex-1 gap-8 sm:justify-end">
               <div className="flex gap-4">
@@ -185,7 +185,8 @@ const Dasboard = () => {
               </p>
             ) : (
               <p className="mt-1.5 text-sm text-gray-100 lg:w-[47%]">
-                Bloggi offers the most flexible platform for both writers. Now you can post across multiple platform with just one button🚀
+                Bloggi offers the most flexible platform for both writers. Now
+                you can post across multiple platform with just one button🚀
               </p>
             )}
           </div>

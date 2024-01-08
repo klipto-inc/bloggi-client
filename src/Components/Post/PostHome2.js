@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Dashboard3 from "../Dashboard/Dashboard3";
 
 const PostHome2 = () => {
   return (
@@ -134,11 +135,11 @@ const PostHome2 = () => {
               </div>
             </div>
           </div>
-          <div className=" mx-3  text-sm font-medium text-gray-400 ">
-            <Image
+          <div className="mx-3 text-sm font-medium text-gray-400 ">
+            <img
               alt="img"
-              height={200}
-              width={200}
+              height={500}
+              width={500}
               className="w-full rounded h-[45vh] md:h-0"
               src="https://picsum.photos/536/354"
             />
@@ -355,6 +356,8 @@ const PostHome2 = () => {
         </div>
       </article>
 
+      <Dashboard3 />
+
       <article className="">
         <div className="bg-white rounded-lg shadow">
           <div className="flex flex-row px-2 py-3 mx-3">
@@ -485,18 +488,18 @@ const PostHome2 = () => {
               </div>
             </div>
           </div>
-          <div className=" mx-3  text-sm font-medium text-gray-400 ">
-            <Image
+          <div className="mx-0 text-sm font-medium text-gray-400 md:mx-3 ">
+            <img
               alt="img"
-              height={200}
-              width={200}
+              height={500}
+              width={500}
               className="w-full rounded h-[45vh] md:h-0"
               src="https://picsum.photos/536/354"
             />
           </div>
 
           <div className="relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400">
-            <Image
+            <img
               alt="img"
               height={200}
               width={200}
