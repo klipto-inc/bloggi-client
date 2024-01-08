@@ -12,7 +12,7 @@ const page = () => {
     <div className="bg-gray-300 md:bg-transparent">
       <Dashboard />
 
-      <div className="grid justify-between grid-cols-4 gap-5 px-0 lg:gap-5 md:grid-cols-6 lg:grid-cols-12 md:px-5">
+      <div className="grid justify-between grid-cols-4 gap-5 px-0 mx-0 lg:gap-5 md:grid-cols-6 lg:grid-cols-12 md:px-5">
         <div className="col-span-4 lg:col-span-7">
           <PostHome2 />
         </div>

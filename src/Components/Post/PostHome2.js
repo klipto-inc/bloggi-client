@@ -135,12 +135,12 @@ const PostHome2 = () => {
               </div>
             </div>
           </div>
-          <div className="mx-3 text-sm font-medium text-gray-400 ">
-            <img
+          <div className="mx-0 text-sm font-medium text-gray-400 md:mx-3 ">
+            <Image
               alt="img"
               height={500}
               width={500}
-              className="w-full rounded h-[45vh] md:h-0"
+              className="w-full rounded h-[48vh]"
               src="https://picsum.photos/536/354"
             />
           </div>
@@ -489,17 +489,17 @@ const PostHome2 = () => {
             </div>
           </div>
           <div className="mx-0 text-sm font-medium text-gray-400 md:mx-3 ">
-            <img
+            <Image
               alt="img"
               height={500}
               width={500}
-              className="w-full rounded h-[45vh] md:h-0"
+              className="w-full rounded h-[48vh]"
               src="https://picsum.photos/536/354"
             />
           </div>
 
           <div className="relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400">
-            <img
+            <Image
               alt="img"
               height={200}
               width={200}
