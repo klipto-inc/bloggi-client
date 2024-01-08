@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../app//Resources/Images/bloggilight.png";
+import logo from "../../app/Resources/Images/bloggilight.png";
 import { BiCategory } from "react-icons/bi";
 import { FaPodcast } from "react-icons/fa6";
 import { AiOutlineRead } from "react-icons/ai";
@@ -9,7 +9,7 @@ import { MdOutlineExplore, MdOutlineNotificationsActive } from "react-icons/md";
 
 const SideBarComponent = () => {
   return (
-    <div className="h-screen hidden lg:block">
+    <div className="hidden h-screen lg:block">
       <div className="flex flex-col items-center w-56 h-full text-gray-400 bg-black">
         <div className="flex flex-col items-start justify-center w-full h-16 px-3 py-3 border-b border-gray-900">
           <Link className="flex flex-row items-start" href="/app">
@@ -43,7 +43,7 @@ const SideBarComponent = () => {
                 className="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300"
                 href="#"
               >
-                <MdOutlineNotificationsActive className="w-6 h-6 stroke-current text-gray-300" />
+                <MdOutlineNotificationsActive className="w-6 h-6 text-gray-300 stroke-current" />
                 <span className="ml-2 text-sm font-medium">Notifications</span>
                 <span class="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full ml-3">
                   New
