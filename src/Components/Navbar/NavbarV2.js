@@ -8,9 +8,9 @@ import { IoNotificationsOutline } from "react-icons/io5";
 
 const NavbarV2 = () => {
   return (
-    <div className="w-full top-0 md:sticky z-20">
-      <nav className="relative flex items-center justify-between w-full h-16 px-3 md:px-8 bg-white shadow">
-        <div className=" hidden md:block lg:hidden h-16 md:px-3 py-3">
+    <div className="top-0 z-20 w-full md:sticky">
+      <nav className="relative flex items-center justify-between w-full h-16 px-3 bg-white shadow md:px-8">
+        <div className="hidden h-16 py-3 md:block lg:hidden md:px-3">
           <Link className="flex flex-row items-start" href="/">
             <Image
               className="h-[40px] w-auto object-cover "
@@ -21,7 +21,7 @@ const NavbarV2 = () => {
             />
           </Link>
         </div>
-        <div className="  static flex md:hidden h-16 items-center  md:px-3 py-3">
+        <div className="static flex items-center h-16 py-3 md:hidden md:px-3">
           <IoNotificationsOutline className="text-[24px]" />
         </div>
 
@@ -52,7 +52,7 @@ const NavbarV2 = () => {
 
         <div className="flex flex-row items-center flex-initial">
           <div className="mr-4">
-            <div className="sm:flex sm:gap-4 hidden md:block">
+            <div className="hidden sm:flex sm:gap-4 md:block">
               <Link
                 className="rounded-lg bg-[#FF3131] px-5 py-2 text-sm font-medium text-white shadow"
                 href="/create"

@@ -11,9 +11,9 @@ import BottomNav from "@/Components/BottomNavigation/BottomNav";
 function Layout({ children }) {
   return (
     <div>
-      <main className="flex flex-row w-screen h-screen overflow-hidden">
+      <main className="flex flex-row ">
         <SideBarComponent />
-        <div className="w-[100%]  flex flex-col overflow-y-auto">
+        <div className="w-[100%]  flex flex-col">
           <NavbarV2 />
           {children}
         </div>

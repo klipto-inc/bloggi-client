@@ -9,7 +9,7 @@ import { MdOutlineExplore, MdOutlineNotificationsActive } from "react-icons/md";
 
 const SideBarComponent = () => {
   return (
-    <div className="hidden h-screen lg:block">
+    <div className="sticky top-0 z-10 hidden h-screen lg:block">
       <div className="flex flex-col items-center w-56 h-full text-gray-400 bg-black">
         <div className="flex flex-col items-start justify-center w-full h-16 px-3 py-3 border-b border-gray-900">
           <Link className="flex flex-row items-start" href="/app">
