@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { LiaTimesSolid } from "react-icons/lia";
 import { GrStatusGood } from "react-icons/gr";
+import CheckAuth from "@/Components/Auth/CheckAuth";
 
 const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -119,36 +120,35 @@ const Page = () => {
     }
   };
 
-const handleUsernameResponse = (message) => {
-  // Reset username status
-  setUsernameStatus(null);
+  const handleUsernameResponse = (message) => {
+    // Reset username status
+    setUsernameStatus(null);
 
-  switch (message) {
-    case "available":
-      setUsernameStatus("available");
-      setUsernameStatusmsg("available");
-      setTimeout(() => {
+    switch (message) {
+      case "available":
+        setUsernameStatus("available");
+        setUsernameStatusmsg("available");
+        setTimeout(() => {
+          setUsernameStatusmsg(null);
+        }, 1000);
+        break;
+      case "taken":
+        setUsernameStatus("taken");
+        setUsernameStatusmsg("taken");
+        setTimeout(() => {
+          setUsernameStatusmsg(null);
+        }, 1000);
+        break;
+      case "":
+        setUsernameStatus(null);
         setUsernameStatusmsg(null);
-      }, 1000);
-      break;
-    case "taken":
-      setUsernameStatus("taken");
-      setUsernameStatusmsg("taken");
-      setTimeout(() => {
-        setUsernameStatusmsg(null);
-      }, 1000);
-      break;
-    case "":
-      setUsernameStatus(null);
-      setUsernameStatusmsg(null);
-      break;
-    default:
-      // Non-201 status or unexpected response, handle accordingly
-      setUsernameStatus(null);
-      break;
-  }
-};
-
+        break;
+      default:
+        // Non-201 status or unexpected response, handle accordingly
+        setUsernameStatus(null);
+        break;
+    }
+  };
 
   // Function to set a random image URL
   const setRandomImage = () => {
@@ -190,9 +190,9 @@ const handleUsernameResponse = (message) => {
                 </Link>
               </div>
               <p className="mt-1 text-sm text-white">
-                #1 Blogging platform for Creators. Join our
-                community and unleash your creativity! share your experiences,
-                and explore a world of limitless possibilities.
+                #1 Blogging platform for Creators. Join our community and
+                unleash your creativity! share your experiences, and explore a
+                world of limitless possibilities.
               </p>
             </div>
             <div className="absolute border-4 border-t-8 rounded-full -bottom-32 -left-40 w-80 h-80 border-opacity-90" />
@@ -409,4 +409,6 @@ const handleUsernameResponse = (message) => {
   );
 };
 
-export default Page;
+const CheckAuthSignin = CheckAuth(Page);
+
+export default CheckAuthSignin;
