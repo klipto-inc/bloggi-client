@@ -61,7 +61,7 @@ function Dashboard3() {
     <>
       <div className="flex flex-row items-center w-[100%] gap-4 py-5 md:p-5 lg:p-5 md:px-0 lg:px-0 bg-white mb-3">
         <ScrollCarousel
-          autoplay
+          // autoplay
           autoplaySpeed={1}
           speed={1}
           onReady={() => console.log("I am ready")}
