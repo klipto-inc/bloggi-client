@@ -4,7 +4,7 @@ import Image from "next/image";
 import logo from "../app/Resources/Images/bloggilogo.png";
 import { useEffect, useState } from "react";
 import PropagateLoader from "react-spinners/PropagateLoader";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // Change from "next/navigation"
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -13,14 +13,14 @@ export default function Home() {
   useEffect(() => {
     const splashTimeout = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Adjust the duration as needed
-    
+      router.push("/app"); // Use router.push instead of redirect
+    }, 5000); // Adjust the duration as needed
+
     // Clean up the timeout on component unmount
     return () => {
-      router.push("/app");
       clearTimeout(splashTimeout);
     };
-  }, []);
+  }, [router]);
 
   return (
     <div
