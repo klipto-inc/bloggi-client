@@ -189,23 +189,23 @@ const handleUsernameResponse = (message) => {
                   />
                 </Link>
               </div>
-              <p className="mt-1 text-white text-sm">
-                Africa{`'`}s #1 Blogging platform for Creators. Join our
+              <p className="mt-1 text-sm text-white">
+                #1 Blogging platform for Creators. Join our
                 community and unleash your creativity! share your experiences,
                 and explore a world of limitless possibilities.
               </p>
             </div>
             <div className="absolute border-4 border-t-8 rounded-full -bottom-32 -left-40 w-80 h-80 border-opacity-90" />
-            <div className="absolute border-4 border-t-8 rounded-full -bottom-40 -left-20 w-80 h-80 border-opacity-50" />
-            <div className="absolute border-4 border-t-8 rounded-full -top-40 -right-0 w-80 h-80 border-opacity-50" />
-            <div className="absolute border-4 border-t-8 rounded-full -top-20 -right-20 w-80 h-80 border-opacity-50" />
+            <div className="absolute border-4 border-t-8 border-opacity-50 rounded-full -bottom-40 -left-20 w-80 h-80" />
+            <div className="absolute border-4 border-t-8 border-opacity-50 rounded-full -top-40 -right-0 w-80 h-80" />
+            <div className="absolute border-4 border-t-8 border-opacity-50 rounded-full -top-20 -right-20 w-80 h-80" />
           </div>
           <div className="flex items-center justify-center py-10 bg-white md:w-1/2 h-[100svh] overflow-y-hidden">
             <form
               className="bg-white px-4 w-full md:px-10 md:w-full lg:px-0 lg:w-[55%]"
               onSubmit={createAccount}
             >
-              <div className="w-full items-center block flex justify-center mb-8 md:gap-12 md:hidden">
+              <div className="flex items-center justify-center block w-full mb-8 md:gap-12 md:hidden">
                 <Link
                   className="flex flex-row items-center justify-center gap-2 text-teal-600"
                   href="/"
@@ -219,7 +219,7 @@ const handleUsernameResponse = (message) => {
                   />
                 </Link>
               </div>
-              <div className="header flex flex-col items-center justify-center md:justify-start md:items-start">
+              <div className="flex flex-col items-center justify-center header md:justify-start md:items-start">
                 <h1 className="mb-1 text-2xl font-bold text-gray-800">
                   Create Account!😇
                 </h1>
@@ -280,7 +280,7 @@ const handleUsernameResponse = (message) => {
                   />
                 </svg>
                 <input
-                  className="pl-2 border-none outline-none w-full"
+                  className="w-full pl-2 border-none outline-none"
                   type="text"
                   name=""
                   id=""
@@ -331,7 +331,7 @@ const handleUsernameResponse = (message) => {
                 <TbLock className="text-[22px] text-gray-400" />
                 {showPassword ? (
                   <input
-                    className="pl-2 border-none outline-none w-full"
+                    className="w-full pl-2 border-none outline-none"
                     type="text"
                     name=""
                     id=""
@@ -342,7 +342,7 @@ const handleUsernameResponse = (message) => {
                   />
                 ) : (
                   <input
-                    className="pl-2 border-none outline-none w-full"
+                    className="w-full pl-2 border-none outline-none"
                     type="password"
                     name=""
                     id=""
@@ -392,11 +392,11 @@ const handleUsernameResponse = (message) => {
               {/* <span className="ml-2 text-sm cursor-pointer hover:text-blue-500">
               Forgot Password?
             </span> */}
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400 mt-3">
+              <p className="mt-3 text-sm font-light text-gray-500 dark:text-gray-400">
                 Already have an account?{" "}
                 <Link
                   href="/signin"
-                  className="font-medium ml-1 text-base text-primary-600 hover:underline text-black"
+                  className="ml-1 text-base font-medium text-black text-primary-600 hover:underline"
                 >
                   Sign In
                 </Link>
