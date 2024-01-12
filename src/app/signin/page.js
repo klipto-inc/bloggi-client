@@ -14,6 +14,7 @@ import logo from "../../app/Resources/Images/Bloggilight.png";
 import logo2 from "../../app/Resources/Images/bloggilogo.png";
 import Cookies from "js-cookie";
 import CheckAuth from "@/Components/Auth/CheckAuth";
+import { Spinner } from "@material-tailwind/react";
 
 const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -226,7 +227,12 @@ const Page = () => {
                   buttonState={state}
                   errorText={error}
                   successText={success}
-                  loadingText="Loading..."
+                  loadingText={
+                    <span className="flex flex-row gap-3 items-center justify-center">
+                      <Spinner className="text-white w-4 h-4 border-gray-200" />{" "}
+                      Loading...
+                    </span>
+                  }
                   idleText="Log in"
                   color="red"
                   width="100%"
@@ -284,9 +290,9 @@ const Page = () => {
                 </Link>
               </div>
               <p className="mt-1 text-sm text-white">
-                #1 Blogging platform for Creators. Join our
-                community and unleash your creativity! share your experiences,
-                and explore a world of limitless possibilities.
+                #1 Blogging platform for Creators. Join our community and
+                unleash your creativity! share your experiences, and explore a
+                world of limitless possibilities.
               </p>
             </div>
             <div className="absolute border-4 border-t-8 rounded-full -bottom-32 -left-40 w-80 h-80 border-opacity-90" />

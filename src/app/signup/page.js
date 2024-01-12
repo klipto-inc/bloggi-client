@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { LiaTimesSolid } from "react-icons/lia";
 import { GrStatusGood } from "react-icons/gr";
 import CheckAuth from "@/Components/Auth/CheckAuth";
+import { Spinner } from "@material-tailwind/react";
 
 const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -372,7 +373,12 @@ const Page = () => {
                   idleText="Create an account"
                   errorText={error}
                   successText={success}
-                  loadingText="Loading..."
+                  loadingText={
+                    <span className="flex flex-row gap-3 items-center justify-center">
+                      <Spinner className="text-white w-4 h-4 border-gray-200" />{" "}
+                      Loading...
+                    </span>
+                  }
                   color="red"
                   width="100%"
                   size="medium"

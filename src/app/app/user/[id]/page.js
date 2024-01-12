@@ -11,13 +11,14 @@ const page = () => {
           <div className="px-4 py-8 bg-white border shadow pyborder-white md:p-4 rounded-2xl">
             <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:items-start md:justify-start">
               <div className="w-auto">
-                <div className="relative h-[160px] w-[160px] mb-3 sm:mb-0">
+                <div className="relative h-[160px] w-[160px] mb-3 sm:mb-0 w-[160px] md:h-[140px] md:w-[140px]">
                   <img
                     src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
                     alt="aji"
-                    className="object-cover h-[160px] w-[160px] border-4 border-gray-200 rounded-full"
+                    className="object-cover h-[160px] w-[160px] md:h-[140px] md:w-[140px] border-4 border-gray-50 rounded-full"
                   />
-                  <span className="absolute w-4 h-4 bg-green-400 border-2 border-white rounded-full bottom-2 right-6 dark:border-gray-800"></span>
+
+                  <span className="absolute w-4 h-4 bg-green-400 border-2 border-white rounded-full bottom-2 right-6 md:right-4 dark:border-gray-800"></span>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center w-auto md:flex md:items-start md:justify-start">
