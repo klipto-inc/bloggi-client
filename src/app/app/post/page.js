@@ -1,11 +1,5 @@
 "use client";
 import { useState } from "react";
-import Dante, {
-  defaultPlugins,
-  ImageBlockConfig,
-  EmbedBlockConfig,
-  CodeBlockConfig,
-} from "dante3/package/esm";
 
 const Page = () => {
   const initialContent = "<p>Share your story</p>";
