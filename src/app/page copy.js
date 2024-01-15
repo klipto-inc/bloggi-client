@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
 import Navbar from "@/Components/Navbar/Navbar";
-import Dashboard from "@/Components/Dashboard/Dashboard";
+import Dashboard from "@/Components/Home/Dashboard";
 import PostHome from "@/Components/Post/PostHome";
 import Footer from "@/Components/Footer/Footer";
 import BottomNav from "@/Components/BottomNavigation/BottomNav";

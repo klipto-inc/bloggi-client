@@ -8,9 +8,9 @@ function Dashboard3() {
   const authors = [
     {
       id: 1,
-      name: "Emeka Nobis",
+      name: "Peter Raymond",
       image:
-        "https://media.licdn.com/dms/image/D4D03AQHJRhLL4k9Nrg/profile-displayphoto-shrink_800_800/0/1664982785615?e=2147483647&v=beta&t=w3QPUqTpo0rvIjOplSBnbkJGt9Hp3QIIOXC90faQIlQ",
+        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
       category: "Coach",
     },
     {

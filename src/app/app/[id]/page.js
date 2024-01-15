@@ -51,6 +51,7 @@ const BlogPost = () => {
     setBlogNav(!blognav);
   };
 
+
   const openModal = (id) => {
     console.log("this is ", id);
     setLinkToShare(`${process.env.NEXT_PUBLIC_CLIENT_URL}/${id}`);
@@ -112,7 +113,7 @@ const BlogPost = () => {
     const FetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/blog/${params.id}`
+          `${process.env.NEXT_PUBLIC_SERVER_URL}blog/${params.id}`
         );
 
         if (response.status === 200) {
@@ -195,11 +196,11 @@ const BlogPost = () => {
 
   return (
     <div className="relative h-screen bg-white md:h-auto">
-      <Navbar />
+
       {blog === null ? (
         <div className="flex flex-col md:mx-10 my-10 lg:flex-row lg:mx-[12%] gap-10 justify-start items-start">
           <div class="w-full  md:w-[80%] lg:w-[70%]">
-            <main className="p-5 md:p-5 lg:p-10 animate-pulse">
+            <main className="p-5  md:p-5 lg:p-10 animate-pulse">
               <div className="relative w-full mx-auto mb-4 md:mb-0">
                 <div className="flex flex-col gap-4 px-4 mb-3 lg:px-0">
                   <div className="rounded-mdfont-semibold bg-gray-200 leading-tight animate-pulse h-5 w-[70%]"></div>
@@ -221,7 +222,7 @@ const BlogPost = () => {
         </div>
       ) : (
         <div className="flex flex-col md:mx-2 md:mb-0 my-10 md:flex-col lg:flex-row lg:px-[2%] md:gap-2 lg:gap-10">
-          <div className="items-center mb-40 justify-center w-full md:w-[80%] lg:w-[80%] lg:px-8">
+          <div className="items-center mb-40 justify-center w-full md:w-[80%] lg:w-[80%] lg:px-10">
             <main className="relative flex flex-col gap-4 p-0 md:p-5 lg:p-10">
               <div className="flex flex-col w-full gap-4 mx-auto ab md:mb-0">
                 <div className="flex flex-col items-start justify-between p-5 md:items-center md:flex-row">
@@ -570,7 +571,7 @@ const BlogPost = () => {
                   </div>
 
                   {blognav && (
-                    <div className="absolute right-0 flex flex-col bg-white  rounded-base w-fit">
+                    <div className="absolute right-0 flex flex-col bg-white md:shadow-lg rounded-base w-fit">
                       {user && blog.author._id === user._id ? (
                         <>
                           <Link href={`/edit/${blog._id}`}>
@@ -683,16 +684,13 @@ const BlogPost = () => {
                 content={`${process.env.NEXT_PUBLIC_CLIENT_URL}/${params.id}`}
               />
               <meta property="og:type" content="article" />
-              <meta
-                property="og:site_name"
-                content="Bloggi - Africas #1 creative platform"
-              />
+              <meta property="og:site_name" content="Bloggi - Africas #1 creative platform" />
               {/* Add more Open Graph tags as needed */}
             </Head>
           </div>
         </div>
       )}
-      <Footer />
+      {/* <Footer /> */}
       <BottomNav />
       {shareModal && (
         <ShareModal closeModal={closeModal} linkToShare={linkToShare} />

@@ -108,7 +108,7 @@ const Page = () => {
       setUsernameStatus("loading");
 
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/checkusername`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}auth/checkusername`,
         {
           username: newUsername,
         }

@@ -27,7 +27,7 @@ function Settings() {
   const DeleteAccount = () => {
     Swal.fire({
       title: "Are you sure?",
-      text: "your account will be deleted after this!",
+      text: "your account will be deactivated after this!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#000000",
@@ -291,7 +291,7 @@ function Settings() {
                 onClick={DeleteAccount}
               >
                 <span className="text-sm font-medium leading-none text-gray-800 cursor-pointer">
-                  Delete Account
+                  Deactivate Account
                 </span>
               </span>
             </div>

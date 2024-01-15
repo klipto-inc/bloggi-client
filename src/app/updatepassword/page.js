@@ -34,7 +34,7 @@ const Page = () => {
     try {
       setState("loading");
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/account/updatepassword`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}auth/account/updatepassword`,
         {
           reset,
           password,

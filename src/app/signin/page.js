@@ -40,7 +40,7 @@ const Page = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/signin`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}auth/signin`,
         {
           email,
           password,

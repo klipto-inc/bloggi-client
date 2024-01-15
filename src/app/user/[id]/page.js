@@ -52,7 +52,7 @@ const UserProfile = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/user/${params.id}`
+          `${process.env.NEXT_PUBLIC_SERVER_URL}auth/user/${params.id}`
         );
 
         if (response.status === 200) {
@@ -63,7 +63,7 @@ const UserProfile = () => {
           setUserData(userdetails);
           setUserPost(postdata);
 
-          console.log("this is", postdata);
+          console.log("this is", postdata, userdata);
         }
       } catch (error) {}
     };
