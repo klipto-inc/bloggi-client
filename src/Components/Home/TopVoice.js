@@ -73,17 +73,17 @@ function TopVoice() {
           authors.map((author) => (
             <>
               <div
-                className="carousel-item p-2 bg-gray-900 border-gray-900 shadow-md w-fit h-fit hover:shadow-lg rounded-2xl"
+                className="p-2 bg-gray-900 border-gray-900 rounded-lg shadow-md carousel-item w-fit h-fit hover:shadow-lg"
                 key={author.id}
               >
-                <div className="flex w-fit items-center h-fit">
-                  <div className="flex items-center h-24 w-24 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-28 xl:w-28">
+                <div className="flex items-center w-fit h-fit">
+                  <div className="flex items-center w-24 h-24 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-28 xl:w-28">
                     <Image
                       src={author.image}
                       alt="unsplash images"
                       height={500}
                       width={500}
-                      className="object-cover h-24 w-24 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-28 xl:w-28 rounded-2xl"
+                      className="object-cover w-24 h-24 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-28 xl:w-28 rounded-2xl"
                     />
                   </div>
                   <div className="flex-auto ml-1 md:ml-3 lg:ml-4 justify-between min-w-[10vw] mr-2">
