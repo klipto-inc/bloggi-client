@@ -23,6 +23,7 @@
     "alloyeditor": "^2.14.10",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
+    "better-react-carousel": "^1.1.2",
     "bufferutil": "^4.0.8",
     "cookies-next": "^4.0.0",
     "eslint": "8.44.0",

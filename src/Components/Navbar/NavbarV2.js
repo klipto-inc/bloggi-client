@@ -10,6 +10,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { PiCrownBold } from "react-icons/pi";
 import { useDispatch, useSelector } from "react-redux";
+import { IoIosArrowDown } from "react-icons/io";
 
 const NavbarV2 = () => {
   const [nav, setNav] = useState(false);
@@ -180,7 +181,7 @@ const NavbarV2 = () => {
           <div className="mr-4">
             <div className="hidden sm:flex sm:gap-4 md:block">
               <Link
-                className="rounded-lg bg-[#FF3131] px-5 py-2 text-sm font-medium text-white shadow"
+                className="rounded-sm bg-[#FF3131] px-7 py-2.5 text-base font-medium text-white shadow"
                 href="/create"
               >
                 Create
@@ -196,31 +197,10 @@ const NavbarV2 = () => {
                     className="relative inline-flex items-center px-2 border rounded-full hover:shadow-lg"
                   >
                     <div className="pl-1">
-                      <svg
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        role="presentation"
-                        focusable="false"
-                        style={{
-                          display: "block",
-                          fill: "none",
-                          height: 16,
-                          width: 16,
-                          stroke: "currentcolor",
-                          strokeWidth: 3,
-                          overflow: "visible",
-                        }}
-                      >
-                        <g fill="none" fillRule="nonzero">
-                          <path d="m2 16h28" />
-                          <path d="m2 24h28" />
-                          <path d="m2 8h28" />
-                        </g>
-                      </svg>
+                     <IoIosArrowDown />
                     </div>
 
-                    <div className="flex-grow-0 flex-shrink-0 block w-12 h-10 pl-5">
+                    <div className="flex-grow-0 flex-shrink-0 block w-12 h-10 pl-3">
                       <svg
                         viewBox="0 0 32 32"
                         xmlns="http://www.w3.org/2000/svg"

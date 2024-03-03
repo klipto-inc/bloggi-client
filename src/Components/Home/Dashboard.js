@@ -174,7 +174,7 @@ const Dasboard = () => {
               </h1>
             ) : (
               <h1 className="text-xl font-bold text-gray-300 sm:text-3xl">
-                Write, Read, and Earn!!
+                Good evening Temple!
               </h1>
             )}
 
@@ -184,7 +184,7 @@ const Dasboard = () => {
                 Keep it up! 🚀
               </p>
             ) : (
-              <p className="mt-1.5 text-sm text-gray-100 lg:w-[47%]">
+              <p className="mt-1.5 text-base text-gray-100 lg:w-[47%]">
                 Bloggi offers the most flexible platform for both writers. Now
                 you can post across multiple platform with just one button🚀
               </p>

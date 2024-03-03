@@ -29,7 +29,7 @@ export default function Home() {
       }`}
     >
       {/* Customize the content of your splash screen */}
-      <div className="flex flex-col items-center justify-center mb-32">
+      <div className="flex flex-col items-center justify-center">
         <div className="mb-3 ">
           <Image
             src={logo}

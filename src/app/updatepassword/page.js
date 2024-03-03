@@ -291,10 +291,10 @@ const Page = () => {
                 world of limitless possibilities.
               </p>
             </div>
-            <div className="absolute border-4 border-t-8 rounded-full -bottom-32 -left-40 w-80 h-80 border-opacity-90" />
-            <div className="absolute border-4 border-t-8 border-opacity-50 rounded-full -bottom-40 -left-20 w-80 h-80" />
-            <div className="absolute border-4 border-t-8 border-opacity-50 rounded-full -top-40 -right-0 w-80 h-80" />
-            <div className="absolute border-4 border-t-8 border-opacity-50 rounded-full -top-20 -right-20 w-80 h-80" />
+            <div className="absolute border-4 border-t-8 rounded-full -bottom-32 -left-40 w-80 h-80 border-opacity-90 opacity-10" />
+            <div className="absolute border-4 border-t-8 border-opacity-50 rounded-full -bottom-40 -left-20 w-80 h-80 opacity-10" />
+            <div className="absolute border-4 border-t-8 border-opacity-50 rounded-full -top-40 -right-0 w-80 h-80 opacity-10" />
+            <div className="absolute border-4 border-t-8 border-opacity-50 rounded-full -top-20 -right-20 w-80 h-80 opacity-10" />
           </div>
         </div>
       )}

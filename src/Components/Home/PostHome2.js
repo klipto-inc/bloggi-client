@@ -122,7 +122,7 @@ const PostHome2 = () => {
 
   return (
     <div className="flex flex-col gap-5 ">
-      <Dashboard3 />
+      
       {blogs &&
         blogs.map((post) => (
           <>
