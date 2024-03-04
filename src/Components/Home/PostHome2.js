@@ -322,7 +322,7 @@ const PostHome2 = () => {
                     height={200}
                     width={200}
                     className='object-cover w-10 h-10 mr-2 rounded-full shadow cursor-pointer'
-                    src={user.userdp}
+                    src={post.author.userdp}
                   />
                   <span className='absolute inset-y-0 right-0 flex items-center pr-6'>
                     <button
