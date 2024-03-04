@@ -324,7 +324,7 @@ const PostHome2 = () => {
                     </Tooltip>
                   </div>
                 </div>
-                <div className='mx-0 text-sm font-medium text-gray-400 md:mx-3 pb-5'>
+                <div className='mx-0 text-sm font-medium text-gray-400 md:mx-3 pb-4'>
                   <Image
                     alt='img'
                     height={500}
