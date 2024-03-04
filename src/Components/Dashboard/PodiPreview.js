@@ -99,7 +99,7 @@ function Dashboard3() {
         </span>
       </div>
 
-      <div className='flex flex-row items-center gap-4 px-2 md:px-5 w-full lg:w-[78vw] overflow-x-auto md:overflow-x-hidden  hover:overflow-x-auto overflow-y-hidden'>
+      <div className='flex flex-row items-center gap-4 px-2 md:px-5 w-full lg:w-[78vw] overflow-x-hidden  hover:overflow-x-auto overflow-y-hidden'>
         {Podi &&
           Podi.map((pod) => (
             <div className='mb-4' key={pod.id}>

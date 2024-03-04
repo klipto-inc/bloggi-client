@@ -15,6 +15,8 @@ import { FaHandsClapping } from 'react-icons/fa6';
 import GenShare from '../Modal/GenShare';
 import { IoMdSend } from 'react-icons/io';
 import { MdVerified } from 'react-icons/md';
+import { AiOutlineComment } from "react-icons/ai";
+import { BsEyeFill } from "react-icons/bs";
 
 const PostHome2 = () => {
   const [blogs, setBlogs] = useState(null);
@@ -122,7 +124,7 @@ const PostHome2 = () => {
   };
 
   return (
-    <div className='flex flex-col gap-5 '>
+    <div className='flex flex-col gap-5 md:mx-5'>
       {blogs &&
         blogs.map((post) => (
           <>
@@ -150,12 +152,12 @@ const PostHome2 = () => {
                   </div>
                 </div>
                 <div className='border-b border-gray-100' />
-                <div className='text-lg font-medium flex flex-row items-center gap-1 px-2 my-2'>
+                <div className='text-lg font-medium flex flex-row items-center gap-1 px-2 my-2 mx-3'>
                   {post.title}
                 </div>
 
                 <div className='mb-3 px-2 flex flex-col gap-2'>
-                  <div className=' mx-3 text-[24px] overflow-hidden line-clamp-4 text-gray-700'>
+                  <div className=' mx-3 text-[16px] overflow-hidden line-clamp-4 text-gray-700'>
                     {parse(post.longdescription)}
                   </div>
                   <span
@@ -167,21 +169,23 @@ const PostHome2 = () => {
                 </div>
                 <div className='flex justify-start mb-4 border-t border-gray-100'>
                   <div className='flex w-full pt-2 pl-5 mt-1'>
-                    <span className='w-10 h-10 p-2 mr-2 text-center text-gray-400 transition duration-300 ease-out bg-white border rounded-full cursor-pointer hover:text-red-500'>
+                    <span className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-400 transition duration-300 ease-out bg-white border border-gray-300 rounded-full cursor-pointer hover:text-red-500'>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
-                        width='16px'
+                        width='22'
+                        height='22'
                         viewBox='0 0 24 24'
                         stroke='currentColor'>
                         <path
                           strokeLinecap='round'
                           strokeLinejoin='round'
-                          strokeWidth={2}
+                          strokeWidth='2'
                           d='M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z'
                         />
                       </svg>
                     </span>
+
                     <Image
                       alt='img'
                       height={200}
@@ -212,30 +216,45 @@ const PostHome2 = () => {
                     /> */}
                   </div>
                   <div className='flex justify-end w-full pt-2 pr-5 mt-1 relative'>
+
                     <span
-                      className='w-10 h-10 p-2 mr-2 text-center text-blue-400 transition duration-300 ease-out bg-blue-100 rounded-full cursor-pointer hover:bg-blue-50'
+                      className='inline-block w-10 h-10 p-2 mr-2 text-center text-blue-400 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'
                       onClick={() => {
                         let id = post._id;
-
                         openShareModal(id);
                       }}>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
-                        width='14px'
+                        width='20'
+                        height='20'
                         viewBox='0 0 24 24'
-                        stroke='currentColor'>
+                        stroke='currentColor'
+                        className='mt-0.5'
+                        >
                         <path
                           strokeLinecap='round'
                           strokeLinejoin='round'
-                          strokeWidth={2}
+                          strokeWidth='2'
                           d='M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z'
                         />
                       </svg>
                     </span>
-                    <span className='w-10 h-10 p-2  text-center text-gray-100 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-gray-50'>
+                    <span
+                      className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-800 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'
+                     >
+                      <AiOutlineComment className='w-6 h-6' />
+                     
+                    </span>
+                    <span
+                      className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-800 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'
+                     >
+                      <BsEyeFill className='w-6 h-6' />
+                     
+                    </span>
+                    <span className='inline-block w-10 h-10 p-2 text-center text-gray-100 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-gray-50'>
                       <svg
-                        className='w-8 h-8 text-red-500'
+                        className='w-6 h-6 text-red-500'
                         fill='none'
                         viewBox='0 0 24 24'
                         stroke='currentColor'
@@ -247,6 +266,7 @@ const PostHome2 = () => {
                         />
                       </svg>
                     </span>
+
                     {clickedPost === post._id && openShare && (
                       <GenShare linkToShare={linkToShare} />
                     )}
@@ -291,7 +311,7 @@ const PostHome2 = () => {
                     </Tooltip>
                   </div>
                 </div>
-                <div className='mx-0 text-sm font-medium text-gray-400 md:mx-3 '>
+                <div className='mx-0 text-sm font-medium text-gray-400 md:mx-3 pb-5'>
                   <Image
                     alt='img'
                     height={500}
@@ -301,14 +321,16 @@ const PostHome2 = () => {
                   />
                 </div>
 
-                <div className='relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400'>
-                  {user && <Image
-                    alt='img'
-                    height={200}
-                    width={200}
-                    className='object-cover w-10 h-10 mr-2 rounded-full shadow cursor-pointer'
-                    src={user.userdp}
-                  /> }
+                {/* <div className='relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400'>
+                  {user && (
+                    <Image
+                      alt='img'
+                      height={200}
+                      width={200}
+                      className='object-cover w-10 h-10 mr-2 rounded-full shadow cursor-pointer'
+                      src={user.userdp}
+                    />
+                  )}
                   <span className='absolute inset-y-0 right-0 flex items-center pr-6'>
                     <button
                       type='submit'
@@ -323,7 +345,7 @@ const PostHome2 = () => {
                     placeholder='Post a comment...'
                     autoComplete='off'
                   />
-                </div>
+                </div> */}
               </div>
             </article>
           </>
