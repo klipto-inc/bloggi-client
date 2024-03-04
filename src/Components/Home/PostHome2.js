@@ -125,7 +125,7 @@ const PostHome2 = () => {
   };
 
   return (
-    <div className='flex flex-col gap-5 md:mx-5'>
+    <div className='flex flex-col gap-2 md:mx-5'>
       {blogs &&
         blogs.map((post) => (
           <>
@@ -164,7 +164,7 @@ const PostHome2 = () => {
                   </div>
                 </div>
                 <div className='border-b border-gray-100' />
-                <div className='text-lg font-medium flex flex-row items-center gap-1 px-2 my-2 mx-3'>
+                <div className='text-lg font-medium flex flex-row items-center gap-1 px-2 my-2'>
                   {post.title}
                 </div>
 
@@ -173,7 +173,7 @@ const PostHome2 = () => {
                     {parse(post.longdescription)}
                   </div>
                   <span
-                    className='text-blue-500 cursor-pointer text-[15px] pl-3'
+                    className='text-blue-500 cursor-pointer text-[15px] pl-1'
                     onClick={() => handleReadMore(post._id)}>
                     {' '}
                     read more
