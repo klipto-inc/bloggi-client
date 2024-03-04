@@ -27,7 +27,7 @@ const page = () => {
           <PostHome2 />
         </div>
 
-        <div className=' hidden md:flex flex-col w-[37%]  px-2'>
+        <div className=' hidden md:flex flex-col w-[37%]'>
           <TopInterest />
           {/* <SuggestedUsers /> */}
         </div>

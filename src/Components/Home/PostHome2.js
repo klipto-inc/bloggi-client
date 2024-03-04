@@ -169,7 +169,7 @@ const PostHome2 = () => {
                 </div>
 
                 <div className='mb-3 px-2 flex flex-col gap-2'>
-                  <div className=' mx-3 text-[14px] md:text-[16px] overflow-hidden line-clamp-4 text-gray-700'>
+                  <div className=' md:mx-3 text-[14px] md:text-[16px] overflow-hidden line-clamp-4 text-gray-700'>
                     {parse(post.longdescription)}
                   </div>
                   <span
@@ -282,7 +282,7 @@ const PostHome2 = () => {
                       title={`${post.comment.length} Saved`}
                       placement='top'
                       arrow>
-                      <div className='flex items-center text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
+                      <div className='flex items-center text-sm md:text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
                         Saved:
                         <div className='ml-1 text-gray-400 text-ms'>
                           {' '}
@@ -293,7 +293,7 @@ const PostHome2 = () => {
                   </div>
                   <div className='flex justify-end w-full mx-1 mt-3 text-xs'>
                     <Tooltip title={`${post.view} Comment`} placement='top' arrow>
-                      <div className='flex items-center text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
+                      <div className='flex items-center text-sm md:text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
                       Comment:{' '}
                         <div className='ml-1 text-gray-400 text-ms'>
                           {' '}
@@ -302,7 +302,7 @@ const PostHome2 = () => {
                       </div>
                     </Tooltip>
                     <Tooltip title={`${post.view} Views`} placement='top' arrow>
-                      <div className='flex items-center text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
+                      <div className='flex items-center text-sm md:text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
                         Views:{' '}
                         <div className='ml-1 text-gray-400 text-ms'>
                           {' '}
@@ -314,7 +314,7 @@ const PostHome2 = () => {
                       title={`${post.like.length} Like`}
                       placement='top'
                       arrow>
-                      <div className='flex items-center mb-2 text-base mr-4 text-gray-700 rounded-md'>
+                      <div className='flex items-center mb-2 text-sm md:text-base mr-4 text-gray-700 rounded-md'>
                         Like:{' '}
                         <div className='ml-1 text-gray-400 '>
                           {' '}
@@ -333,32 +333,6 @@ const PostHome2 = () => {
                     src={post.blogimage}
                   />
                 </div>
-
-                {/* <div className='relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400'>
-                  {user && (
-                    <Image
-                      alt='img'
-                      height={200}
-                      width={200}
-                      className='object-cover w-10 h-10 mr-2 rounded-full shadow cursor-pointer'
-                      src={user.userdp}
-                    />
-                  )}
-                  <span className='absolute inset-y-0 right-0 flex items-center pr-6'>
-                    <button
-                      type='submit'
-                      className='p-1 focus:outline-none focus:shadow-none hover:text-blue-500'>
-                      <IoMdSend className='text-xl text-[#FF3131]' />
-                    </button>
-                  </span>
-                  <input
-                    type='search'
-                    className='w-full py-2 pl-4 pr-10 text-sm placeholder-gray-400 bg-gray-100 border border-transparent appearance-none rounded-tg focus:bg-white focus:outline-none focus:border-gray-200 focus:text-gray-900 focus:shadow-outline-blue'
-                    style={{ borderRadius: 25 }}
-                    placeholder='Post a comment...'
-                    autoComplete='off'
-                  />
-                </div> */}
               </div>
             </article>
           </>
