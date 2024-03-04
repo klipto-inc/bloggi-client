@@ -7,9 +7,10 @@ import SideBarComponent from '@/Components/Sidebar/SideBarComponent';
 import Dashboard from '@/Components/Home/Dashboard';
 import PostHome2 from '@/Components/Home/PostHome2';
 import SuggestedUsers from '@/Components/Home/SuggestedUsers';
-import TopInterest from '@/Components/Home/TopInterest';
+import TopCreators from '@/Components/Home/TopCreators';
 import PodiPreview from '@/Components/Dashboard/PodiPreview';
 import TopVoice from '@/Components/Home/TopVoice';
+import TopInterest from '@/Components/Home/TopInterest';
 
 const page = () => {
   return (
@@ -27,8 +28,10 @@ const page = () => {
           <PostHome2 />
         </div>
 
-        <div className=' hidden md:flex flex-col w-[37%]'>
+        <div className=' hidden md:flex flex-col gap-4 w-[37%]'>
           <TopInterest />
+          <TopCreators />
+          
           {/* <SuggestedUsers /> */}
         </div>
       </div>

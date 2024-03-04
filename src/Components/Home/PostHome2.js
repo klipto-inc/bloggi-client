@@ -164,7 +164,7 @@ const PostHome2 = () => {
                   </div>
                 </div>
                 <div className='border-b border-gray-100' />
-                <div className='text-lg font-medium flex flex-row items-center gap-1 px-2 my-2'>
+                <div className='text-lg font-medium flex flex-row items-center gap-1 px-2 my-2 md:mx-3'>
                   {post.title}
                 </div>
 
@@ -173,7 +173,7 @@ const PostHome2 = () => {
                     {parse(post.longdescription)}
                   </div>
                   <span
-                    className='text-blue-500 cursor-pointer text-[15px] pl-1'
+                    className='text-blue-500 cursor-pointer text-[15px] pl-1 md:mx-2'
                     onClick={() => handleReadMore(post._id)}>
                     {' '}
                     read more
