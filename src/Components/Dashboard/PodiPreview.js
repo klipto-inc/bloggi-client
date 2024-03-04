@@ -53,9 +53,9 @@ function Dashboard3() {
     },
     {
       id: 4,
-      name: 'Simon Sinek',
+      name: 'Hilda Patrick',
       image:
-        'https://renaissancemarketer.com/wp-content/uploads/2023/01/renaissance-marketer-simon-sinek.webp',
+        'https://a.storyblok.com/f/119964/1200x800/0eaa71d1d8/podcast_brandlovev2.jpeg',
       verified: true,
       description:
         "World's most influential people, experts and thinkers and embarks on a curiosity driven journey to discover untold truths",
@@ -66,15 +66,15 @@ function Dashboard3() {
     },
     {
       id: 5,
-      name: 'Peter Raymond',
+      name: 'Martin Cicily',
       image:
-        'https://static.independent.co.uk/2022/10/07/08/06114323-90a26a99-d133-44cc-8f36-0b6af597ca1a.jpg',
+        'https://t4.ftcdn.net/jpg/06/03/34/53/360_F_603345302_1eBiHLriYQnDJhhb9gRcYZ9MUuXuFyKD.jpg',
       verified: true,
       description:
         "World's most influential people, experts and thinkers and embarks on a curiosity driven journey to discover untold truths",
       premium: true,
-      like: 800,
-      play: 5000,
+      like: 400,
+      play: 1000,
       date: '22 Feb 2024',
     },
   ];
