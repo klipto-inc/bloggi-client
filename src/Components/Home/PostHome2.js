@@ -131,7 +131,7 @@ const PostHome2 = () => {
           <>
             <article className='' key={post._id}>
               <div className='bg-white rounded-lg shadow'>
-                <div className='relative flex flex-row px-2  py-3 md:mx-2'>
+                <div className='relative flex flex-row px-2 py-3 md:mx-2'>
                   <Link href={`/app/user/${post.author._id}`}>
                     <div className='w-auto h-auto border-2 border-gray-500 rounded-full'>
                       <img
@@ -169,7 +169,7 @@ const PostHome2 = () => {
                 </div>
 
                 <div className='mb-3 px-2 flex flex-col gap-2'>
-                  <div className=' mx-3 text-[16px] overflow-hidden line-clamp-4 text-gray-700'>
+                  <div className=' mx-3 text-[14px] md:text-[16px] overflow-hidden line-clamp-4 text-gray-700'>
                     {parse(post.longdescription)}
                   </div>
                   <span
@@ -258,7 +258,7 @@ const PostHome2 = () => {
                     </span>
                     <span className='inline-block w-10 h-10 p-2 text-center text-gray-100 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-gray-50'>
                       <svg
-                        className='w-6 h-6 text-red-500'
+                        className='w-5 h-5 text-red-500 mt-0.5 ml-0.5'
                         fill='none'
                         viewBox='0 0 24 24'
                         stroke='currentColor'
@@ -279,7 +279,7 @@ const PostHome2 = () => {
                 <div className='flex w-full border-t border-gray-100'>
                   <div className='flex flex-row mx-5 mt-3 text-xs'>
                     <Tooltip
-                      title={`${post.comment.length} Comments`}
+                      title={`${post.comment.length} Saved`}
                       placement='top'
                       arrow>
                       <div className='flex items-center text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
@@ -292,12 +292,9 @@ const PostHome2 = () => {
                     </Tooltip>
                   </div>
                   <div className='flex justify-end w-full mx-1 mt-3 text-xs'>
-                    <Tooltip
-                      title={`${post.view} Comment`}
-                      placement='top'
-                      arrow>
+                    <Tooltip title={`${post.view} Comment`} placement='top' arrow>
                       <div className='flex items-center text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
-                        Comment:{' '}
+                      Comment:{' '}
                         <div className='ml-1 text-gray-400 text-ms'>
                           {' '}
                           {post.view}
