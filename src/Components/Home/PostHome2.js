@@ -15,8 +15,9 @@ import { FaHandsClapping } from 'react-icons/fa6';
 import GenShare from '../Modal/GenShare';
 import { IoMdSend } from 'react-icons/io';
 import { MdVerified } from 'react-icons/md';
-import { AiOutlineComment } from "react-icons/ai";
-import { BsEyeFill } from "react-icons/bs";
+import { AiOutlineComment } from 'react-icons/ai';
+import { BsEyeFill } from 'react-icons/bs';
+import { HiOutlineDotsVertical } from 'react-icons/hi';
 
 const PostHome2 = () => {
   const [blogs, setBlogs] = useState(null);
@@ -130,7 +131,7 @@ const PostHome2 = () => {
           <>
             <article className='' key={post._id}>
               <div className='bg-white rounded-lg shadow'>
-                <div className='flex flex-row px-2 py-3 mx-3'>
+                <div className='relative flex flex-row px-2  py-3 md:mx-2'>
                   <Link href={`/app/user/${post.author._id}`}>
                     <div className='w-auto h-auto border-2 border-gray-500 rounded-full'>
                       <img
@@ -148,6 +149,17 @@ const PostHome2 = () => {
                       ) : (
                         <></>
                       )} */}
+                    </div>
+                  </div>
+
+                  <div className='absolute top-3 right-2 text-[23px] text-gray-700 w-fit'>
+                    <div placement='relative'>
+                      <div>
+                        <HiOutlineDotsVertical
+                          className='text-gray-900 cursor-pointer'
+                          // onClick={PostNav}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -216,8 +228,7 @@ const PostHome2 = () => {
                     /> */}
                   </div>
                   <div className='flex justify-end w-full pt-2 pr-5 mt-1 relative'>
-
-                    <span
+                    {/* <span
                       className='inline-block w-10 h-10 p-2 mr-2 text-center text-blue-400 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'
                       onClick={() => {
                         let id = post._id;
@@ -230,8 +241,7 @@ const PostHome2 = () => {
                         height='20'
                         viewBox='0 0 24 24'
                         stroke='currentColor'
-                        className='mt-0.5'
-                        >
+                        className='mt-0.5'>
                         <path
                           strokeLinecap='round'
                           strokeLinejoin='round'
@@ -239,18 +249,12 @@ const PostHome2 = () => {
                           d='M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z'
                         />
                       </svg>
-                    </span>
-                    <span
-                      className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-800 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'
-                     >
+                    </span> */}
+                    <span className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-800 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'>
                       <AiOutlineComment className='w-6 h-6' />
-                     
                     </span>
-                    <span
-                      className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-800 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'
-                     >
+                    <span className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-800 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'>
                       <BsEyeFill className='w-6 h-6' />
-                     
                     </span>
                     <span className='inline-block w-10 h-10 p-2 text-center text-gray-100 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-gray-50'>
                       <svg
@@ -278,16 +282,30 @@ const PostHome2 = () => {
                       title={`${post.comment.length} Comments`}
                       placement='top'
                       arrow>
-                      <div className='flex items-center mb-2 mr-4 font-normal text-gray-700 rounded-md'>
-                        Comments:
+                      <div className='flex items-center text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
+                        Saved:
                         <div className='ml-1 text-gray-400 text-ms'>
                           {' '}
                           {post.comment.length}
                         </div>
                       </div>
                     </Tooltip>
+                  </div>
+                  <div className='flex justify-end w-full mx-1 mt-3 text-xs'>
+                    <Tooltip
+                      title={`${post.view} Comment`}
+                      placement='top'
+                      arrow>
+                      <div className='flex items-center text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
+                        Comment:{' '}
+                        <div className='ml-1 text-gray-400 text-ms'>
+                          {' '}
+                          {post.view}
+                        </div>
+                      </div>
+                    </Tooltip>
                     <Tooltip title={`${post.view} Views`} placement='top' arrow>
-                      <div className='flex items-center mb-2 mr-4 font-normal text-gray-700 rounded-md'>
+                      <div className='flex items-center text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
                         Views:{' '}
                         <div className='ml-1 text-gray-400 text-ms'>
                           {' '}
@@ -295,15 +313,13 @@ const PostHome2 = () => {
                         </div>
                       </div>
                     </Tooltip>
-                  </div>
-                  <div className='flex justify-end w-full mx-5 mt-3 text-xs'>
                     <Tooltip
                       title={`${post.like.length} Like`}
                       placement='top'
                       arrow>
-                      <div className='flex items-center mb-2 mr-4 text-gray-700 rounded-md'>
+                      <div className='flex items-center mb-2 text-base mr-4 text-gray-700 rounded-md'>
                         Like:{' '}
-                        <div className='ml-1 text-gray-400 text-ms'>
+                        <div className='ml-1 text-gray-400 '>
                           {' '}
                           {post.like.length}
                         </div>
