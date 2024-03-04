@@ -88,13 +88,13 @@ function Dashboard3() {
 
   return (
     <div className='my-5 h-auto'>
-      <div className='text-2xl font-medium flex flex-col md:flex-row items-start md:items-center gap-1 px-2 md:px-8 my-6'>
-        <div className='flex flex-row items-center gap-2'>
+      <div className='flex flex-col md:flex-row items-start md:items-center gap-1 px-2 md:px-8 my-6'>
+        <div className='flex flex-row items-center gap-2 text-lg md:text-2xl font-medium'>
           <FaPodcast className='w-6 h-6 stroke-current' />
           <span className='hidden md:block'>Live Audio Session - </span>
           <span className='block md:hidden'>Live Audio Session </span>
         </div>
-        <span className='text-xl ml-3 md:ml-0 text-medium text-gray-700'>
+        <span className=' ml-3 md:ml-0 text-base text-gray-700'>
           coming soon on Bloggi
         </span>
       </div>

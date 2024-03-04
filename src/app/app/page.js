@@ -16,18 +16,18 @@ const page = () => {
     <div className='bg-gray-200 md:bg-white md:bg-transparent w-full'>
       <Dashboard />
 
-      <div className="mb-40">
+      <div className="mb-4">
         <PodiPreview />
       </div>
 
       {/* <TopVoice /> */}
 
       <div className='flex flex-col lg:flex-row w-full'>
-        <div className='flex flex-col w-[60%]'>
+        <div className='flex flex-col w-full lg:w-[60%]'>
           <PostHome2 />
         </div>
 
-        <div className='flex flex-col w-[40%]'>
+        <div className=' hidden md:flex flex-col w-[40%]'>
           <TopInterest />
           {/* <SuggestedUsers /> */}
         </div>
