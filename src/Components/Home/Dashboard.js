@@ -185,8 +185,7 @@ const Dasboard = () => {
               </p>
             ) : (
               <p className="mt-1.5 text-base text-gray-100 lg:w-[47%]">
-                Bloggi offers the most flexible platform for both writers. Now
-                you can post across multiple platform with just one button🚀
+                Bloggi offers the most flexible platform for both writers and Creators.
               </p>
             )}
           </div>
