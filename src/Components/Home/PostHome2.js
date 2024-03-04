@@ -235,7 +235,7 @@ const PostHome2 = () => {
                     </span>
                     <span className='w-10 h-10 p-2  text-center text-gray-100 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-gray-50'>
                       <svg
-                        className='w-10 h-10 text-red-500'
+                        className='w-8 h-8 text-red-500'
                         fill='none'
                         viewBox='0 0 24 24'
                         stroke='currentColor'
