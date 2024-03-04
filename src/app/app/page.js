@@ -22,12 +22,12 @@ const page = () => {
 
       {/* <TopVoice /> */}
 
-      <div className='flex flex-col lg:flex-row w-full'>
-        <div className='flex flex-col w-full lg:w-[60%]'>
+      <div className='flex flex-col lg:flex-row w-full  gap-5'>
+        <div className='flex flex-col w-full lg:w-[63%]'>
           <PostHome2 />
         </div>
 
-        <div className=' hidden md:flex flex-col w-[40%]'>
+        <div className=' hidden md:flex flex-col w-[37%]  px-2'>
           <TopInterest />
           {/* <SuggestedUsers /> */}
         </div>

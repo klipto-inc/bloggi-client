@@ -20,7 +20,7 @@ const Offline = () => {
         <div className="flex flex-col h-screen">
           <div className="flex flex-row items-center justify-center w-full my-4">
             <Image
-              className="h-[80px] w-auto object-cover "
+              className="h-[50px] md:h-[80px] w-auto object-cover "
               src={logo}
               height={200}
               width={200}

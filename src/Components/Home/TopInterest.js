@@ -4,7 +4,7 @@ const TopInterest = () => {
   return (
     <div
       aria-label='card'
-      className='p-8 rounded-3xl hidden lg:block bg-gray-50 max-w-sm w-full my-10'>
+      className='p-8 rounded-3xl hidden lg:block bg-gray-50 max-w-sm w-full my-2'>
       <div aria-label='header' className='flex items-center space-x-2'>
         <svg
           xmlns='http://www.w3.org/2000/svg'

@@ -139,7 +139,6 @@ const PostHome2 = () => {
                     </div>
                   </Link>
                   <div className='flex flex-col mt-1 mb-2 ml-4'>
-                    <div className='text-sm font-semibold text-gray-600'></div>
                     <div className='text-xl font-medium flex flex-row items-center gap-1'>
                       {post.author.fullname}
                       {/* {post.verified === true ? (
@@ -148,33 +147,19 @@ const PostHome2 = () => {
                         <></>
                       )} */}
                     </div>
-                    <div className='flex w-full mt-1'>
-                      {!post.category ? (
-                        <div className='mr-1 text-xs text-blue-700 cursor-pointer font-base'>
-                          uncategorized
-                        </div>
-                      ) : (
-                        <div className='mr-1 text-xs text-blue-700 cursor-pointer font-base'>
-                          {post.category}
-                        </div>
-                      )}
-                      <div className='text-xs font-thin text-gray-400'>
-                        {/* {post.createdAt} */}
-                      </div>
-                    </div>
                   </div>
                 </div>
                 <div className='border-b border-gray-100' />
-                <div className='text-lg font-medium flex flex-row items-center gap-1'>
+                <div className='text-lg font-medium flex flex-row items-center gap-1 px-2 my-2'>
                   {post.title}
                 </div>
 
-                <div className='mb-3 px-2'>
-                  <div className=' mx-3 text-sm overflow-hidden line-clamp-4'>
+                <div className='mb-3 px-2 flex flex-col gap-2'>
+                  <div className=' mx-3 text-[24px] overflow-hidden line-clamp-4 text-gray-700'>
                     {parse(post.longdescription)}
                   </div>
                   <span
-                    className='text-blue-500 cursor-pointer text-[14px] pl-3'
+                    className='text-blue-500 cursor-pointer text-[15px] pl-3'
                     onClick={() => handleReadMore(post._id)}>
                     {' '}
                     read more
@@ -182,11 +167,11 @@ const PostHome2 = () => {
                 </div>
                 <div className='flex justify-start mb-4 border-t border-gray-100'>
                   <div className='flex w-full pt-2 pl-5 mt-1'>
-                    <span className='w-10 h-10 px-2 pt-2 mr-2 text-center text-gray-400 transition duration-300 ease-out bg-white border rounded-full cursor-pointer hover:text-red-500'>
+                    <span className='w-10 h-10 p-2 mr-2 text-center text-gray-400 transition duration-300 ease-out bg-white border rounded-full cursor-pointer hover:text-red-500'>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
-                        width='14px'
+                        width='16px'
                         viewBox='0 0 24 24'
                         stroke='currentColor'>
                         <path
@@ -218,17 +203,17 @@ const PostHome2 = () => {
                       className='inline-block object-cover w-10 h-10 -ml-2 text-white border-2 border-white rounded-full shadow-sm cursor-pointer'
                       src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
                     />
-                    <Image
+                    {/* <Image
                       alt='img'
                       height={200}
                       width={200}
                       className='inline-block object-cover w-10 h-10 -ml-2 text-white border-2 border-white rounded-full shadow-sm cursor-pointer'
                       src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80'
-                    />
+                    /> */}
                   </div>
                   <div className='flex justify-end w-full pt-2 pr-5 mt-1 relative'>
                     <span
-                      className='w-10 h-10 px-2 py-2 mr-2 text-center text-blue-400 transition duration-300 ease-out bg-blue-100 rounded-full cursor-pointer hover:bg-blue-50'
+                      className='w-10 h-10 p-2 mr-2 text-center text-blue-400 transition duration-300 ease-out bg-blue-100 rounded-full cursor-pointer hover:bg-blue-50'
                       onClick={() => {
                         let id = post._id;
 
@@ -237,7 +222,7 @@ const PostHome2 = () => {
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
-                        width='16px'
+                        width='14px'
                         viewBox='0 0 24 24'
                         stroke='currentColor'>
                         <path
@@ -248,7 +233,7 @@ const PostHome2 = () => {
                         />
                       </svg>
                     </span>
-                    <span className='w-10 h-10 px-2 py-2 text-center text-gray-100 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-gray-50'>
+                    <span className='w-10 h-10 p-2  text-center text-gray-100 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-gray-50'>
                       <svg
                         className='w-10 h-10 text-red-500'
                         fill='none'
@@ -317,13 +302,13 @@ const PostHome2 = () => {
                 </div>
 
                 <div className='relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400'>
-                  <Image
+                  {user && <Image
                     alt='img'
                     height={200}
                     width={200}
                     className='object-cover w-10 h-10 mr-2 rounded-full shadow cursor-pointer'
-                    src={post.author.userdp}
-                  />
+                    src={user.userdp}
+                  /> }
                   <span className='absolute inset-y-0 right-0 flex items-center pr-6'>
                     <button
                       type='submit'
