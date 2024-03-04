@@ -180,7 +180,7 @@ const PostHome2 = () => {
                   </span>
                 </div>
                 <div className='flex justify-start mb-4 border-t border-gray-100'>
-                  <div className='flex w-full pt-2 pl-5 mt-1'>
+                  <div className='flex w-full pt-2 pl-2 md:pl-5 mt-1'>
                     <span className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-400 transition duration-300 ease-out bg-white border border-gray-300 rounded-full cursor-pointer hover:text-red-500'>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
@@ -227,7 +227,7 @@ const PostHome2 = () => {
                       src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80'
                     /> */}
                   </div>
-                  <div className='flex justify-end w-full pt-2 pr-5 mt-1 relative'>
+                  <div className='flex justify-end w-full pt-2 pr-2 md:pr-5 mt-1 relative'>
                     {/* <span
                       className='inline-block w-10 h-10 p-2 mr-2 text-center text-blue-400 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'
                       onClick={() => {
