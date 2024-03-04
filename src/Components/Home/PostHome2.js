@@ -142,11 +142,11 @@ const PostHome2 = () => {
                     <div className='text-sm font-semibold text-gray-600'></div>
                     <div className='text-xl font-medium flex flex-row items-center gap-1'>
                       {post.author.fullname}
-                      {post.verified === true ? (
+                      {/* {post.verified === true ? (
                         <MdVerified className='text-blue-600 text-[16px]' />
                       ) : (
                         <></>
-                      )}
+                      )} */}
                     </div>
                     <div className='flex w-full mt-1'>
                       {!post.category ? (
