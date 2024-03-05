@@ -185,8 +185,8 @@ function Dashboard3() {
                   <div className='flex flex-row items-center justify-between'>
                     <div className='flex space-x-2'>
                       {pod.premium === true ? (
-                        <span className='rounded-md text-sm px-2 font-medium text-gray-600 flex flex-row items-center gap-2'>
-                          <FaCrown className='text-yellow-600' />
+                        <span className='rounded-md text-sm px-2 font-medium text-gray-600 flex flex-row items-center gap-1'>
+                          <FaCrown className='text-yellow-600 mb-0.5' />
                           Premium
                         </span>
                       ) : (
