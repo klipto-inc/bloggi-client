@@ -118,7 +118,7 @@ function Settings() {
 
   return (
     <main className="bg-white h-s">
-      <div className="h-full md:h-fit md:w-[80%] lg:shadow-md lg:px-10 lg:ml-10 mt-8 rounded-md">
+      <div className="h-full md:h-fit md:w-[80%] lg:shadow-md lg:px-10 lg:ml-10 mt-8 rounded-md mb-10">
         <div className="px-4 md:px-8 lg:px-0">
           <div className="py-4 mx-5 my-4 border-b border-b-gray-100 lg:mx-5">
             <p className="text-lg font-bold leading-none text-gray-800">
@@ -299,10 +299,10 @@ function Settings() {
         </div>
       </div>
 
-      {/* <div className="hidden md:block">
+      <div className="hidden md:block">
        
         <Footer />
-      </div> */}
+      </div>
       <BottomNav />
     </main>
   );
