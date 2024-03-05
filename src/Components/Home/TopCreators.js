@@ -36,7 +36,7 @@ const TopInterest = () => {
   
 
   return (
-    <div className='w-full bg-white max-w-xs rounded-xl bg-layer-2 p-6 shadow'>
+    <div className='w-full bg-white lg:max-w-xs rounded-xl bg-layer-2 p-6 shadow'>
       <div className='flex items-center justify-between'>
         <h3 className='text-lg font-semibold text-heading'>Top Creators</h3>
         <button className='inline-flex cursor-pointer items-center justify-center rounded-xl border-none border-transparent bg-transparent p-2 font-semibold text-text hover:bg-heading/5 hover:text-heading focus:bg-heading/5 focus:outline-none focus:ring-2 focus:ring-heading/80 focus:ring-offset-0 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-text'>
