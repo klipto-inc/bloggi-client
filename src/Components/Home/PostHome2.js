@@ -175,7 +175,7 @@ const PostHome2 = () => {
                     {parse(post.longdescription)}
                   </div>
                   <span
-                    className='text-blue-500 cursor-pointer text-[15px] md:mx-2'
+                    className='text-blue-500 cursor-pointer text-[15px] md:mx-3'
                     onClick={() => handleReadMore(post._id)}>
                     {' '}
                     read more
@@ -279,7 +279,7 @@ const PostHome2 = () => {
                   </div>
                 </div>
                 <div className='flex w-full border-t border-gray-100 py-1'>
-                  <div className='flex flex-row mx-2 mt-3 text-xs'>
+                  <div className='flex flex-row mx-2 mt-3 text-xs md:mx-5'>
                     <Tooltip
                       title={`${post.comment.length} Saved`}
                       placement='top'
@@ -293,7 +293,7 @@ const PostHome2 = () => {
                       </div>
                     </Tooltip>
                   </div>
-                  <div className='flex justify-end w-full mx-1 mt-3 text-xs'>
+                  <div className='flex justify-end w-full mx-1 mt-3 text-xs md:mx-5'>
                     <Tooltip
                       title={`${post.view} Comment`}
                       placement='top'
