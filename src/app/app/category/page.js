@@ -17,7 +17,7 @@ export default function Page() {
     // </main>
 
     <div className=''>
-      <div className='container mx-auto px-2 py-6 md:p-10 lg:p-20 h-auto'>
+      <div className='container mx-auto px-2 py-6 md:p-4 md:py-10 lg:py-20 lg:px-8  h-auto'>
         <div className='grid grid-cols-1 gap-4 md:gap-10 md:grid-cols-2 lg:grid-cols-3'>
           {/* Item 1 */}
           <div className='p-4 bg-white rounded-lg shadow-md'>

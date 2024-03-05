@@ -6,33 +6,34 @@ const TopInterest = () => {
       avatar:
         'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       name: 'Nicholas Turner',
-      role: 'Admin',
+      bio: 'Passionate about exploring the intersection of technology and art.',
     },
     {
       avatar:
         'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJhbmRvbSUyMHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D',
       name: 'Robert Fox',
-      role: 'Editor',
+      bio: 'Dedicated to simplifying complex concepts through visual storytelling.',
     },
     {
       avatar:
         'https://images.unsplash.com/photo-1530268729831-4b0b9e170218?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJhbmRvbSUyMHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D',
       name: 'Arlene McCoy',
-      role: 'Writer',
+      bio: 'Passionate about empowering individuals through the written word.',
     },
     {
       avatar:
         'https://images.unsplash.com/photo-1530785602389-07594beb8b73?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJhbmRvbSUyMHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D',
       name: 'Kathryn Murphy',
-      role: 'Editor',
+      bio: 'Passionate about building bridges between creativity and technology.',
     },
     {
       avatar:
         'https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww',
       name: 'Marvin McKinney',
-      role: 'HR',
+      bio: 'Committed to spreading positivity and inspiration through social media.',
     },
   ];
+  
 
   return (
     <div className='w-full max-w-xs rounded-xl bg-layer-2 p-6 shadow'>
@@ -75,7 +76,7 @@ const TopInterest = () => {
                 <div className='text-sm font-medium text-heading'>
                   {user.name}
                 </div>
-                <div className='mt-1 text-xs font-medium text-gray-700'>{user.role}</div>
+                <div className='mt-1 text-xs font-medium text-gray-700 line-clamp-1'>{user.bio}</div>
               </div>
             </a>
           </li>

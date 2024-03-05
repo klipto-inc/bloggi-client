@@ -11,6 +11,7 @@ import TopCreators from '@/Components/Home/TopCreators';
 import PodiPreview from '@/Components/Dashboard/PodiPreview';
 import TopVoice from '@/Components/Home/TopVoice';
 import TopInterest from '@/Components/Home/TopInterest';
+import Footer from '@/Components/Footer/Footer';
 
 const page = () => {
   return (
@@ -22,12 +23,12 @@ const page = () => {
       </div>
 
 
-      <div className='flex flex-col lg:flex-row w-full  gap-5'>
+      <div className='flex flex-col lg:flex-row w-full  gap-5 mb-10'>
         <div className='flex flex-col w-full lg:w-[63%]'>
           <PostHome2 />
         </div>
 
-        <div className=' hidden md:flex flex-col gap-4 w-[37%]'>
+        <div className='w-full flex flex-col gap-4 lg:w-[37%]'>
           <TopInterest />
           <div className='sticky top-20 mb-10'>
             <TopCreators />
@@ -36,6 +37,7 @@ const page = () => {
           {/* <SuggestedUsers /> */}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

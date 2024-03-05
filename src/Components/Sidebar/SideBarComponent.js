@@ -94,7 +94,7 @@ const SideBarComponent = () => {
               </a>
               <a
                 className="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300"
-                href="#"
+                href="/app/settings"
               >
                 <svg
                   className="w-6 h-6 stroke-current"

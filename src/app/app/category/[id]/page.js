@@ -52,7 +52,7 @@ const Page = () => {
       <div className="">
         <div>
           <section className="px-2 md:px-5 lg:px-10">
-            <div className="ml-4 pt-8">Search result for: {id} </div>
+            <div className="ml-4 pt-8">Category result for: {id} </div>
             <div className="container px-2 py-10 pt-2 mx-auto md:px-2">
               {blogs === null ? (
                 <div className="grid grid-cols-1 gap-8 mt-8 animate-pulse xl:mt-12 xl:gap-8 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-3">
