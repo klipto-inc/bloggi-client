@@ -29,7 +29,7 @@ const page = () => {
 
         <div className=' hidden md:flex flex-col gap-4 w-[37%]'>
           <TopInterest />
-          <div className='sticky top-0'>
+          <div className='sticky top-20 mb-10'>
             <TopCreators />
           </div>
 
