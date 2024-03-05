@@ -18,6 +18,7 @@ import { MdVerified } from 'react-icons/md';
 import { AiOutlineComment } from 'react-icons/ai';
 import { BsEyeFill } from 'react-icons/bs';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
+import { FaCrown } from 'react-icons/fa';
 
 const PostHome2 = () => {
   const [blogs, setBlogs] = useState(null);
@@ -174,12 +175,19 @@ const PostHome2 = () => {
                   <div className=' md:mx-3 text-[14px] md:text-[16px] overflow-hidden line-clamp-4 text-gray-700'>
                     {parse(post.longdescription)}
                   </div>
-                  <span
-                    className='text-blue-500 cursor-pointer text-[15px] md:mx-3'
-                    onClick={() => handleReadMore(post._id)}>
-                    {' '}
-                    read more
-                  </span>
+
+                  <div className='flex flex-row items-center'>
+                    <span
+                      className='text-blue-500 cursor-pointer text-[15px] md:mx-3'
+                      onClick={() => handleReadMore(post._id)}>
+                      {' '}
+                      read more
+                    </span>
+                    <span className='rounded-md text-sm px-2 font-medium text-gray-600 flex flex-row items-center gap-2'>
+                      <FaCrown className='text-yellow-600' />
+                      Premium
+                    </span>
+                  </div>
                 </div>
                 <div className='flex justify-start mb-4 border-t border-gray-100'>
                   <div className='flex w-full pt-2 pl-2 md:pl-5 mt-1'>
