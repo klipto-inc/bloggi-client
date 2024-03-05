@@ -131,9 +131,9 @@ const PostHome2 = () => {
           <>
             <article className='' key={post._id}>
               <div className='bg-white rounded-lg shadow'>
-                <div className='relative flex flex-row px-2 py-3 md:mx-2'>
+                <div className='relative flex flex-row items-center px-2 py-3 md:mx-2'>
                   <Link href={`/app/user/${post.author._id}`}>
-                    <div className='w-auto h-auto border-2 border-gray-500 rounded-full'>
+                    <div className='w-auto h-auto border-2 border-gray-100 rounded-full'>
                       <img
                         className='object-cover w-10 h-10 rounded-full shadow cursor-pointer'
                         alt='User avatar'
@@ -141,16 +141,18 @@ const PostHome2 = () => {
                       />
                     </div>
                   </Link>
-                  <div className='flex flex-col mt-1 mb-2 ml-4'>
-                    <div className='text-xl font-medium flex flex-row items-center gap-1'>
-                      {post.author.fullname}
-                      {/* {post.verified === true ? (
+                  <Link href={`/app/user/${post.author._id}`}>
+                    <div className='flex flex-col ml-4'>
+                      <div className='text-[19px] font-medium text-gray-800 flex flex-row items-center gap-1'>
+                        {post.author.fullname}
+                        {/* {post.verified === true ? (
                         <MdVerified className='text-blue-600 text-[16px]' />
                       ) : (
                         <></>
                       )} */}
+                      </div>
                     </div>
-                  </div>
+                  </Link>
 
                   <div className='absolute top-3 right-2 text-[23px] text-gray-700 w-fit'>
                     <div placement='relative'>
@@ -276,13 +278,13 @@ const PostHome2 = () => {
                     )}
                   </div>
                 </div>
-                <div className='flex w-full border-t border-gray-100'>
+                <div className='flex w-full border-t border-gray-100 py-1'>
                   <div className='flex flex-row mx-5 mt-3 text-xs'>
                     <Tooltip
                       title={`${post.comment.length} Saved`}
                       placement='top'
                       arrow>
-                      <div className='flex items-center text-sm md:text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
+                      <div className='flex items-center text-sm md:text-[15px] mb-2 mr-4 font-normal text-gray-700 rounded-md'>
                         Saved:
                         <div className='ml-1 text-gray-400 text-ms'>
                           {' '}
@@ -292,9 +294,12 @@ const PostHome2 = () => {
                     </Tooltip>
                   </div>
                   <div className='flex justify-end w-full mx-1 mt-3 text-xs'>
-                    <Tooltip title={`${post.view} Comment`} placement='top' arrow>
-                      <div className='flex items-center text-sm md:text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
-                      Comment:{' '}
+                    <Tooltip
+                      title={`${post.view} Comment`}
+                      placement='top'
+                      arrow>
+                      <div className='flex items-center text-sm md:text-[15px] mb-2 mr-4 font-normal text-gray-700 rounded-md'>
+                        Comment:{' '}
                         <div className='ml-1 text-gray-400 text-ms'>
                           {' '}
                           {post.view}
@@ -302,7 +307,7 @@ const PostHome2 = () => {
                       </div>
                     </Tooltip>
                     <Tooltip title={`${post.view} Views`} placement='top' arrow>
-                      <div className='flex items-center text-sm md:text-base mb-2 mr-4 font-normal text-gray-700 rounded-md'>
+                      <div className='flex items-center text-sm md:text-[15px] mb-2 mr-4 font-normal text-gray-700 rounded-md'>
                         Views:{' '}
                         <div className='ml-1 text-gray-400 text-ms'>
                           {' '}
@@ -314,7 +319,7 @@ const PostHome2 = () => {
                       title={`${post.like.length} Like`}
                       placement='top'
                       arrow>
-                      <div className='flex items-center mb-2 text-sm md:text-base mr-4 text-gray-700 rounded-md'>
+                      <div className='flex items-center mb-2 text-sm md:text-[15px] mr-4 text-gray-700 rounded-md'>
                         Like:{' '}
                         <div className='ml-1 text-gray-400 '>
                           {' '}
