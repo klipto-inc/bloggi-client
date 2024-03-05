@@ -33,10 +33,10 @@ const TopInterest = () => {
         </svg>
         <div className='space-y-0.5 flex-1'>
           <h3 className='font-medium text-lg tracking-tight text-gray-900 leading-tight'>
-            Top Blog Categories
+            Trending Categories
           </h3>
           <p className='text-sm font-normal text-gray-400 leading-none line-clamp-1'>
-            Explore the most popular blog categories and find your interests.
+            Explore the most popular categories and find your interests.
           </p>
         </div>
         <a
