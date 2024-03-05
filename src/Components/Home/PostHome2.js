@@ -183,7 +183,7 @@ const PostHome2 = () => {
                       {' '}
                       read more
                     </span>
-                    <span className='rounded-md text-sm px-2 font-medium text-gray-600 flex flex-row items-center gap-2'>
+                    <span className='rounded-md text-sm px-2 font-medium text-gray-600 flex flex-row items-center gap-1'>
                       <FaCrown className='text-yellow-600' />
                       Premium
                     </span>
