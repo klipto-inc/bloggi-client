@@ -26,7 +26,7 @@ const BottomNav = () => {
           <span className="block text-xs text-black tab">Feed</span>
         </Link>
         <Link
-          href="/category"
+          href="/app/category"
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
             pathName === "/app/category" ? "text-[#FF3131] bg-white" : "text-[#000]"
           }`}
