@@ -17,9 +17,9 @@ const BottomNav = () => {
     <section className="fixed inset-x-0 bottom-0 z-50 block text-gray-800 bg-white border-t-2 shadow-lg dark:bg-dark backdrop-blur-lg bg-opacity-100 dark:bg-opacity-80 dark:text-gray-400 border-royal/20 md:hidden">
       <div id="tabs" className="flex justify-between">
         <Link
-          href="/"
+          href="/feed"
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
-            pathName === "/" ? "text-[#FF3131]  bg-white" : "text-[#000]"
+            pathName === "/feed" ? "text-[#FF3131]  bg-white" : "text-[#000]"
           }`}
         >
           <MdOutlineExplore className="inline-block w-6 h-6 mb-1" />
