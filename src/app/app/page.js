@@ -30,7 +30,7 @@ const page = () => {
 
         <div className='w-full flex flex-col gap-4 lg:w-[37%]'>
           <TopInterest />
-          <div className='sticky top-20 mb-10'>
+          <div className='w-full lg:sticky lg:top-20 lg:mb-10'>
             <TopCreators />
           </div>
 
