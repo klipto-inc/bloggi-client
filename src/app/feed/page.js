@@ -17,11 +17,10 @@ const page = () => {
     <div className='bg-gray-200 md:bg-white md:bg-transparent w-full'>
       <Dashboard />
 
-      <div className="mb-4">
+      <div className='mb-4'>
         <PodiPreview />
       </div>
 
-      {/* <TopVoice /> */}
 
       <div className='flex flex-col lg:flex-row w-full  gap-5'>
         <div className='flex flex-col w-full lg:w-[63%]'>
@@ -30,13 +29,13 @@ const page = () => {
 
         <div className=' hidden md:flex flex-col gap-4 w-[37%]'>
           <TopInterest />
-          <TopCreators />
-          
+          <div className='sticky top-0'>
+            <TopCreators />
+          </div>
+
           {/* <SuggestedUsers /> */}
         </div>
       </div>
-
-    
     </div>
   );
 };

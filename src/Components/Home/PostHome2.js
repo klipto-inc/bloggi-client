@@ -181,12 +181,12 @@ const PostHome2 = () => {
                 </div>
                 <div className='flex justify-start mb-4 border-t border-gray-100'>
                   <div className='flex w-full pt-2 pl-2 md:pl-5 mt-1'>
-                    <span className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-400 transition duration-300 ease-out bg-white border border-gray-300 rounded-full cursor-pointer hover:text-red-500'>
+                    <span className='inline-block w-fit h-fit p-2 mr-2 text-center text-gray-400 transition duration-300 ease-out bg-white border border-gray-300 rounded-full cursor-pointer hover:text-red-500'>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
-                        width='22'
-                        height='22'
+                        width='18'
+                        height='18'
                         viewBox='0 0 24 24'
                         stroke='currentColor'>
                         <path
@@ -200,22 +200,22 @@ const PostHome2 = () => {
 
                     <Image
                       alt='img'
-                      height={200}
-                      width={200}
+                      height={180}
+                      width={180}
                       className='inline-block object-cover w-10 h-10 text-white border-2 border-white rounded-full shadow-sm cursor-pointer'
                       src='https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
                     />
                     <Image
                       alt='img'
-                      height={200}
-                      width={200}
+                      height={180}
+                      width={180}
                       className='inline-block object-cover w-10 h-10 -ml-2 text-white border-2 border-white rounded-full shadow-sm cursor-pointer'
                       src='https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
                     />
                     <Image
                       alt='img'
-                      height={200}
-                      width={200}
+                      height={180}
+                      width={180}
                       className='inline-block object-cover w-10 h-10 -ml-2 text-white border-2 border-white rounded-full shadow-sm cursor-pointer'
                       src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
                     />
@@ -228,8 +228,8 @@ const PostHome2 = () => {
                     /> */}
                   </div>
                   <div className='flex justify-end w-full pt-2 pr-2 md:pr-5 mt-1 relative'>
-                    {/* <span
-                      className='inline-block w-10 h-10 p-2 mr-2 text-center text-blue-400 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'
+                    <span
+                      className='inline-block w-fit h-fit p-2 mr-2 text-center text-blue-400 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'
                       onClick={() => {
                         let id = post._id;
                         openShareModal(id);
@@ -237,11 +237,11 @@ const PostHome2 = () => {
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
-                        width='20'
-                        height='20'
+                        width='18'
+                        height='18'
                         viewBox='0 0 24 24'
                         stroke='currentColor'
-                        className='mt-0.5'>
+                        className='mr-0.5'>
                         <path
                           strokeLinecap='round'
                           strokeLinejoin='round'
@@ -249,14 +249,14 @@ const PostHome2 = () => {
                           d='M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z'
                         />
                       </svg>
+                    </span>
+                    <span className='inline-block w-fit h-fit p-2 mr-2 text-center text-gray-800 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'>
+                      <AiOutlineComment className='w-5 h-5' />
+                    </span>
+                    {/* <span className='inline-block w-fit h-fit p-2 mr-2 text-center text-gray-800 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'>
+                      <BsEyeFill className='w-5 h-5' />
                     </span> */}
-                    <span className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-800 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'>
-                      <AiOutlineComment className='w-6 h-6' />
-                    </span>
-                    <span className='inline-block w-10 h-10 p-2 mr-2 text-center text-gray-800 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-blue-50'>
-                      <BsEyeFill className='w-6 h-6' />
-                    </span>
-                    <span className='inline-block w-10 h-10 p-2 text-center text-gray-100 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-gray-50'>
+                    <span className='inline-block w-fit h-fit p-2 text-center text-gray-100 transition duration-300 ease-out bg-gray-100 rounded-full cursor-pointer hover:bg-gray-50'>
                       <svg
                         className='w-5 h-5 text-red-500 mt-0.5 ml-0.5'
                         fill='none'
