@@ -34,7 +34,7 @@ const SideBarComponent = () => {
               </Link>
               <a
                 className="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300"
-                href="#"
+                href="/app/category"
               >
                 <BiCategory className="w-6 h-6 stroke-current" />
                 <span className="ml-4 text-base font-medium">Categories</span>

@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer className="hidden bg-gray-100 md:block">
       <div className="max-w-5xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-        <div className="flex justify-center text-teal-600">
+        {/* <div className="flex justify-center text-teal-600">
           <Link
             className="flex flex-row items-center gap-2 text-teal-600"
             href="/"
@@ -21,7 +21,7 @@ function Footer() {
               alt=""
             />
           </Link>
-        </div>
+        </div> */}
 
         <p className="max-w-md mx-auto mt-6 leading-relaxed text-center text-gray-500">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt

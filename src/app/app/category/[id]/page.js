@@ -49,7 +49,6 @@ const Page = () => {
 
   return (
     <main>
-      <Navbar />
       <div className="">
         <div>
           <section className="px-2 md:px-5 lg:px-10">
@@ -205,9 +204,7 @@ const Page = () => {
 
         <Footer />
       </div>
-      <div className="hidden md:block">
-        <Footer />
-      </div>
+     
       <BottomNav />
     </main>
   );
