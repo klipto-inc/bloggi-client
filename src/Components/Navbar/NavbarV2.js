@@ -102,7 +102,7 @@ const NavbarV2 = ({ navSetting }) => {
   };
 
   return (
-    <div className='top-0 z-40 w-full md:sticky'>
+    <div className='top-0 z-30 w-full sticky'>
       <nav className='flex gap-2 items-center justify-between w-full h-16 px-3 bg-white shadow md:px-4 lg:px-8'>
         <div
           className=' p-1 border border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer '
@@ -150,7 +150,7 @@ const NavbarV2 = ({ navSetting }) => {
             </div>
           </div>
 
-          <div className='w-full flex flex-row-reverse flex-grow-0 flex-shrink bg-gray-100 bg-purple-white rounded-lg'>
+          <div className='w-[60%] flex flex-row-reverse flex-grow-0 flex-shrink bg-gray-100 bg-purple-white rounded-lg'>
             <input
               type='text'
               className=' p-3 border-0 bg-transparent outline-none w-full'
