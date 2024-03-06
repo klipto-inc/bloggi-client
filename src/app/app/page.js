@@ -22,13 +22,12 @@ const page = () => {
         <PodiPreview />
       </div>
 
-
-      <div className='flex flex-col lg:flex-row w-full  gap-5 mb-10'>
+      <div className='flex flex-col lg:flex-row w-full gap-2 md:gap-5 mb-3 md:mb-4 lg:mb-10'>
         <div className='flex flex-col w-full lg:w-[63%]'>
           <PostHome2 />
         </div>
 
-        <div className='w-full flex flex-col md:flex-row lg:flex-col gap-4 lg:w-[37%] px-2 mb-4'>
+        <div className='w-full flex flex-col md:flex-row lg:flex-col gap-2 lg:w-[37%] px-2 mb-4'>
           <TopInterest />
           <div className='w-full lg:sticky lg:top-20 lg:mb-10'>
             <TopCreators />

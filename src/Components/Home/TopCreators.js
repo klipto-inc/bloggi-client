@@ -83,7 +83,7 @@ const TopInterest = () => {
         ))}
       </ul>
 
-      <button className='mt-2 inline-flex w-full cursor-pointer items-center justify-center rounded-xl border-2 border-transparent bg-transparent px-3 py-2 text-xs font-semibold text-text hover:bg-heading/5 hover:text-heading focus:bg-heading/5 focus:outline-none focus:ring-2 focus:ring-heading/80 focus:ring-offset-0 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-text'>
+      <button className='mt-2 inline-flex w-full cursor-pointer items-center justify-start rounded-xl border-2 border-transparent bg-transparent px-3 py-2 text-xs font-semibold hover:bg-heading/5 hover:text-heading focus:bg-heading/5 focus:outline-none focus:ring-2 focus:ring-heading/80 focus:ring-offset-0 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-text'>
         View all
       </button>
     </div>
