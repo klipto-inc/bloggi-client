@@ -154,7 +154,7 @@ const NavbarV2 = ({ navOpen }) => {
             <input
               type='text'
               className=' p-3 border-0 bg-transparent outline-none w-full'
-              placeholder='Search something...'
+              placeholder='Search here...'
             />
 
             <div className='p-4 pr-3 text-purple-lighter'>
