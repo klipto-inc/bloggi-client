@@ -15,10 +15,14 @@ function Layout({ children }) {
   };
 
   return (
-    <div>
-      <main className='flex relative flex-row relative overflow-x-hidden'>
+    <div className='relative'>
+      {/* <div className='block lg:hidden'>
         <SideBarComponent nav={nav} />
-        <div className='w-[100%]  flex flex-col'>
+      </div> */}
+      <main className='flex relative flex-row overflow-x-hidden'>
+        <SideBarComponent nav={nav} />
+
+        <div className='w-[100%] z-30 flex flex-col'>
           <NavbarV2 navSetting={navSetting} />
           {children}
         </div>

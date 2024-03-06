@@ -199,7 +199,7 @@ const NavbarV2 = ({ navSetting }) => {
           </div>
         </div>
 
-        <div className='flex w-full flex-row items-center justify-end'>
+        <div className='flex w-auto flex-row items-center justify-end'>
           <div className='mr-4 hidden md:block'>
             <div className=' sm:flex sm:gap-4'>
               <Link
