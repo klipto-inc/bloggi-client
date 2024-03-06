@@ -131,7 +131,7 @@ const SideBarComponent = ({ nav, navClose }) => {
         </div>
       </div>
       <div
-        className=' p-1 border absolute top-3 right-3 border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer '
+        className=' p-1 absolute top-3 right-3 border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer '
         onClick={navClose}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -139,7 +139,7 @@ const SideBarComponent = ({ nav, navClose }) => {
           viewBox='0 0 24 24'
           stroke-width='1.5'
           stroke='currentColor'
-          class='w-7 h-7'>
+          class='w-7 h-7 text-white'>
           <path
             stroke-linecap='round'
             stroke-linejoin='round'
