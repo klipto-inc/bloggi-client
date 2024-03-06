@@ -12,7 +12,7 @@ import { PiCrownBold } from 'react-icons/pi';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoIosArrowDown } from 'react-icons/io';
 
-const NavbarV2 = ({navSetting}) => {
+const NavbarV2 = ({ navSetting }) => {
   const [nav, setNav] = useState(false);
   const navref = useRef(null);
   const token = Cookies.get('authtoken');
@@ -104,8 +104,9 @@ const NavbarV2 = ({navSetting}) => {
   return (
     <div className='top-0 z-20 w-full md:sticky'>
       <nav className='relative flex gap-2 items-center justify-between w-full h-16 px-3 bg-white shadow md:px-4 lg:px-8'>
-
-        <div className=' p-1 border border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer ' onClick={navSetting}>
+        <div
+          className=' p-1 border border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer '
+          onClick={navSetting}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -121,7 +122,7 @@ const NavbarV2 = ({navSetting}) => {
           </svg>
         </div>
 
-        <div className='flex flex-row items-center gap-4'>
+        <div className='hidden md:flex flex-row items-center gap-4'>
           <div className='flex items-center hidden md:block'>
             <div className='relative block'>
               <button
@@ -171,6 +172,30 @@ const NavbarV2 = ({navSetting}) => {
                 />
               </svg>
             </div>
+          </div>
+        </div>
+
+        <div className='flex items-center w-full md:hidden bg-gray-100 bg-purple-white rounded-lg'>
+          <div className='p-4 text-purple-lighter'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='w-5 h-5 cursor-pointer'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'>
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+              />
+            </svg>
+          </div>
+
+          <div
+            type='text'
+            className=' p-3 border-0 bg-transparent outline-none'>
+            <span className='text-gray-600'>Search something...</span>
           </div>
         </div>
 
@@ -280,7 +305,7 @@ const NavbarV2 = ({navSetting}) => {
                         </div>
                       </div>
                     </Link>
-                    
+
                     <hr className='border-gray-200 dark:border-gray-700' />
                     <a
                       href='#'
