@@ -7,9 +7,9 @@ import { AiOutlineRead } from "react-icons/ai";
 import React from "react";
 import { MdOutlineExplore, MdOutlineNotificationsActive } from "react-icons/md";
 
-const SideBarComponent = () => {
+const SideBarComponent = ({nav}) => {
   return (
-    <div className="sticky top-0 z-10 hidden h-screen lg:block w-[25dvw]">
+    <div className={`sticky top-0 ${nav === true ? "block absolute" : "hidden"}  h-screen lg:block w-[25dvw]`}>
       <div className="flex flex-col items-center w-full h-full text-gray-400 bg-black px-2 md:pl-4 md:pr-8">
         <div className="flex flex-col items-start justify-center w-full h-16 px-3 py-3 border-b border-gray-900">
           <Link className="flex flex-row items-start" href="/app">

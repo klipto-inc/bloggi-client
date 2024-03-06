@@ -12,7 +12,7 @@ import { PiCrownBold } from 'react-icons/pi';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoIosArrowDown } from 'react-icons/io';
 
-const NavbarV2 = () => {
+const NavbarV2 = ({navSetting}) => {
   const [nav, setNav] = useState(false);
   const navref = useRef(null);
   const token = Cookies.get('authtoken');
@@ -103,17 +103,22 @@ const NavbarV2 = () => {
 
   return (
     <div className='top-0 z-20 w-full md:sticky'>
-      <nav className='relative flex items-center justify-between w-full h-16 px-3 bg-white shadow md:px-8'>
-        <div className='h-16 py-3 block lg:hidden md:px-3'>
-          <Link className='flex flex-row items-start' href='/'>
-            <Image
-              className='h-[40px] w-auto object-cover '
-              src={logo}
-              height={200}
-              width={200}
-              alt=''
+      <nav className='relative flex gap-2 items-center justify-between w-full h-16 px-3 bg-white shadow md:px-4 lg:px-8'>
+
+        <div className=' p-1 border border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer ' onClick={navSetting}>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='w-7 h-7'>
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
             />
-          </Link>
+          </svg>
         </div>
 
         <div className='flex flex-row items-center gap-4'>
@@ -144,14 +149,14 @@ const NavbarV2 = () => {
             </div>
           </div>
 
-          <div className='relative flex-grow-0 flex-shrink hidden md:block '>
+          <div className='flex flex-row-reverse flex-grow-0 flex-shrink bg-gray-100 bg-purple-white rounded-lg'>
             <input
               type='text'
-              className='w-full p-3 bg-gray-100 border-0 rounded-lg bg-purple-white'
-              placeholder='Search somthing...'
-              style={{ minWidth: 400 }}
+              className='w-[300px] p-3 border-0 bg-transparent outline-none md:w-[400px]'
+              placeholder='Search something...'
             />
-            <div className='absolute top-0 right-0 p-4 pr-3 text-purple-lighter'>
+
+            <div className='p-4 pr-3 text-purple-lighter'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='w-5 h-5 cursor-pointer'
@@ -170,8 +175,8 @@ const NavbarV2 = () => {
         </div>
 
         <div className='flex flex-row items-center flex-initial'>
-          <div className='mr-4'>
-            <div className='hidden sm:flex sm:gap-4 md:block'>
+          <div className='mr-4  hidden md:block'>
+            <div className=' sm:flex sm:gap-4'>
               <Link
                 className='rounded-sm bg-[#FF3131] px-7 py-2.5 text-base font-medium text-white shadow'
                 href='/create'>
@@ -189,12 +194,12 @@ const NavbarV2 = () => {
                     </div>
                     <button
                       type='button'
-                      className='relative inline-flex items-center px-2 border rounded-full hover:shadow-lg'>
-                      <div className='pl-1'>
-                        <IoIosArrowDown />
+                      className='relative inline-flex items-center md:px-2 border rounded-full hover:shadow-lg'>
+                      <div className='hidden md:block md:pl-1'>
+                        <IoIosArrowDown className='' />
                       </div>
 
-                      <div className='flex-grow-0 flex-shrink-0 block w-12 h-10 pl-3'>
+                      <div className='flex-grow-0 flex-shrink-0 block w-8 h-8 md:w-10 md:h-10 md:pl-3'>
                         <svg
                           viewBox='0 0 32 32'
                           xmlns='http://www.w3.org/2000/svg'

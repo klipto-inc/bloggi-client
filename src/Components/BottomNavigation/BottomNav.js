@@ -14,7 +14,7 @@ const BottomNav = () => {
   const pathName = usePathname();
 
   return (
-    <section className="fixed inset-x-0 bottom-0 z-50 block text-gray-800 bg-white border-t-2 shadow-lg dark:bg-dark backdrop-blur-lg bg-opacity-100 dark:bg-opacity-80 dark:text-gray-400 border-royal/20 md:hidden">
+    <section className="fixed inset-x-0 bottom-0 z-40 block text-gray-800 bg-white border-t-2 shadow-lg dark:bg-dark backdrop-blur-lg bg-opacity-100 dark:bg-opacity-80 dark:text-gray-400 border-royal/20 md:hidden">
       <div id="tabs" className="flex justify-between">
         <Link
           href="/app"
