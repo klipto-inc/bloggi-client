@@ -103,7 +103,7 @@ const NavbarV2 = ({ navSetting }) => {
 
   return (
     <div className='top-0 z-20 w-full md:sticky'>
-      <nav className='relative flex gap-2 items-center justify-between w-full h-16 px-3 bg-white shadow md:px-4 lg:px-8'>
+      <nav className='flex gap-2 items-center justify-between w-full h-16 px-3 bg-white shadow md:px-4 lg:px-8'>
         <div
           className=' p-1 border border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer '
           onClick={navSetting}>
@@ -122,7 +122,7 @@ const NavbarV2 = ({ navSetting }) => {
           </svg>
         </div>
 
-        <div className='hidden md:flex flex-row items-center gap-4'>
+        <div className='hidden md:flex w-full  flex-row items-center gap-4'>
           <div className='flex items-center hidden md:block'>
             <div className='relative block'>
               <button
@@ -150,10 +150,10 @@ const NavbarV2 = ({ navSetting }) => {
             </div>
           </div>
 
-          <div className='flex flex-row-reverse flex-grow-0 flex-shrink bg-gray-100 bg-purple-white rounded-lg'>
+          <div className='w-full flex flex-row-reverse flex-grow-0 flex-shrink bg-gray-100 bg-purple-white rounded-lg'>
             <input
               type='text'
-              className=' p-3 border-0 bg-transparent outline-none'
+              className=' p-3 border-0 bg-transparent outline-none w-full'
               placeholder='Search something...'
             />
 
@@ -199,8 +199,8 @@ const NavbarV2 = ({ navSetting }) => {
           </div>
         </div>
 
-        <div className='flex flex-row items-center flex-initial'>
-          <div className='mr-4  hidden md:block'>
+        <div className='flex w-full flex-row items-center justify-end'>
+          <div className='mr-4 hidden md:block'>
             <div className=' sm:flex sm:gap-4'>
               <Link
                 className='rounded-sm bg-[#FF3131] px-7 py-2.5 text-base font-medium text-white shadow'
@@ -214,7 +214,7 @@ const NavbarV2 = ({ navSetting }) => {
               <div className='relative inline'>
                 {!user && (
                   <div className='flex items-center gap-3'>
-                    <div className='flex items-center h-16 py-3 md:hidden md:px-3'>
+                    <div className='flex items-center h-16 py-3 md:px-3'>
                       <IoNotificationsOutline className='text-[24px]' />
                     </div>
                     <button
