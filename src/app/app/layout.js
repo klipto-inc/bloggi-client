@@ -18,7 +18,7 @@ function Layout({ children }) {
     <div>
       <main className='flex flex-row relative '>
       
-          <SideBarComponent />
+          <SideBarComponent nav={nav} />
         <div className='w-[100%]  flex flex-col'>
           <NavbarV2 navSetting={navSetting} />
           {children}
