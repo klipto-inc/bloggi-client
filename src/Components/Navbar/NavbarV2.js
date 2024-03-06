@@ -194,7 +194,7 @@ const NavbarV2 = ({ navOpen }) => {
 
           <div
             type='text'
-            className=' p-3 border-0 bg-transparent outline-none'>
+            className=' p-3 border-0 bg-transparent line-clamp-1 outline-none'>
             <span className='text-gray-600'>Search something...</span>
           </div>
         </div>
