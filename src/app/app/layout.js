@@ -10,17 +10,27 @@ import BottomNav from '@/Components/BottomNavigation/BottomNav';
 function Layout({ children }) {
   const [nav, setNav] = useState(false);
 
-  const navSetting = () => {
-    setNav(!nav);
+  const navOpen = () => {
+    setNav(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const navClose = () => {
+    setNav(false);
+    document.body.style.overflow = 'block';
   };
 
   return (
-    <div>
-      <main className='flex flex-row relative '>
-      
-          <SideBarComponent nav={nav} />
+    <div className='relative'>
+      {nav && (
+        <div className='h-screen w-screen fixed top-0 z-50 bg-gray-400 bg-opacity-40'>
+          <SideBarComponent nav={nav} navClose={navClose} />
+        </div>
+      )}
+      <main className='flex flex-row relative'>
+        <SideBarComponent nav={nav} />
         <div className='w-[100%]  flex flex-col'>
-          <NavbarV2 navSetting={navSetting} />
+          <NavbarV2 navOpen={navOpen} />
           {children}
         </div>
         <BottomNav />

@@ -7,9 +7,9 @@ import { AiOutlineRead } from "react-icons/ai";
 import React from "react";
 import { MdOutlineExplore, MdOutlineNotificationsActive } from "react-icons/md";
 
-const SideBarComponent = ({nav}) => {
+const SideBarComponent = ({nav, navClose}) => {
   return (
-    <div className={`sticky top-0 ${nav === true ? "absolute z-50" : "hidden"}  h-screen lg:block w-[25dvw]`}>
+    <div className={`sticky top-0 ${nav === true ? "block" : "hidden"} relative h-screen lg:block w-fit lg:w-[25dvw]`}>
       <div className="flex flex-col items-center w-full h-full text-gray-400 bg-black px-2 md:pl-4 md:pr-8">
         <div className="flex flex-col items-start justify-center w-full h-16 px-3 py-3 border-b border-gray-900">
           <Link className="flex flex-row items-start" href="/app">
@@ -137,6 +137,23 @@ const SideBarComponent = ({nav}) => {
           </div>
         </div>
       </div>
+      <div
+          className=' p-1 border absolute top-3 right-3 border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer '
+          onClick={navClose}>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='w-7 h-7'>
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+            />
+          </svg>
+        </div>
     </div>
   );
 };

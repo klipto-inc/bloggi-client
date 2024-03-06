@@ -12,7 +12,7 @@ import { PiCrownBold } from 'react-icons/pi';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoIosArrowDown } from 'react-icons/io';
 
-const NavbarV2 = ({ navSetting }) => {
+const NavbarV2 = ({ navOpen }) => {
   const [nav, setNav] = useState(false);
   const navref = useRef(null);
   const token = Cookies.get('authtoken');
@@ -103,10 +103,10 @@ const NavbarV2 = ({ navSetting }) => {
 
   return (
     <div className='top-0 z-30 w-full sticky'>
-      <nav className='flex gap-2 items-center justify-between w-full h-16 px-3 bg-white shadow md:px-4 lg:px-8'>
+      <nav className='flex gap-2 items-center justify-between w-full h-16 px-3 bg-white shadow md:px-8 lg:px-8'>
         <div
           className=' p-1 border border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer '
-          onClick={navSetting}>
+          onClick={navOpen}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
