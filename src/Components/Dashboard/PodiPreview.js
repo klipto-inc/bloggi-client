@@ -111,7 +111,7 @@ function Dashboard3() {
                 />
                 <section className='inset-0 flex flex-col justify-between p-4 text-gray-800'>
                   <header className='space-y-1'>
-                    <div className='text-xl font-medium flex flex-row items-center gap-1'>
+                    <div className='text-lg md:text-xl font-medium flex flex-row items-center gap-1'>
                       {pod.name}
                       {pod.verified === true ? (
                         <MdVerified className='text-blue-600 text-[16px]' />
