@@ -19,7 +19,7 @@ function Layout({ children }) {
       {/* <div className='block lg:hidden'>
         <SideBarComponent nav={nav} />
       </div> */}
-      <main className='flex relative flex-row overflow-x-hidden'>
+      <main className='flex relative flex-row h-screen overflow-x-hidden'>
         <SideBarComponent nav={nav} />
 
         <div className='w-[100%] z-30 flex flex-col'>

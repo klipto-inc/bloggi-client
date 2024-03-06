@@ -28,7 +28,7 @@ const page = () => {
           <PostHome2 />
         </div>
 
-        <div className='w-full flex flex-col md:flex-row gap-4 lg:w-[37%] px-2 mb-4'>
+        <div className='w-full flex flex-col md:flex-row lg:flex-col gap-4 lg:w-[37%] px-2 mb-4'>
           <TopInterest />
           <div className='w-full lg:sticky lg:top-20 lg:mb-10'>
             <TopCreators />

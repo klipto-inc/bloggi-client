@@ -102,7 +102,7 @@ const NavbarV2 = ({ navSetting }) => {
   };
 
   return (
-    <div className='top-0 z-20 w-full sticky'>
+    <div className='top-0 z-40 w-full md:sticky'>
       <nav className='flex gap-2 items-center justify-between w-full h-16 px-3 bg-white shadow md:px-4 lg:px-8'>
         <div
           className=' p-1 border border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer '
