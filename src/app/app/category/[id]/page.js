@@ -202,7 +202,7 @@ const Page = () => {
           </section>
         </div>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
      
       <BottomNav />

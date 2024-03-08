@@ -267,7 +267,7 @@ function EditBlog() {
 
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
       <BottomNav />
     </div>
   );

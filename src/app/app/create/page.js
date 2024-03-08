@@ -272,7 +272,7 @@ function Page() {
           </form>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
       <BottomNav />
     </div>
   );

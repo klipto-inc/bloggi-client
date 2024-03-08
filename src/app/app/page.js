@@ -36,7 +36,7 @@ const page = () => {
           {/* <SuggestedUsers /> */}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -301,7 +301,7 @@ function Settings() {
 
       <div className="hidden md:block">
        
-        <Footer />
+        {/* <Footer /> */}
       </div>
       <BottomNav />
     </main>
