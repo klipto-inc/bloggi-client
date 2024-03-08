@@ -34,15 +34,15 @@ const SideBarComponent = ({ nav, navClose }) => {
                 <MdOutlineExplore className='w-6 h-6 stroke-current' />
                 <span className='ml-4 text-base font-medium'>Feed</span>
               </Link>
-              <a
+              <Link
                 className='flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
                 href='/app/category'>
                 <BiCategory className='w-6 h-6 stroke-current' />
                 <span className='ml-4 text-base font-medium'>Categories</span>
-              </a>
-              <a
+              </Link>
+              <Link
                 className='flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-                href='#'>
+                href='/app/notifications'>
                 <MdOutlineNotificationsActive className='w-6 h-6 text-gray-300 stroke-current' />
                 <span className='ml-4 text-base font-medium'>
                   Notifications
@@ -50,7 +50,7 @@ const SideBarComponent = ({ nav, navClose }) => {
                 <span class='inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full ml-3'>
                   New
                 </span>
-              </a>
+              </Link>
               <a
                 className='flex items-center w-full h-12 px-3 mt-2 rounded row hover:bg-gray-700 hover:text-gray-300'
                 href='#'>
