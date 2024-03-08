@@ -21,12 +21,8 @@ function Layout({ children }) {
   };
 
   return (
-    <div className='relative'>
-      {/* {nav && (
-        <div className='h-screen w-screen fixed top-0 z-50 bg-gray-400 bg-opacity-40'>
-          <SideBarComponent nav={nav} navClose={navClose} />
-        </div>
-      )} */}
+    <div className='relative h-screen w-screen overflow-hidden overflow-y-auto'>
+    
       <main className='flex flex-row relative'>
         <SideBarComponent nav={nav} />
         <div className='w-[100%]  flex flex-col'>
