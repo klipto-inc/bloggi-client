@@ -6,8 +6,7 @@ import { useEffect, useState } from 'react';
 import { IoEyeOffOutline } from 'react-icons/io5';
 import { IoEyeOutline } from 'react-icons/io5';
 import { TbLock } from 'react-icons/tb';
-import logo from '../../app/Resources/Images/Bloggilight.png';
-import logo2 from '../../app/Resources/Images/bloggilogo.png';
+import logo from '@/app/Resources/Images/Bloggilight.png';
 import ReactiveButton from 'reactive-button';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
@@ -238,7 +237,7 @@ const Page = () => {
                   href='/'>
                   <Image
                     className='h-[55px] w-auto object-cover '
-                    src={logo2}
+                    src={logo}
                     height={200}
                     width={200}
                     alt=''
@@ -422,7 +421,7 @@ const Page = () => {
               <p className='mt-3 text-sm font-light text-gray-500 dark:text-gray-400'>
                 Already have an account?{' '}
                 <Link
-                  href='/signin'
+                  href='/auth/signin'
                   className='ml-1 text-base font-medium text-black text-primary-600 underline'>
                   Sign In
                 </Link>

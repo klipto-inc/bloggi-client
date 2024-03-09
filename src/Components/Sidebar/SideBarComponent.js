@@ -15,7 +15,7 @@ const SideBarComponent = ({ nav, navClose }) => {
       } relative h-screen lg:block w-fit lg:w-[25dvw]`}>
       <div className='flex flex-col items-center w-full h-full text-gray-400 bg-black px-2 md:pl-4 md:pr-8'>
         <div className='flex flex-col items-start justify-center w-full h-16 px-3 py-3 border-b border-gray-900'>
-          <Link className='flex flex-row items-start' href='/app'>
+          <Link className='flex flex-row items-start' href='/dashboard'>
             <Image
               className='h-[40px] w-auto object-cover '
               src={logo}
@@ -27,22 +27,24 @@ const SideBarComponent = ({ nav, navClose }) => {
         </div>
         <div className='flex flex-col justify-between w-full h-full px-2'>
           <div className=''>
+
+
             <div className='flex flex-col items-center w-full mt-3 '>
               <Link
                 className='flex items-center w-full h-12 px-3 mt-2 bg-gray-700 rounded hover:bg-gray-700 hover:text-gray-300'
-                href='/app'>
+                href='/dashboard'>
                 <MdOutlineExplore className='w-6 h-6 stroke-current' />
                 <span className='ml-4 text-base font-medium'>Feed</span>
               </Link>
               <Link
                 className='flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-                href='/app/category'>
+                href='/dashboard/category'>
                 <BiCategory className='w-6 h-6 stroke-current' />
                 <span className='ml-4 text-base font-medium'>Categories</span>
               </Link>
               <Link
                 className='flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-                href='/app/notifications'>
+                href='/dashboard/notifications'>
                 <MdOutlineNotificationsActive className='w-6 h-6 text-gray-300 stroke-current' />
                 <span className='ml-4 text-base font-medium'>
                   Notifications
@@ -92,7 +94,7 @@ const SideBarComponent = ({ nav, navClose }) => {
               </a>
               <a
                 className='flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300'
-                href='/app/settings'>
+                href='/dashboard/settings'>
                 <svg
                   className='w-6 h-6 stroke-current'
                   xmlns='http://www.w3.org/2000/svg'

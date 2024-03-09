@@ -13,8 +13,8 @@ export default function Home() {
   useEffect(() => {
     const splashTimeout = setTimeout(() => {
       setLoading(false);
-      router.push("/app"); // Use router.push instead of redirect
-    }, 3000); // Adjust the duration as needed
+      router.push("/dashboard"); // Use router.push instead of redirect
+    }, 1000); // Adjust the duration as needed
 
     // Clean up the timeout on component unmount
     return () => {

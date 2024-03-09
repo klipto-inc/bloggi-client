@@ -10,8 +10,7 @@ import { TbLock } from 'react-icons/tb';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import ReactiveButton from 'reactive-button';
-import logo from '../../app/Resources/Images/Bloggilight.png';
-import logo2 from '../../app/Resources/Images/bloggilogo.png';
+import logo from '@/app/Resources/Images/Bloggilight.png';
 import Cookies from 'js-cookie';
 import CheckAuth from '@/Components/Auth/CheckAuth';
 import { Spinner } from '@material-tailwind/react';
@@ -138,7 +137,7 @@ const Page = () => {
                   href='/'>
                   <Image
                     className='h-[55px] w-auto object-cover '
-                    src={logo2}
+                    src={logo}
                     height={200}
                     width={200}
                     alt=''
@@ -251,7 +250,7 @@ const Page = () => {
                 <p className='text-sm font-light text-gray-500 dark:text-gray-400'>
                   New?{' '}
                   <Link
-                    href='/signup'
+                    href='/auth/signup'
                     className='text-base font-medium text-black underline'>
                     click here
                   </Link>
@@ -259,7 +258,7 @@ const Page = () => {
 
                 <p className='text-sm font-light text-gray-500 dark:text-gray-400'>
                   <Link
-                    href='/recovery'
+                    href='/auth/recovery'
                     className='ml-2 text-base font-medium text-black underline'>
                     recovery?
                   </Link>

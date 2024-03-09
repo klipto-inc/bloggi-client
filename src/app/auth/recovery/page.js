@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import logo from "../../app/Resources/Images/Bloggilight.png";
-import logo2 from "../../app/Resources/Images/bloggilogo.png";
+import logo from '@/app/Resources/Images/Bloggilight.png';
 import ReactiveButton from "reactive-button";
 import axios from "axios";
 import CheckAuth from "@/Components/Auth/CheckAuth";
@@ -162,7 +161,7 @@ const Page = () => {
                 >
                   <Image
                     className="h-[55px] w-auto object-cover "
-                    src={logo2}
+                    src={logo}
                     height={200}
                     width={200}
                     alt=""
@@ -240,7 +239,7 @@ const Page = () => {
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don{`'`}t have an account?
                   <Link
-                    href="/signup"
+                    href="/auth/signup"
                     className="ml-2 text-base font-medium text-black underline"
                   >
                     click here
