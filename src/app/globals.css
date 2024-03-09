@@ -30,7 +30,7 @@ body {
 /* Media query for mobile devices */
 @media only screen and (max-width: 480px) {
   ::-webkit-scrollbar {
-    width: 1px; /* Even smaller width for mobile devices */
+    width: 2px; /* Even smaller width for mobile devices */
   }
 }
 
