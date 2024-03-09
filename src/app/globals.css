@@ -20,6 +20,20 @@ body {
   height: 8px;
 }
 
+/* Media query for tablets */
+@media only screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 5px; /* Smaller width for tablets */
+  }
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 480px) {
+  ::-webkit-scrollbar {
+    width: 1px; /* Even smaller width for mobile devices */
+  }
+}
+
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
@@ -42,6 +56,7 @@ body {
 ::-webkit-scrollbar-corner {
   background-color: #817c7c9a;
 }
+
 .has-mask {
   position: absolute;
   clip: rect(10px, 150px, 130px, 10px);
