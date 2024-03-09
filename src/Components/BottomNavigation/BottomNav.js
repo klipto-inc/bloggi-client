@@ -17,18 +17,18 @@ const BottomNav = () => {
     <section className="fixed inset-x-0 bottom-0 z-40 block text-gray-800 bg-white border-t-2 shadow-lg dark:bg-dark backdrop-blur-lg bg-opacity-100 dark:bg-opacity-80 dark:text-gray-400 border-royal/20 md:hidden">
       <div id="tabs" className="flex justify-between">
         <Link
-          href="/app"
+          href="/dashboard"
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
-            pathName === "/app" ? "text-[#FF3131]  bg-white" : "text-[#000]"
+            pathName === "/dashboard" ? "text-[#FF3131]  bg-white" : "text-[#000]"
           }`}
         >
           <MdOutlineExplore className="inline-block w-6 h-6 mb-1" />
           <span className="block text-xs text-black tab">Feed</span>
         </Link>
         <Link
-          href="/app/category"
+          href="/dashboard/category"
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
-            pathName === "/app/category" ? "text-[#FF3131] bg-white" : "text-[#000]"
+            pathName === "/dashboard/category" ? "text-[#FF3131] bg-white" : "text-[#000]"
           }`}
         >
           <svg
@@ -48,7 +48,7 @@ const BottomNav = () => {
           <span className="block text-xs text-black tab">Categories</span>
         </Link>
         <Link
-          href={user ? "/app/create" : "/signin"}
+          href={user ? "/dashboard/create" : "/signin"}
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
             pathName === "/create" ? "text-[#FF3131] bg-white" : "text-[#000]"
           }`}
@@ -59,7 +59,7 @@ const BottomNav = () => {
 
         {user && (
           <Link
-            href={user ? `/app/user/${user._id}` : "/signin"}
+            href={user ? `/dashboard/user/${user._id}` : "/signin"}
             className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
               pathName === `/user/${user._id}`
                 ? "text-[#FF3131] bg-white"
@@ -84,6 +84,7 @@ const BottomNav = () => {
             <span className="block text-xs text-black tab">Profile</span>
           </Link>
         )}
+
 
         {!user && (
           <Link
@@ -110,9 +111,9 @@ const BottomNav = () => {
         )}
 
         <Link
-          href={user ? "/app/settings" : "/signin"}
+          href={user ? "/dashboard/settings" : "/signin"}
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
-            pathName === "/app/settings" ? "text-[#FF3131] bg-white" : "text-[#000]"
+            pathName === "/dashboard/settings" ? "text-[#FF3131] bg-white" : "text-[#000]"
           }`}
         >
           <IoSettingsOutline className="inline-block w-6 h-6 mb-1" />
