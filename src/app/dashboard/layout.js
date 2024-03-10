@@ -20,6 +20,8 @@ function Layout({ children }) {
     document.body.style.overflow = 'auto';
   };
 
+  
+
   return (
     <div className='relative h-screen w-screen overflow-hidden overflow-y-auto'>
     

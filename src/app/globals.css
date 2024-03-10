@@ -23,7 +23,7 @@ body {
 /* Media query for tablets */
 @media only screen and (max-width: 768px) {
   ::-webkit-scrollbar {
-    width: 5px; /* Smaller width for tablets */
+    width: 2px; /* Smaller width for tablets */
   }
 }
 

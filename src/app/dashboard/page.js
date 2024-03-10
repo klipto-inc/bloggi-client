@@ -18,7 +18,7 @@ const page = () => {
     <div className='bg-gray-200 md:bg-white md:bg-transparent w-full'>
       <Dashboard />
 
-      <div className='mb-4'>
+      <div className='mb-2 lg:mb-4'>
         <PodiPreview />
       </div>
 
