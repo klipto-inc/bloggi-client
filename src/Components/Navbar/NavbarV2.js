@@ -232,25 +232,27 @@ const NavbarV2 = ({ navOpen }) => {
                       </div>
                     </div>
 
-                    <div className='flex items-center gap-3'>
-                      <div className='flex items-center h-16 md:py-3 md:px-3'>
-                        <IoNotificationsOutline className='text-2xl md:text-3xl' />
+                    <div className='flex items-center w-fit h-fit  gap-3'>
+                      <div className='flex items-center h-16 py-3 md:px-3'>
+                        <IoNotificationsOutline className='text-[24px]' />
                       </div>
-                      <button
-                        type='button'
-                        className='relative inline-flex items-center px-4 py-2 md:px-3 md:py-2 border rounded-full hover:shadow-lg'
-                        onClick={openNav}>
+
+                      <div
+                        className=' flex flex-row items-center gap-3'
+                        onClick={OpenNav}>
                         <div className='hidden md:block md:pl-1'>
-                          <IoIosArrowDown className='text-xl' />
+                          <IoIosArrowDown className='' />
                         </div>
-                        <div className='relative inline-block w-10 h-10 md:w-12 md:h-12'>
+
+                        <div className='relative inline-block w-8 h-8 md:w-10 md:h-10'>
                           <img
-                            className='rounded-full'
+                            className='inline-block size-[46px] h-full w-full rounded-full'
                             src={user.userdp}
-                            alt='User Display Picture'
+                            alt='Image Description'
                           />
+                          <span className='absolute top-0 end-0 block size-3 rounded-full ring-2 ring-white bg-teal-400' />
                         </div>
-                      </button>
+                      </div>
                     </div>
                   </div>
                 )}
