@@ -244,14 +244,13 @@ const NavbarV2 = ({ navOpen }) => {
                           <IoIosArrowDown className='' />
                         </div>
 
-                        <div className='flex-grow-0 flex-shrink-0 block w-8 h-8 md:w-10 md:h-10 md:pl-3'>
-                          <Image
-                            className='object-cover w-8 h-8 rounded-full'
+                        <div className='relative inline-block'>
+                          <img
+                            className='inline-block size-[46px] rounded-full'
                             src={user.userdp}
-                            alt='Avatar'
-                            height={200}
-                            width={200}
+                            alt='Image Description'
                           />
+                          <span className='absolute top-0 end-0 block size-3 rounded-full ring-2 ring-white bg-teal-400' />
                         </div>
                       </button>
                     </div>
