@@ -209,20 +209,19 @@ const NavbarV2 = ({ navOpen }) => {
                       <Link
                         className='px-5 py-2 text-base font-medium text-gray-900'
                         href='/auth/signup'>
-                         Sign Up
+                        Sign Up
                       </Link>
                     </div>
                     <Link
                       className='rounded-md  bg-[#FF3131] px-7 py-2 md:py-2 text-base flex flex-row items-center gap-2 font-medium text-white shadow'
                       href='/auth/signin'>
-                    
                       Login
                     </Link>
                   </div>
                 )}
 
                 {user && (
-                  <div className=''>
+                  <div className='flex flex-row items-center gap-2'>
                     <div className='mr-4 hidden md:block'>
                       <div className=' sm:flex sm:gap-4'>
                         <Link
@@ -232,33 +231,30 @@ const NavbarV2 = ({ navOpen }) => {
                         </Link>
                       </div>
                     </div>
-                    <button
-                      type='button'
-                      className='relative inline-flex items-center px-2 border rounded-full hover:shadow-lg'
-                      onClick={OpenNav}>
-                      <div className='flex items-center gap-3'>
-                        <div className='flex items-center h-16 py-3 md:px-3'>
-                          <IoNotificationsOutline className='text-[24px]' />
-                        </div>
-                        <button
-                          type='button'
-                          className='relative inline-flex items-center md:px-2 border rounded-full hover:shadow-lg'>
-                          <div className='hidden md:block md:pl-1'>
-                            <IoIosArrowDown className='' />
-                          </div>
 
-                          <div className='flex-grow-0 flex-shrink-0 block w-8 h-8 md:w-10 md:h-10 md:pl-3'>
-                            <Image
-                              className='object-cover w-8 h-8 rounded-full'
-                              src={user.userdp}
-                              alt='Avatar'
-                              height={200}
-                              width={200}
-                            />
-                          </div>
-                        </button>
+                    <div className='flex items-center gap-3'>
+                      <div className='flex items-center h-16 py-3 md:px-3'>
+                        <IoNotificationsOutline className='text-[24px]' />
                       </div>
-                    </button>
+                      <button
+                        type='button'
+                        className='relative inline-flex items-center md:px-2 border rounded-full hover:shadow-lg'
+                        onClick={OpenNav}>
+                        <div className='hidden md:block md:pl-1'>
+                          <IoIosArrowDown className='' />
+                        </div>
+
+                        <div className='flex-grow-0 flex-shrink-0 block w-8 h-8 md:w-10 md:h-10 md:pl-3'>
+                          <Image
+                            className='object-cover w-8 h-8 rounded-full'
+                            src={user.userdp}
+                            alt='Avatar'
+                            height={200}
+                            width={200}
+                          />
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 )}
                 {nav && user && (
