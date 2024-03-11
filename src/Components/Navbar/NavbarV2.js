@@ -102,7 +102,7 @@ const NavbarV2 = ({ navOpen }) => {
   };
 
   return (
-    <div className='top-0 z-30 w-full sticky'>
+    <div className='top-0 z-30 w-full sticky bg-white'>
       <nav className='flex gap-2 items-center justify-between w-full h-16 px-3  shadow md:px-8 lg:px-8'>
         <div
           className=' p-1 border border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer '
