@@ -103,7 +103,7 @@ const NavbarV2 = ({ navOpen }) => {
 
   return (
     <div className='top-0 z-30 w-full sticky'>
-      <nav className='flex gap-2 items-center justify-between w-full h-16 px-3 bg-white shadow md:px-8 lg:px-8'>
+      <nav className='flex gap-2 items-center justify-between w-full h-16 px-3  shadow md:px-8 lg:px-8'>
         <div
           className=' p-1 border border-gray-200 border-opacity-80 rounded-md lg:hidden cursor-pointer '
           onClick={navOpen}>
@@ -175,7 +175,7 @@ const NavbarV2 = ({ navOpen }) => {
           </div>
         </div>
 
-        <div className='flex items-center w-full md:hidden bg-gray-100 bg-purple-white rounded-lg'>
+        <div className='flex items-center w-[100%] md:hidden bg-gray-100 bg-purple-white rounded-lg'>
           <div className='p-4 text-purple-lighter'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -194,12 +194,12 @@ const NavbarV2 = ({ navOpen }) => {
 
           <div
             type='text'
-            className=' p-3 border-0 bg-transparent line-clamp-1 outline-none'>
+            className=' p-3 border-0 bg-transparent line-clamp-1 outline-none w-full'>
             <span className='text-gray-600 w-full'>Search here...</span>
           </div>
         </div>
 
-        <div className='flex flex-row items-center justify-end w-full'>
+        <div className='flex flex-row items-center justify-end w-fit md:w-full'>
           <div className='relative flex items-center justify-end'>
             <div className='block'>
               <div className='relative inline w-full '>
@@ -207,13 +207,13 @@ const NavbarV2 = ({ navOpen }) => {
                   <div className='sm:flex gap-2'>
                     <div className='hidden md:flex'>
                       <Link
-                        className='px-5 py-2.5 text-base font-medium text-gray-900'
+                        className='px-5 py-2 text-base font-medium text-gray-900'
                         href='/auth/signup'>
                          Sign Up
                       </Link>
                     </div>
                     <Link
-                      className='rounded-sm bg-[#FF3131] px-7 py-2 md:py-2.5 text-base flex flex-row items-center gap-2 font-medium text-white shadow'
+                      className='rounded-md  bg-[#FF3131] px-7 py-2 md:py-2 text-base flex flex-row items-center gap-2 font-medium text-white shadow'
                       href='/auth/signin'>
                     
                       Login
@@ -226,7 +226,7 @@ const NavbarV2 = ({ navOpen }) => {
                     <div className='mr-4 hidden md:block'>
                       <div className=' sm:flex sm:gap-4'>
                         <Link
-                          className='rounded-sm bg-[#FF3131] px-7 py-2.5 text-base font-medium text-white shadow'
+                          className='rounded-md bg-[#FF3131] px-7 py-2 text-base font-medium text-white shadow'
                           href='/dashboard/create'>
                           Create
                         </Link>
