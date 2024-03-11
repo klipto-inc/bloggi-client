@@ -233,26 +233,23 @@ const NavbarV2 = ({ navOpen }) => {
                     </div>
 
                     <div className='flex items-center gap-3'>
-                      <div className='flex items-center h-16 py-3 md:px-3'>
-                        <IoNotificationsOutline className='text-[24px]' />
+                      <div className='flex items-center h-16 md:py-3 md:px-3'>
+                        <IoNotificationsOutline className='text-2xl md:text-3xl' />
                       </div>
                       <button
                         type='button'
-                        className='relative inline-flex items-center md:px-2 border rounded-full hover:shadow-lg'
-                        onClick={OpenNav}>
+                        className='relative inline-flex items-center px-4 py-2 md:px-3 md:py-2 border rounded-full hover:shadow-lg'
+                        onClick={openNav}>
                         <div className='hidden md:block md:pl-1'>
-                          <IoIosArrowDown className='' />
+                          <IoIosArrowDown className='text-xl' />
                         </div>
-
-                        <div className='relative inline-block w-8 h-8 md:w-10 md:h-10'>
+                        <div className='relative inline-block w-10 h-10 md:w-12 md:h-12'>
                           <img
-                            className='inline-block size-[46px] h-full w-full rounded-full'
+                            className='rounded-full'
                             src={user.userdp}
-                            alt='Image Description'
+                            alt='User Display Picture'
                           />
-                          <span className='absolute top-0 end-0 block size-3 rounded-full ring-2 ring-white bg-teal-400' />
                         </div>
-
                       </button>
                     </div>
                   </div>
