@@ -238,7 +238,7 @@ const NavbarV2 = ({ navOpen }) => {
                       </div>
 
                       <div
-                        className=' flex flex-row items-center gap-3 cursor-pointer border border-gray-800 border-opacity-8 rounded-full px-1 py-1'
+                        className=' flex flex-row items-center gap-3 cursor-pointer border border-gray-800 border-opacity-5 rounded-full px-1 py-1'
                         onClick={OpenNav}>
                         <div className='hidden md:block md:pl-2'>
                           <IoIosArrowDown className='' />
