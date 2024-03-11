@@ -205,7 +205,7 @@ const NavbarV2 = ({ navOpen }) => {
               <div className='relative inline w-full '>
                 {!user && (
                   <div className='sm:flex gap-2'>
-                    <div className='hidden sm:flex'>
+                    <div className='hidden md:flex'>
                       <Link
                         className='px-5 py-2.5 text-base font-medium text-gray-900'
                         href='/auth/signup'>
@@ -213,7 +213,7 @@ const NavbarV2 = ({ navOpen }) => {
                       </Link>
                     </div>
                     <Link
-                      className='rounded-sm bg-[#FF3131] px-7 py-2.5 text-base flex flex-row items-center gap-2 font-medium text-white shadow'
+                      className='rounded-sm bg-[#FF3131] px-7 py-2 md:py-2.5 text-base flex flex-row items-center gap-2 font-medium text-white shadow'
                       href='/auth/signin'>
                     
                       Login
