@@ -238,13 +238,13 @@ const NavbarV2 = ({ navOpen }) => {
                       </div>
 
                       <div
-                        className=' flex flex-row items-center gap-3 cursor-pointer border border-gray-800 border-opacity-10 shadow-sm rounded-full px-2 py-1.5'
+                        className=' flex flex-row items-center gap-3 cursor-pointer border border-gray-800 border-opacity-10 shadow-sm rounded-full px-2 py-1'
                         onClick={OpenNav}>
-                        <div className='hidden md:block md:pl-1'>
+                        <div className='hidden md:block md:pl-2'>
                           <IoIosArrowDown className='' />
                         </div>
 
-                        <div className='relative inline-block w-8 h-8 md:w-10 md:h-10'>
+                        <div className='relative inline-block w-8 h-8'>
                           <img
                             className='inline-block size-[46px] h-full w-full rounded-full'
                             src={user.userdp}
