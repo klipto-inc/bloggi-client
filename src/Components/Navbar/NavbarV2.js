@@ -10,7 +10,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { PiCrownBold } from 'react-icons/pi';
 import { useDispatch, useSelector } from 'react-redux';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown, IoIosLock } from 'react-icons/io';
 
 const NavbarV2 = ({ navOpen }) => {
   const [nav, setNav] = useState(false);
@@ -150,7 +150,7 @@ const NavbarV2 = ({ navOpen }) => {
             </div>
           </div>
 
-          <div className='w-[60%] flex flex-row-reverse flex-grow-0 flex-shrink bg-gray-100 bg-purple-white rounded-lg'>
+          <div className='w-[80%] flex flex-row-reverse flex-grow-0 flex-shrink bg-gray-100 bg-purple-white rounded-lg'>
             <input
               type='text'
               className=' p-3 border-0 bg-transparent outline-none w-full'
@@ -199,90 +199,67 @@ const NavbarV2 = ({ navOpen }) => {
           </div>
         </div>
 
-        <div className='flex w-auto flex-row items-center justify-end'>
-          <div className='mr-4 hidden md:block'>
-            <div className=' sm:flex sm:gap-4'>
-              <Link
-                className='rounded-sm bg-[#FF3131] px-7 py-2.5 text-base font-medium text-white shadow'
-                href='/create'>
-                Create
-              </Link>
-            </div>
-          </div>
+        <div className='flex flex-row items-center justify-end w-full'>
           <div className='relative flex items-center justify-end'>
             <div className='block'>
-              <div className='relative inline'>
+              <div className='relative inline w-full '>
                 {!user && (
-                  <div className='flex items-center gap-3'>
-                    <div className='flex items-center h-16 py-3 md:px-3'>
-                      <IoNotificationsOutline className='text-[24px]' />
+                  <div className='sm:flex gap-2'>
+                    <div className='hidden sm:flex'>
+                      <Link
+                        className='px-5 py-2.5 text-base font-medium text-gray-900'
+                        href='/auth/signup'>
+                         Sign Up
+                      </Link>
                     </div>
-                    <button
-                      type='button'
-                      className='relative inline-flex items-center md:px-2 border rounded-full hover:shadow-lg'>
-                      <div className='hidden md:block md:pl-1'>
-                        <IoIosArrowDown className='' />
-                      </div>
-
-                      <div className='flex-grow-0 flex-shrink-0 block w-8 h-8 md:w-10 md:h-10 md:pl-3'>
-                        <svg
-                          viewBox='0 0 32 32'
-                          xmlns='http://www.w3.org/2000/svg'
-                          aria-hidden='true'
-                          role='presentation'
-                          focusable='false'
-                          style={{
-                            display: 'block',
-                            height: '100%',
-                            width: '100%',
-                            fill: 'currentcolor',
-                          }}>
-                          <path d='m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z' />
-                        </svg>
-                      </div>
-                    </button>
+                    <Link
+                      className='rounded-sm bg-[#FF3131] px-7 py-2.5 text-base flex flex-row items-center gap-2 font-medium text-white shadow'
+                      href='/auth/signin'>
+                    
+                      Login
+                    </Link>
                   </div>
                 )}
 
                 {user && (
-                  <button
-                    type='button'
-                    className='relative inline-flex items-center px-2 border rounded-full hover:shadow-lg'
-                    onClick={OpenNav}>
-                    <div className='pl-1'>
-                      <svg
-                        viewBox='0 0 32 32'
-                        xmlns='http://www.w3.org/2000/svg'
-                        aria-hidden='true'
-                        role='presentation'
-                        focusable='false'
-                        style={{
-                          display: 'block',
-                          fill: 'none',
-                          height: 16,
-                          width: 16,
-                          stroke: 'currentcolor',
-                          strokeWidth: 3,
-                          overflow: 'visible',
-                        }}>
-                        <g fill='none' fillRule='nonzero'>
-                          <path d='m2 16h28' />
-                          <path d='m2 24h28' />
-                          <path d='m2 8h28' />
-                        </g>
-                      </svg>
+                  <div className=''>
+                    <div className='mr-4 hidden md:block'>
+                      <div className=' sm:flex sm:gap-4'>
+                        <Link
+                          className='rounded-sm bg-[#FF3131] px-7 py-2.5 text-base font-medium text-white shadow'
+                          href='/dashboard/create'>
+                          Create
+                        </Link>
+                      </div>
                     </div>
+                    <button
+                      type='button'
+                      className='relative inline-flex items-center px-2 border rounded-full hover:shadow-lg'
+                      onClick={OpenNav}>
+                      <div className='flex items-center gap-3'>
+                        <div className='flex items-center h-16 py-3 md:px-3'>
+                          <IoNotificationsOutline className='text-[24px]' />
+                        </div>
+                        <button
+                          type='button'
+                          className='relative inline-flex items-center md:px-2 border rounded-full hover:shadow-lg'>
+                          <div className='hidden md:block md:pl-1'>
+                            <IoIosArrowDown className='' />
+                          </div>
 
-                    <div className='relative z-10 flex items-center px-2 py-1 text-sm text-gray-800 rounded-md hover:text-blue-800 dark:text-gray-100 dark:hover:text-white'>
-                      <Image
-                        className='object-cover w-8 h-8 rounded-full'
-                        src={user.userdp}
-                        alt='Avatar'
-                        height={200}
-                        width={200}
-                      />
-                    </div>
-                  </button>
+                          <div className='flex-grow-0 flex-shrink-0 block w-8 h-8 md:w-10 md:h-10 md:pl-3'>
+                            <Image
+                              className='object-cover w-8 h-8 rounded-full'
+                              src={user.userdp}
+                              alt='Avatar'
+                              height={200}
+                              width={200}
+                            />
+                          </div>
+                        </button>
+                      </div>
+                    </button>
+                  </div>
                 )}
                 {nav && user && (
                   <div className='absolute right-0 z-24 py-2 mt-2 overflow-hidden bg-gray-50 rounded-md shadow-xl w-72 dark:bg-gray-800'>

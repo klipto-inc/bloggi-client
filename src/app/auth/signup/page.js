@@ -7,6 +7,7 @@ import { IoEyeOffOutline } from 'react-icons/io5';
 import { IoEyeOutline } from 'react-icons/io5';
 import { TbLock } from 'react-icons/tb';
 import logo from '@/app/Resources/Images/Bloggilight.png';
+import logo2 from '@/app/Resources/Images/bloggilogo.png';
 import ReactiveButton from 'reactive-button';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
@@ -237,7 +238,7 @@ const Page = () => {
                   href='/'>
                   <Image
                     className='h-[55px] w-auto object-cover '
-                    src={logo}
+                    src={logo2}
                     height={200}
                     width={200}
                     alt=''

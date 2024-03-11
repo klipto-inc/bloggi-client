@@ -8,6 +8,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { TbLock } from "react-icons/tb";
 import axios from "axios";
 import logo from '@/app/Resources/Images/Bloggilight.png';
+import logo2 from '@/app/Resources/Images/bloggilogo.png';
 import ReactiveButton from "reactive-button";
 import { useRouter, useSearchParams } from "next/navigation";
 import CheckAuth2 from "@/Components/Auth/CheckAuth2";
@@ -115,7 +116,7 @@ const Page = () => {
                 >
                   <Image
                     className="h-[55px] w-auto object-cover "
-                    src={logo}
+                    src={logo2}
                     height={200}
                     width={200}
                     alt=""

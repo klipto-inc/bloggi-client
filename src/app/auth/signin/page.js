@@ -11,6 +11,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import ReactiveButton from 'reactive-button';
 import logo from '@/app/Resources/Images/Bloggilight.png';
+import logo2 from '@/app/Resources/Images/bloggilogo.png';
 import Cookies from 'js-cookie';
 import CheckAuth from '@/Components/Auth/CheckAuth';
 import { Spinner } from '@material-tailwind/react';
@@ -137,7 +138,7 @@ const Page = () => {
                   href='/'>
                   <Image
                     className='h-[55px] w-auto object-cover '
-                    src={logo}
+                    src={logo2}
                     height={200}
                     width={200}
                     alt=''

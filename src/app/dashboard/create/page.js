@@ -112,7 +112,6 @@ function Page() {
 
   return (
     <div className="h-screen bg-white md:h-auto">
-      <Navbar />
       <div className="px-4 py-16 mx-auto bg-gray-50 sm:px-6">
         <div className="max-w-lg mx-auto">
           <h1 className="text-xl font-semibold text-center text-black">
@@ -278,6 +277,6 @@ function Page() {
   );
 }
 
-const CheckAuthInCreate = CheckAuthIn(Page);
+// const CheckAuthInCreate = CheckAuthIn(Page);
 
-export default CheckAuthInCreate;
+export default Page;
