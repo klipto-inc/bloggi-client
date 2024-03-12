@@ -142,7 +142,7 @@ const PostHome2 = () => {
                       />
                     </div>
                   </Link>
-                  <Link href={`/app/user/${post.author._id}`}>
+                  <Link href={`/dashboard/user/${post.author._id}`}>
                     <div className='flex flex-col ml-3'>
                       <div className='text-[18px] font-medium text-gray-800 flex flex-row items-center gap-1'>
                         {post.author.fullname}
