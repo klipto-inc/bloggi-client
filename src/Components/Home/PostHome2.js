@@ -34,7 +34,7 @@ const PostHome2 = () => {
 
   const handleReadMore = (postId) => {
     // You can replace '/posts/[postId]' with the actual path to your post detail page
-    router.push(`/app/${postId}`);
+    router.push(`/dashboard/${postId}`);
   };
 
   const dispatch = useDispatch();
