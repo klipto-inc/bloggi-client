@@ -88,7 +88,7 @@ const BottomNav = () => {
 
         {!user && (
           <Link
-            href="/signin"
+            href="/auth/signin"
             className="justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white text-[#000]" 
           >
             <svg
