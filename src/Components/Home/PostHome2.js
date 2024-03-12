@@ -133,7 +133,7 @@ const PostHome2 = () => {
             <article className='' key={post._id}>
               <div className='bg-white rounded-lg shadow'>
                 <div className='relative flex flex-row items-center px-2 py-3 md:mx-2'>
-                  <Link href={`/app/user/${post.author._id}`}>
+                  <Link href={`/dashboard/user/${post.author._id}`}>
                     <div className='w-auto h-auto border-2 border-gray-100 rounded-full'>
                       <img
                         className='object-cover w-10 h-10 rounded-full shadow cursor-pointer'
