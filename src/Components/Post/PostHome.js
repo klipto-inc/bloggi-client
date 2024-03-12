@@ -176,7 +176,7 @@ function PostHome() {
                                 className="h-[40px] w-[40px] object-cover bg-gray-50 p-1[]  rounded-full"
                               />
                             </Link>
-                            <Link href={`/user/${post.author._id}`}>
+                            <Link href={`dashboard/user/${post.author._id}`}>
                               <span className="text-sm font-medium ">
                                 {post.author.fullname}
                               </span>
