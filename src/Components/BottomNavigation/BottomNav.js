@@ -48,7 +48,7 @@ const BottomNav = () => {
           <span className="block text-xs text-black tab">Categories</span>
         </Link>
         <Link
-          href={user ? "/dashboard/create" : "/signin"}
+          href={user ? "/dashboard/create" : "/auth/signin"}
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
             pathName === "/create" ? "text-[#FF3131] bg-white" : "text-[#000]"
           }`}
@@ -59,9 +59,9 @@ const BottomNav = () => {
 
         {user && (
           <Link
-            href={user ? `/dashboard/user/${user._id}` : "/signin"}
+            href={user ? `/dashboard/user/${user._id}` : "/auth/signin"}
             className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
-              pathName === `/user/${user._id}`
+              pathName === `/dashboard/user/${user._id}`
                 ? "text-[#FF3131] bg-white"
                 : "text-[#000]"
             }`}
@@ -111,7 +111,7 @@ const BottomNav = () => {
         )}
 
         <Link
-          href={user ? "/dashboard/settings" : "/signin"}
+          href={user ? "/dashboard/settings" : "/auth/signin"}
           className={`justify-center inline-block w-full pt-2 pb-1 text-center focus:text-royal hover:text-royal hover:bg-white ${
             pathName === "/dashboard/settings" ? "text-[#FF3131] bg-white" : "text-[#000]"
           }`}
