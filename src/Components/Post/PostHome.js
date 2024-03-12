@@ -167,7 +167,7 @@ function PostHome() {
                             {post.category}
                           </span> */}
                           <div className="flex items-center space-x-2">
-                            <Link href={`/user/${post.author._id}`}>
+                            <Link href={`dashboard/user/${post.author._id}`}>
                               <Image
                                 src={post.author.userdp}
                                 alt="Jese Leos avatar"
