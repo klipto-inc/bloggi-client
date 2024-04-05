@@ -170,7 +170,7 @@ const Page = () => {
                   />
                 </svg>
                 <input
-                  className='pl-2 border-none outline-none'
+                  className='pl-2 border-none outline-none w-full'
                   type='email'
                   name=''
                   id=''

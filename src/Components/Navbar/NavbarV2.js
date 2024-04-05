@@ -213,10 +213,32 @@ const NavbarV2 = ({ navOpen }) => {
                       </Link>
                     </div>
                     <Link
-                      className='rounded-md  bg-[#FF3131] px-7 py-2 md:py-2 text-base flex flex-row items-center gap-2 font-medium text-white shadow'
+                      className='rounded-md hidden md:flex  bg-[#FF3131] px-7 py-2 md:py-2 text-base flex-row items-center gap-2 font-medium text-white shadow'
                       href='/auth/signin'>
                       Login
                     </Link>
+
+                    <div
+                      className=' flex flex-row md:hidden items-center cursor-pointer border border-gray-800 border-opacity-5 rounded-full px-0.5 py-0.5'
+                      onClick={OpenNav}>
+                      <Link
+                        href='/auth/signin'
+                        className='relative inline-block w-10 h-10'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          strokeWidth='1.5'
+                          stroke='currentColor'
+                          className='w-full h-full text-gray-700'>
+                          <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            d='M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z'
+                          />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 )}
 
@@ -256,6 +278,7 @@ const NavbarV2 = ({ navOpen }) => {
                     </div>
                   </div>
                 )}
+
                 {nav && user && (
                   <div className='absolute right-0 z-24 py-2 mt-2 overflow-hidden bg-gray-50 rounded-md shadow-xl w-72 dark:bg-gray-800'>
                     <Link href={`/app/user/${user._id}`}>
